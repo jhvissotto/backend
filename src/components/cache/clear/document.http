@@ -1,0 +1,17 @@
+GET http://localhost:4000/cache/clear?
+# &abc=123
+# &xyz=456
+
+# content-type: application/json
+# Authorization: Basic user:pass
+# Authorization: Bearer abcd
+# X-REQUEST-TYPE: GraphQL
+# { "body": "1234" }
+
+
+
+// ========================================== //
+// ================ RESPONSE ================ //
+// ========================================== //
+
+

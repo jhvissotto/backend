@@ -1,0 +1,3 @@
+v1 - Original without modifications
+v2 - Add boolean validators
+v3 - Parse Content in Payload & Extra

@@ -1,0 +1,118 @@
+GET http://localhost:4000/database/select/td_user?
+# &wk=_id
+# &we==
+# &wv=5
+# &limit=0
+# &offset=0
+# &randKey=0
+
+# content-type: application/json
+# Authorization: Basic user:pass
+# Authorization: Bearer abcd
+# X-REQUEST-TYPE: GraphQL
+# { "body": "1234" }
+
+
+
+// ========================================== //
+// ================ RESPONSE ================ //
+// ========================================== //
+
+
+{
+  "reqId_short": "2d93d828277",
+  "reqId_v4": "a67be992-96d4-42f2-9787-2f013af31bfb",
+  "date_value": 1674427796746,
+  "date_full": "2023-01-22T22:49:56.746Z",
+  "date_formated": "2023-01-22  17:49:56",
+  "cache_enable": null,
+  "cache_response": null,
+  "cache_duration": "",
+  "status_message": "Successful",
+  "status_description": "OK",
+  "status_code": 200,
+  "status_flag": "success",
+  "value_params": {},
+  "value_query": {},
+  "value_body": {},
+  "validation_params": {},
+  "validation_query": {},
+  "validation_body": {},
+  "valid_username": null,
+  "valid_password": null,
+  "valid_credentials": null,
+  "valid_token": null,
+  "token_user": "",
+  "token_server": "",
+  "token_serverDuration": "",
+  "level_required": null,
+  "level_user": null,
+  "retryNumber": 0,
+  "pagined": null,
+  "page_key": 0,
+  "page_items": 0,
+  "page_number": 0,
+  "page_isLast": null,
+  "props_meta": {},
+  "props": {},
+  "list_meta": {},
+  "list": [
+    {
+      "_id": 1,
+      "pk_email": "email1",
+      "name": "name1",
+      "passHash": null,
+      "createdAt": "2023-01-14T20:56:41.000Z",
+      "updatedAt": null
+    },
+    {
+      "_id": 2,
+      "pk_email": "email2",
+      "name": "name2",
+      "passHash": null,
+      "createdAt": "2023-01-14T20:56:41.000Z",
+      "updatedAt": null
+    },
+    {
+      "_id": 3,
+      "pk_email": "email3",
+      "name": "name3",
+      "passHash": null,
+      "createdAt": "2023-01-14T20:56:41.000Z",
+      "updatedAt": null
+    }
+  ],
+  "list_length": 3,
+  "list_isEmpty": false,
+  "list_isFilled": true,
+  "list_isZero": false,
+  "list_isUnique": false,
+  "list_isMany": true,
+  "list_itemFirst": {
+    "_id": 1,
+    "pk_email": "email1",
+    "name": "name1",
+    "passHash": null,
+    "createdAt": "2023-01-14T20:56:41.000Z",
+    "updatedAt": null
+  },
+  "list_itemLast": {
+    "_id": 3,
+    "pk_email": "email3",
+    "name": "name3",
+    "passHash": null,
+    "createdAt": "2023-01-14T20:56:41.000Z",
+    "updatedAt": null
+  },
+  "resources_meta": {},
+  "resources_count": 0,
+  "resources": {},
+  "req_isSuccess": true,
+  "req_isOk": true,
+  "req_isError": false,
+  "req_hasWarns": null,
+  "errors_inDatabase": null,
+  "errors_inServices": null,
+  "errors_has": false,
+  "errors": []
+}

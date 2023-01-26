@@ -1,0 +1,19 @@
+{
+  "yaml.schemas": {
+    "swaggerviewer:openapi": "file:///d%3A/Coding/Trying/fullstack/backend/src/document/config.yml"
+  },
+  "sqltools.connections": [
+    {
+      "mysqlOptions": {
+        "authProtocol": "default"
+      },
+      "previewLimit": 50,
+      "server": "localhost",
+      "port": 3306,
+      "driver": "MySQL",
+      "name": "Localhost",
+      "database": "backend",
+      "username": "admin"
+    }
+  ]
+}

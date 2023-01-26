@@ -1,0 +1,108 @@
+GET http://localhost:4000/database/select/td_post?
+# &wk=_id
+# &we==
+# &wv=5
+# &limit=0
+# &offset=0
+# &randKey=0
+
+# content-type: application/json
+# Authorization: Basic user:pass
+# Authorization: Bearer abcd
+# X-REQUEST-TYPE: GraphQL
+# { "body": "1234" }
+
+
+
+
+// ========================================== //
+// ================ RESPONSE ================ //
+// ========================================== //
+
+
+{
+  "reqId_short": "767297de5e3",
+  "reqId_v4": "9bf3357b-9226-4fde-9fb9-be15fad109c8",
+  "date_value": 1674426421363,
+  "date_full": "2023-01-22T22:27:01.363Z",
+  "date_formated": "2023-01-22  17:27:01",
+  "cache_enable": null,
+  "cache_response": null,
+  "cache_duration": "",
+  "status_message": "Successful",
+  "status_description": "OK",
+  "status_code": 200,
+  "status_flag": "success",
+  "validation_params": {},
+  "validation_query": {},
+  "validation_body": {},
+  "valid_username": null,
+  "valid_password": null,
+  "valid_credentials": null,
+  "valid_token": null,
+  "token_user": "",
+  "token_server": "",
+  "token_serverDuration": "",
+  "level_required": null,
+  "level_user": null,
+  "retryNumber": 0,
+  "pagined": null,
+  "page_key": 0,
+  "page_items": 0,
+  "page_number": 0,
+  "page_isLast": null,
+  "props_meta": {},
+  "props": {},
+  "list_meta": {},
+  "list": [
+    {
+      "_id": 1,
+      "pk_slug": "slug1",
+      "title": "title1",
+      "text": "text1",
+      "createdAt": "2023-01-14T20:44:58.000Z",
+      "updatedAt": null
+    },
+    {
+      "_id": 2,
+      "pk_slug": "slug2",
+      "title": "title2",
+      "text": "text2",
+      "createdAt": "2023-01-14T20:44:58.000Z",
+      "updatedAt": null
+    }
+  ],
+  "list_length": 2,
+  "list_isEmpty": false,
+  "list_isFilled": true,
+  "list_isZero": false,
+  "list_isUnique": false,
+  "list_isMany": true,
+  "list_itemFirst": {
+    "_id": 1,
+    "pk_slug": "slug1",
+    "title": "title1",
+    "text": "text1",
+    "createdAt": "2023-01-14T20:44:58.000Z",
+    "updatedAt": null
+  },
+  "list_itemLast": {
+    "_id": 2,
+    "pk_slug": "slug2",
+    "title": "title2",
+    "text": "text2",
+    "createdAt": "2023-01-14T20:44:58.000Z",
+    "updatedAt": null
+  },
+  "resources_meta": {},
+  "resources_count": 0,
+  "resources": {},
+  "req_isSuccess": true,
+  "req_isOk": true,
+  "req_isError": false,
+  "req_hasWarns": null,
+  "errors_inDatabase": null,
+  "errors_inServices": null,
+  "errors_has": false,
+  "errors": []
+}
