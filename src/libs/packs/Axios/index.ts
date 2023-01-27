@@ -1,2 +1,2 @@
-export * from "./modules";
-export * as Axios from "./types";
+export * from './modules'
+export * as Axios from './types'

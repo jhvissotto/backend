@@ -1,12 +1,13 @@
-import { env } from "~/src/global";
-import { keyv } from "~/src/services";
-import { environment } from "~/src/libs/helpers";
-import { CreateServer, plugins, utils } from "~/src/libs/packs/apollo";
+// import { env } from '~/src/global'
+// import { keyv } from '~/src/services'
+// import { environment } from '~/src/libs/helpers'
+// import { CreateServer, plugins, utils } from '~/src/libs/packs/Apollo'
 
 // import { _schema } from "~/src/graphql";
 // import { _types, _resolvers } from "~/src/gql";
 
-export function initialize(): InstanceType<typeof CreateServer> {
+export function initialize() {
+  // export function initialize(): InstanceType<typeof CreateServer> {
   // return new CreateServer<{ token?: string }>({
   //   // schema: _schema,
   //   // typeDefs: _types,

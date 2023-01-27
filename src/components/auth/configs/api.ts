@@ -1,21 +1,22 @@
 // libs
-import { resolvers } from "~/src/libs/helpers";
+import { resolvers } from '~/src/libs/helpers'
 // app
-import { self } from "~/src/api";
+import { self } from '~/src/api'
 // local
-import * as comp from "../";
+import type { SchemaReq } from '../'
+import { defs } from '../'
 
 // prettier-ignore
 export async function api({ params, query, body }: {
-  params: comp.SchemaReq.Params;
-  query: comp.SchemaReq.Query;
-  body: comp.SchemaReq.Body;
+  params: SchemaReq.Params;
+  query: SchemaReq.Query;
+  body: SchemaReq.Body;
 },
-  opts: Parameters<typeof self.axios>[1]
+  opts: Parameters<typeof self.axios>
 ) {
   return await resolvers.obj.d(self.axios({
-    method: comp.defs.method,
-    url: comp.defs.url(params, query),
+    method: defs.method,
+    url: defs.url(params, query),
     data: body,
     ...opts
   }));

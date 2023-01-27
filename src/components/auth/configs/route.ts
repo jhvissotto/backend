@@ -1,7 +1,7 @@
 // local
-import * as comp from "../";
+import * as comp from '../'
 // app
-import { createRoute } from "~/src/navigation/createRoute";
+import { createRoute } from '~/src/navigation'
 
 // prettier-ignore
 export const route = createRoute({

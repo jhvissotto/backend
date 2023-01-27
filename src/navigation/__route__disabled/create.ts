@@ -1,8 +1,8 @@
-import type { Route } from '~/src/navigation'
+import { nav } from '~/src'
 import * as mids from '~/src/middlewares'
 
 // prettier-ignore
-export function createRoute({ name, active, method, pattern, ctrl }: Omit<Route, 'mids'>, { 
+export function create({ name, active, method, pattern, ctrl }: Omit<nav.Route, 'mids'>, { 
     z_schema, 
     canSanitize, 
     canCache 

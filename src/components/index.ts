@@ -1,6 +1,6 @@
-export * from "./createDef";
+export * from './createDef'
 
-export * as auth from "./auth";
+export * as auth from './auth'
 // export * as cache from "./cache";
 // export * as crypt from "./crypt";
 // export * as database from "./database";

@@ -1,3 +1,3 @@
-import { initialize } from "~/src/apollo";
+import { initialize } from '~/src/apollo'
 
-export const server = initialize();
+export const server = initialize()

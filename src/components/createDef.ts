@@ -1,4 +1,4 @@
-import type { router } from "~/src/navigation";
+import type { Methods } from '~/src/navigation/router/types'
 
 export function createDef<Params = {}, Query = {}>({
   name,
@@ -9,17 +9,17 @@ export function createDef<Params = {}, Query = {}>({
   user_levelReq,
   staff_levelReq,
   canSanitize,
-  canCache
+  canCache,
 }: {
-  name: string;
-  active: boolean;
-  method: router.Methods;
-  pattern: string;
-  url: (params: Params, query: Query) => string;
-  user_levelReq: number;
-  staff_levelReq: number;
-  canSanitize: boolean | null;
-  canCache: boolean | null;
+  name: string
+  active: boolean
+  method: Methods
+  pattern: string
+  url: (params: Params, query: Query) => string
+  user_levelReq: number
+  staff_levelReq: number
+  canSanitize: boolean | null
+  canCache: boolean | null
 }) {
   return {
     name,
@@ -30,6 +30,6 @@ export function createDef<Params = {}, Query = {}>({
     user_levelReq,
     staff_levelReq,
     canSanitize,
-    canCache
-  };
+    canCache,
+  }
 }

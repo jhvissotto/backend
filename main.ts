@@ -1,5 +1,5 @@
-import { server } from "./src";
+import { server } from './src'
 
-export function Main() {
-  server.initialize();
+export function main() {
+  server.initialize()
 }

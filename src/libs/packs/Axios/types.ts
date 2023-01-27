@@ -1,1 +1,1 @@
-export type { AxiosError as ResError } from "axios";
+export type { AxiosError as ResError, RawAxiosRequestConfig as ReqOpts } from 'axios'

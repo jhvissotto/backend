@@ -1,6 +1,6 @@
-import { resolvers } from "~/src/libs/helpers";
-import { global } from "~/src/app";
-import { client, prepare } from ".";
+import { config } from '~/src/global'
+import { resolvers } from '~/src/libs/helpers'
+import { client, prepare } from '.'
 
 // prettier-ignore
 export async function send(
@@ -13,7 +13,7 @@ export async function send(
   const { response, error, isSuccess, isError } = await resolvers.r(
     new Promise((resolve, reject) => {
       client.send({
-        ...global.config().emailDefault, 
+        ...config().emailDefault, 
         ...options,
       }, undefined, (error, resp) => {
         error ? reject(error) : resolve(resp);
@@ -23,5 +23,5 @@ export async function send(
 
   // feedback
   const sending = { response, error, isSuccess, isError };
-  return sending;
+  return sending
 }
