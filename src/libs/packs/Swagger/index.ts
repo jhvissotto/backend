@@ -1,3 +1,3 @@
-export * from "./create";
+export * from './create'
 
-export { default as documentCombiner } from "swagger-jsdoc";
+export { default as componentization } from 'swagger-jsdoc'

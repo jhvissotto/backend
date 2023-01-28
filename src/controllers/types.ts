@@ -4,7 +4,7 @@ import type { Ctrl } from '~/src/libs/packs/Express'
 import type { Validation } from '~/src/middlewares/validator'
 import { E } from '~/src'
 
-export type { Handler, Next } from '~/src/libs/packs/Express/Controller'
+export type { Next, Handler } from '~/src/libs/packs/Express/Controller'
 
 // ========================= //
 // ======== REQUEST ======== //

@@ -1,42 +1,33 @@
-export function tryCatch<Arg, Result, ErrorV, ErrorF, Final>({
-  arg,
-  fnTry,
-  fnCatch,
-  fnFinal,
-}: {
-  arg?: any;
-  fnTry: (arg?: Arg) => Result | any;
-  fnCatch?: (arg?: Arg, errorV?: ErrorV) => ErrorF | any;
-  fnFinal?: (arg?: Arg, errorV?: ErrorV, errorF?: ErrorF) => Final | any;
-}): {
-  result: Result | any;
-  errorV: ErrorV | any;
-  errorF: ErrorF | any;
-  final: Final | any;
-} {
-  const Return = {
-    result: null,
-    errorV: null,
-    errorF: null,
-    final: null,
-  };
+// prettier-ignore
+export function tryCatch<
+  Result = void, 
+  Catched = void, 
+  Final = void
+>(
+  fnTry: () => Result,
+  fnCatch?: (error?: Error) => Catched,
+  fnFinal?: (error?: Error, catched?: Catched) => Final,
+) {
+
+
+  let result: Result
+  let error: Error
+  let catched: Catched
+  let final: Final
+
 
   try {
-    const result = fnTry(arg);
-    Return.result = result;
-  } catch (error) {
-    Return.errorV = error;
+    result = fnTry()
 
-    if (fnCatch) {
-      const errorF = fnCatch(arg, error);
-      Return.errorF = errorF;
-    }
+  } catch (e) {
+    error = e
+    if (fnCatch) catched = fnCatch(error)
+
   } finally {
-    if (fnFinal) {
-      const final = fnFinal(arg, Return.errorV, Return.errorF);
-      Return.final = final;
-    }
+    if (fnFinal) final = fnFinal(error, catched)  
+
   }
 
-  return Return;
+
+  return { result, error, catched, final }
 }
