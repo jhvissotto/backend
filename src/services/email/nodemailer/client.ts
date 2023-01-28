@@ -1,5 +1,5 @@
-import { env } from "~/src/global";
-import { Nodemailer } from "~/src/libs/packs/Nodemailer";
+import { env } from '~/src/global'
+import { Nodemailer } from '~/src/libs/packs/Nodemailer'
 
 // Nodemailer / Mailtrap
 export const client = Nodemailer.createTransport({
@@ -7,7 +7,7 @@ export const client = Nodemailer.createTransport({
   port: env().NODEMAILER_PORT,
   secure: true,
   auth: {
-    user: env().NODEMAILER_AUTH_USER,
-    pass: env().NODEMAILER_AUTH_PASS
-  }
-});
+    user: env().NODEMAILER_USER,
+    pass: env().NODEMAILER_PASS,
+  },
+})

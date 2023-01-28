@@ -1,5 +1,5 @@
-import { jwt } from "~/src/libs/utils";
-import { env } from "~/src/global";
+import { jwt } from '~/src/libs/utils'
+import { env } from '~/src/global'
 
 // prettier-ignore
 export function check<Payload>(
@@ -11,7 +11,7 @@ export function check<Payload>(
 
     const { content, error, isValid } = jwt.v3.verify<Payload>(
         token, 
-        secret || env().PRIVATE_KEY, 
+        secret || env().APP_KEY_PRIVATE, 
         verifyOpts
     )
     

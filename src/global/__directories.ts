@@ -1,7 +1,7 @@
-import { path } from "~/src/libs/helpers";
+import { path } from '~/src/libs/helpers'
 
-export const __directories = {
+export const __dir = {
   root: process.cwd(),
-  public: path.join(__dirname, "../public"),
-  uploads: path.join(__dirname, "../public/uploads")
-};
+  public: path.join(__dirname, '../public'),
+  upload: path.join(__dirname, '../public/upload'),
+}

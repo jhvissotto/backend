@@ -1,9 +1,9 @@
-import { __directories } from "~/src/global";
-import { Multer } from "~/src/libs/packs";
-import { byte } from "~/src/libs/functions";
+import { __dir } from '~/src/global'
+import { Multer } from '~/src/libs/packs'
+import { calc } from '~/src/libs/functions'
 
 export const instance = Multer.create({
-  dest: __directories.uploads
+  dest: __dir.upload,
   // fileFilter: (req, file, cb) => {},
   // preservePath: false,
   // storage: Multer.diskStorage({
@@ -11,12 +11,12 @@ export const instance = Multer.create({
   //   // filename: (req, file, cb) => {}
   // }),
   // limits: {
-  //   fieldNameSize: byte.calc(100, "b"), // Max field name size
-  //   fieldSize: byte.calc(1, "mb"), // Max field value size
+  //   fieldNameSize: calc.byte(100, "b"), // Max field name size
+  //   fieldSize: calc.byte(1, "mb"), // Max field value size
   //   fields: Infinity, // Max number of non-file fields
   //   fileSize: Infinity, // For multipart forms, the max file size (in bytes)
   //   files: Infinity, // For multipart forms, the max number of file fields
   //   parts: Infinity, // For multipart forms, the max number of parts (fields + files)
   //   headerPairs: 2000 // For multipart forms, the max number of header key => value pairs to parse
   // }
-});
+})

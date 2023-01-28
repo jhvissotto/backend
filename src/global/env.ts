@@ -1,8 +1,8 @@
-import { environment } from "~/src/libs/helpers";
-import { is } from "~/src/libs/functions/check";
+import { environment } from '~/src/libs/helpers'
+import { is } from '~/src/libs/functions/check'
 
 export function env() {
-  environment.initialize();
+  environment.initialize()
 
   return {
     // SERVER
@@ -12,8 +12,8 @@ export function env() {
 
     // SECURITY
     CORS_ORIGIN: process.env.CORS_ORIGIN,
-    PUBLIC_KEY: process.env.PUBLIC_KEY,
-    PRIVATE_KEY: process.env.PRIVATE_KEY,
+    APP_KEY_PUBLIC: process.env.APP_KEY_PUBLIC,
+    APP_KEY_PRIVATE: process.env.APP_KEY_PRIVATE,
 
     // DATABASE
     DATABASE_USER: process.env.DATABASE_USER,
@@ -30,20 +30,23 @@ export function env() {
     REDIS_URL: process.env.REDIS_URL,
 
     // CACHE
-    APOLLO_CACHE_ENABLE: is.True.vs(process.env.APOLLO_CACHE_ENABLE),
-    EXPRESS_CACHE_ENABLE: is.True.vs(process.env.EXPRESS_CACHE_ENABLE),
-    EXPRESS_CACHE_DEBUG: is.True.vs(process.env.EXPRESS_CACHE_DEBUG),
+    CACHE_APOLLO_ENABLE: is.True.vs(process.env.CACHE_APOLLO_ENABLE),
+    CACHE_EXPRESS_ENABLE: is.True.vs(process.env.CACHE_EXPRESS_ENABLE),
+    CACHE_EXPRESS_DEBUG: is.True.vs(process.env.CACHE_EXPRESS_DEBUG),
 
     // EMAIL
-    SENDGRID_API_KEY: process.env.SENDGRID_API_KEY,
+    SGM_KEY_API: process.env.SGM_KEY_API,
 
     NODEMAILER_HOST: process.env.NODEMAILER_HOST,
     NODEMAILER_PORT: Number(process.env.NODEMAILER_PORT),
-    NODEMAILER_AUTH_USER: process.env.NODEMAILER_AUTH_USER,
-    NODEMAILER_AUTH_PASS: process.env.NODEMAILER_AUTH_PASS,
+    NODEMAILER_USER: process.env.NODEMAILER_USER,
+    NODEMAILER_PASS: process.env.NODEMAILER_PASS,
 
     // SMS
     NEXMO_KEY_PUBLIC: process.env.NEXMO_KEY_PUBLIC,
-    NEXMO_KEY_PRIVATE: process.env.NEXMO_KEY_PRIVATE
-  };
+    NEXMO_KEY_PRIVATE: process.env.NEXMO_KEY_PRIVATE,
+
+    // DBX
+    DBX_KEY_API: process.env.DBX_KEY_API,
+  }
 }

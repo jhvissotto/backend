@@ -1,7 +1,7 @@
-import type { SchemaReq } from "../";
-import { defs } from "../";
-import { self } from "~/src/api";
-import { resolvers } from "~/src/libs/helpers";
+import type { SchemaReq } from '../'
+import { defs } from '../'
+import { self } from '~/src/api'
+import { resolvers } from '~/src/libs/helpers'
 
 // prettier-ignore
 export async function api({ params, query, body }: {
