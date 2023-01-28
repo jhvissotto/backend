@@ -1,12 +1,14 @@
+// libs
 import type { Z } from '~/src/libs/utils/validator'
-import { mids } from '~/src'
-import { resolvers } from '~/src/libs/helpers'
 import { L } from '~/src/libs/utils'
+import { resolvers } from '~/src/libs/helpers'
+// app
+import { E, mids } from '~/src'
 
 export type Validation = {
   isSanitized: boolean | null
   hasError: boolean | null
-  errors: Array<Error | void>
+  errors: Array<Error | any>
 }
 
 // prettier-ignore
@@ -32,7 +34,7 @@ export const validator = (schema: Z.AnyZodObject, { canSanitize = false }) => as
   // ======== set errors ======== //
   if (isError) {
     validation.hasError = true
-    validation.errors.push(error)
+    validation.errors.push(E.catcher(error))
   } else {
     validation.hasError = false
   }
@@ -48,8 +50,7 @@ export const validator = (schema: Z.AnyZodObject, { canSanitize = false }) => as
 
 
   // ======== assign variables ======== //
-  L.merge(req, { validation })
-
+  req['validation'] = validation
 
   return next()
 }

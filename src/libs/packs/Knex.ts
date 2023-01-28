@@ -1,1 +1,1 @@
-export { default as create } from "knex";
+export { default as create } from 'knex'

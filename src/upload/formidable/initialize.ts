@@ -1,6 +1,6 @@
-import { Formidable } from "~/src/libs/packs";
-import { byte } from "~/src/libs/functions";
-import { __directories } from "~/src/global";
+import { Formidable } from '~/src/libs/packs'
+import { calc } from '~/src/libs/functions'
+import { __directories } from '~/src/global'
 
 export function initialize(opts?: Parameters<typeof Formidable.create>[0]) {
   // ======================================== //
@@ -17,18 +17,18 @@ export function initialize(opts?: Parameters<typeof Formidable.create>[0]) {
     allowEmptyFiles: false,
 
     // ==== one ==== //
-    minFileSize: byte.calc(1, "kb"),
-    maxFileSize: byte.calc(10, "mb"),
+    minFileSize: calc.byte(1, 'kb'),
+    maxFileSize: calc.byte(10, 'mb'),
 
     // ==== many ==== //
     multiples: false,
     maxFiles: 20,
-    maxTotalFileSize: byte.calc(100, "mb"),
+    maxTotalFileSize: calc.byte(100, 'mb'),
 
     // ==== custom ==== //
     // enabledPlugins: ["json", "querystring", "multipart", "octetstream"],
-    ...opts
-  });
+    ...opts,
+  })
 
   // ========================================= //
   // ================ plugins ================ //
@@ -46,5 +46,5 @@ export function initialize(opts?: Parameters<typeof Formidable.create>[0]) {
   //   uploader.emit("", {});
   // });
 
-  return { instance };
+  return { instance }
 }

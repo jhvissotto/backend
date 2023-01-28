@@ -1,5 +1,5 @@
 // prettier-ignore
-export function calc(val: number, multiple: 'b' | 'kb' | 'mb' | 'gb' | 'tr') {
+export function byte(val: number, multiple: 'b' | 'kb' | 'mb' | 'gb' | 'tr') {
 
     // byte
     if (multiple === 'b')

@@ -1,13 +1,13 @@
-import { error } from '~/src'
-import { newIstance } from '~/src/error'
+import z from 'zod'
 
-const A = newIstance()
-const B = newIstance()
+try {
+  const S = z.enum(['111', '222'])
 
-A.createPush('INVALID_CREDENTIALS')
-B.createPush('INVALID_PASS')
-error.createPush()('INVALID_TOKEN')
+  const val = '333'
 
-console.log('A.list', A.list)
-console.log('B.list', B.list)
-console.log('error.list', error.list)
+  const r = S.parse(val)
+
+  console.log('r', r)
+} catch (error) {
+  console.log('error', error)
+}

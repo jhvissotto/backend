@@ -35,7 +35,7 @@ export function initialize() {
 
   // ======== public ======== //
   server.express.use(favicon(path.join(__directories.public, 'favicon.ico')))
-  server.express.use('/static', Express.static(__directories.public))
+  server.express.use('/public', Express.static(__directories.public))
 
   // ======== swagger ======== //
   server.express.use('/swagger', swagger.UI())

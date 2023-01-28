@@ -1,30 +1,35 @@
-import { database } from "~/src";
-import { array } from "~/src/libs/functions";
-import { resolvers } from "~/src/libs/helpers";
+// libs
+import { resolvers } from '~/src/libs/helpers'
+import { array, calc } from '~/src/libs/functions'
+// app
+import { database } from '~/src'
 
 export async function querySelect({
   table,
-  wk = "",
-  we = "",
-  wv = "",
-  limit = 100,
-  offset = 0,
-  randKey = null
+  wk = '',
+  we = '',
+  wv = '',
+  items = 10,
+  page = 0,
+  randKey = null,
 }) {
-  // WHERE
-  const whereHasAllParams = array.is.fullFilled([wk, we, wv]);
-  const where = whereHasAllParams ? `${wk} ${we} ${wv}` : "";
+  // FILTER
+  const whereHasAllParams = array.is.fullFilled([wk, we, wv])
+  const where = whereHasAllParams ? `${wk} ${we} ${wv}` : ''
 
-  // ORDER BY
-  const orderBy = randKey ? `RAND(${randKey})` : "_id DESC";
+  // AMOUNT
+  const { limit, offset } = calc.pagination(items, page)
+
+  // ORDER
+  const orderBy = randKey ? `RAND(${randKey})` : `id_${table} DESC`
 
   return await resolvers.d<any[]>(
     database.knex
-      .select("*")
+      .select('*')
       .from(table)
       .whereRaw(where)
       .limit(limit)
       .offset(offset)
       .orderByRaw(orderBy)
-  );
+  )
 }
