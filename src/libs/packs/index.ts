@@ -1,11 +1,11 @@
-export * from "./Axios";
-export * as Apollo from "./Apollo";
-export * as Express from "./Express";
-export * as Formidable from "./Formidable";
-export * as Knex from "./Knex";
-export * as Multer from "./Multer";
-export * from "./Nexmo";
-export * as Prisma from "./Prisma";
-export * as Redis from "./Redis";
-export * as Sendgrid from "./Sendgrid";
-export * as Swagger from "./Swagger";
+export * from './Axios'
+// export * as Apollo from "./Apollo";
+export * as Express from './Express'
+export * as Formidable from './Formidable'
+export * as Knex from './Knex'
+export * as Multer from './Multer'
+export * from './Nexmo'
+export * as Prisma from './Prisma'
+export * as Redis from './Redis'
+export * as Sendgrid from './Sendgrid'
+export * as Swagger from './Swagger'

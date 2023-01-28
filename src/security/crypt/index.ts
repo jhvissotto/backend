@@ -1,3 +1,3 @@
-export * from "./genHash";
-export * from "./genSalt";
-export * from "./match";
+export * from './hash_make'
+export * from './hash_match'
+export * from './salt_create'

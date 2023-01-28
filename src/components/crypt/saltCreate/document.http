@@ -1,0 +1,77 @@
+GET http://localhost:4000/crypt/saltCreate?
+# &rounds=10
+
+# content-type: application/json
+# Authorization: Basic user:pass
+# Authorization: Bearer abcd
+# X-REQUEST-TYPE: GraphQL
+# { "body": "1234" }
+
+
+
+// ========================================== //
+// ================ RESPONSE ================ //
+// ========================================== //
+
+{
+	"reqId_short": "7f64439c42e",
+	"reqId_v4": "215f5825-b745-4ee5-9e88-fb661a7a5eb6",
+	"date_value": 1674861584224,
+	"date_full": "2023-01-27T23:19:44.224Z",
+	"date_formated": "2023-01-27  18:19:44",
+	"cache_enable": null,
+	"cache_response": null,
+	"cache_duration": "",
+	"status_message": "",
+	"status_description": "",
+	"status_code": null,
+	"status_flag": "",
+	"validation_params": {},
+	"validation_query": {},
+	"validation_body": {},
+	"validation_isSanitized": false,
+	"valid_user": null,
+	"valid_pass": null,
+	"valid_credentials": null,
+	"user_level": null,
+	"user_levelReq": 0,
+	"user_isStaff": null,
+	"staff_level": null,
+	"staff_levelReq": null,
+	"token_valid": null,
+	"token_user": "",
+	"token_server": "",
+	"token_serverDuration": "",
+	"apiKey_valid": null,
+	"apiKey_user": "",
+	"apiKey_server": "",
+	"retryNumber": 0,
+	"pagined": null,
+	"page_key": 0,
+	"page_items": 0,
+	"page_number": 0,
+	"page_isLast": null,
+	"props_meta": {},
+	"props": {
+		"salt": "$2b$10$w1Bx16X0cX7tCPv5qIJlke"
+	},
+	"list_meta": {},
+	"list": [],
+	"list_length": 0,
+	"list_isEmpty": true,
+	"list_isFilled": false,
+	"list_isZero": true,
+	"list_isUnique": false,
+	"list_isMany": false,
+	"resources_meta": {},
+	"resources_count": 0,
+	"resources": {},
+	"req_isSuccess": null,
+	"req_isOk": null,
+	"req_isError": null,
+	"req_hasWarns": null,
+	"errors_inDatabase": null,
+	"errors_inServices": null,
+	"errors_has": false,
+	"errors": []
+}

@@ -1,9 +1,9 @@
-GET http://localhost:4000/auth/basic?
+GET http://localhost:4000/auth?
 # &abc=123
 # &xyz=456
 
 # content-type: application/json
-# Authorization: Basic user:pass
+Authorization: Basic user1:pass1
 # Authorization: Bearer abcd
 # X-REQUEST-TYPE: GraphQL
 # { "body": "1234" }

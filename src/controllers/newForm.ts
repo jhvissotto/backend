@@ -1,11 +1,11 @@
-import { is } from "~/src/libs/functions/check";
-import { array, cast } from "~/src/libs/functions";
-import { format } from "~/src/libs/utils/dt/format";
-import { id } from "~/src/libs/utils";
-import { status } from ".";
+import { is } from '~/src/libs/functions/check'
+import { array, cast } from '~/src/libs/functions'
+import { format } from '~/src/libs/utils/dt/format'
+import { id } from '~/src/libs/utils'
+import { status } from '.'
 
-type OBJ = object | {};
-type TRI = boolean | null;
+type OBJ = object | {}
+type TRI = boolean | null
 
 export function newForm<
   // ========================================== //
@@ -46,13 +46,13 @@ export function newForm<
     // ======== cache ======== //
     cache_enable = null,
     cache_response = null,
-    cache_duration = "",
+    cache_duration = '',
 
     // ======== status ======== //
     // status_message = "",
     // status_description = "",
     status_code = NaN,
-    status_flag = "",
+    status_flag = '',
 
     // // #deprecated
     // // // ======== input ======== //
@@ -78,13 +78,13 @@ export function newForm<
     staff_levelReq = NaN,
 
     token_valid = null,
-    token_user = "",
-    token_server = "",
-    token_serverDuration = "",
+    token_user = '',
+    token_server = '',
+    token_serverDuration = '',
 
     apiKey_valid = null,
-    apiKey_user = "",
-    apiKey_server = "",
+    apiKey_user = '',
+    apiKey_server = '',
 
     // ======== retry ======== //
     retryNumber = 0,
@@ -131,7 +131,7 @@ export function newForm<
 
     // ======== errors ======== //
     // errors_has = null,
-    errors = []
+    errors = [],
   }: {
     // =========================================== //
     // ================ ARG TYPES ================ //
@@ -146,15 +146,15 @@ export function newForm<
     // date_formated?: string;
 
     // ======== cache ======== //
-    cache_enable?: TRI;
-    cache_response?: TRI;
-    cache_duration?: string;
+    cache_enable?: TRI
+    cache_response?: TRI
+    cache_duration?: string
 
     // ======== status ======== //
     // status_message: 'Informational' | 'Successful' | 'Redirection' | 'Client Error' | 'Server Error';
     // status_description: string;
-    status_code?: number;
-    status_flag?: "success" | "ok" | "error" | "";
+    status_code?: number
+    status_flag?: 'success' | 'ok' | 'error' | ''
 
     // // #deprecated
     // // // ======== input ======== //
@@ -163,48 +163,48 @@ export function newForm<
     // // value_body?: Value_Body | OBJ;
 
     // ======== validation ======== //
-    validation_params?: Validation_Params | OBJ;
-    validation_query?: Validation_Query | OBJ;
-    validation_body?: Validation_Body | OBJ;
-    validation_isSanitized?: TRI;
+    validation_params?: Validation_Params | OBJ
+    validation_query?: Validation_Query | OBJ
+    validation_body?: Validation_Body | OBJ
+    validation_isSanitized?: TRI
 
     // ======== security ======== //
-    valid_user?: TRI;
-    valid_pass?: TRI;
-    valid_credentials?: TRI;
+    valid_user?: TRI
+    valid_pass?: TRI
+    valid_credentials?: TRI
 
-    user_level?: number;
-    user_levelReq?: number;
-    user_isStaff?: TRI;
-    staff_level?: number;
-    staff_levelReq?: number;
+    user_level?: number
+    user_levelReq?: number
+    user_isStaff?: TRI
+    staff_level?: number
+    staff_levelReq?: number
 
-    token_valid?: TRI;
-    token_user?: string;
-    token_server?: string;
-    token_serverDuration?: string;
+    token_valid?: TRI
+    token_user?: string
+    token_server?: string
+    token_serverDuration?: string
 
-    apiKey_valid?: TRI;
-    apiKey_user?: string;
-    apiKey_server?: string;
+    apiKey_valid?: TRI
+    apiKey_user?: string
+    apiKey_server?: string
 
     // ======== retry ======== //
-    retryNumber?: number;
+    retryNumber?: number
 
     // ======== pagination ======== //
-    pagined?: TRI;
-    page_key?: number;
-    page_items?: number;
-    page_number?: number;
-    page_isLast?: TRI;
+    pagined?: TRI
+    page_key?: number
+    page_items?: number
+    page_number?: number
+    page_isLast?: TRI
 
     // ======== output ======== //
-    props_meta?: Props_Meta | OBJ;
-    props?: Props | OBJ;
+    props_meta?: Props_Meta | OBJ
+    props?: Props | OBJ
 
     // ======== list ======== //
-    list_meta?: List_Meta | OBJ;
-    list?: Array<List_Item | void>;
+    list_meta?: List_Meta | OBJ
+    list?: Array<List_Item | void>
     // list_length?: number;
 
     // list_isEmpty?: TRI;
@@ -217,23 +217,23 @@ export function newForm<
     // list_itemLast?: List_Item | OBJ;
 
     // ======== multiple lists ======== //
-    resources_meta?: Resources_Meta | OBJ;
+    resources_meta?: Resources_Meta | OBJ
     // resources_count?: number;
-    resources?: Resources | OBJ;
+    resources?: Resources | OBJ
 
     // ======== req/res ======== //
-    req_isSuccess?: TRI;
-    req_isOk?: TRI;
-    req_isError?: TRI;
-    req_hasWarns?: TRI;
+    req_isSuccess?: TRI
+    req_isOk?: TRI
+    req_isError?: TRI
+    req_hasWarns?: TRI
 
     // ======== specification ======== //
-    errors_inDatabase?: TRI;
-    errors_inServices?: TRI;
+    errors_inDatabase?: TRI
+    errors_inServices?: TRI
 
     // ======== errors ======== //
     // errors_has?: TRI;
-    errors?: Array<Error | void>;
+    errors?: Array<Error | void>
   },
   canUpdateStatus = false
 ) {
@@ -241,53 +241,53 @@ export function newForm<
   // ================ AUTOMATIONS ================ //
   // ============================================= //
   // ======== id ======== //
-  const reqId_short = id.short();
-  const reqId_v4 = id.v4();
+  const reqId_short = id.short()
+  const reqId_v4 = id.v4()
 
   // ======== current ======== //
-  const date_value = Date.now();
-  const date_full = new Date();
-  const date_formated = format(date_full, "yyyy-MM-dd  HH:mm:ss");
+  const date_value = Date.now()
+  const date_full = new Date()
+  const date_formated = format(date_full, 'yyyy-MM-dd  HH:mm:ss')
 
   // ======== error update ======== //
   if (canUpdateStatus) {
     if (
       status_code >= 400 ||
-      status_flag == "error" ||
+      status_flag == 'error' ||
       req_isError ||
       errors_inDatabase ||
       errors_inServices ||
       errors?.length
     ) {
-      status_code = status_code || 400;
-      status_flag = status_flag || "error";
-      req_isSuccess = is.filled(req_isSuccess) ? req_isSuccess : false;
-      req_isOk = is.filled(req_isOk) ? req_isOk : false;
-      req_isError = is.filled(req_isError) ? req_isError : true;
+      status_code = status_code || 400
+      status_flag = status_flag || 'error'
+      req_isSuccess = is.filled(req_isSuccess) ? req_isSuccess : false
+      req_isOk = is.filled(req_isOk) ? req_isOk : false
+      req_isError = is.filled(req_isError) ? req_isError : true
     } else {
-      status_code = status_code || 200;
-      status_flag = status_flag || "success";
-      req_isSuccess = is.filled(req_isSuccess) ? req_isSuccess : true;
-      req_isOk = is.filled(req_isOk) ? req_isOk : true;
-      req_isError = is.filled(req_isError) ? req_isError : false;
+      status_code = status_code || 200
+      status_flag = status_flag || 'success'
+      req_isSuccess = is.filled(req_isSuccess) ? req_isSuccess : true
+      req_isOk = is.filled(req_isOk) ? req_isOk : true
+      req_isError = is.filled(req_isError) ? req_isError : false
     }
   }
 
   // ======== status list ======== //
-  const F1 = status.list?.find((i) => i.code == status_code);
-  const group = F1?.group;
-  const description = F1?.description;
+  const F1 = status.list?.find(i => i.code == status_code)
+  const group = F1?.group
+  const description = F1?.description
 
-  const F2 = status.general?.find((i) => i.group == group);
-  const message = F2?.message;
+  const F2 = status.general?.find(i => i.group == group)
+  const message = F2?.message
 
-  const status_message = is.filled(message) ? message : "";
-  const status_description = is.filled(description) ? description : "";
+  const status_message = is.filled(message) ? message : ''
+  const status_description = is.filled(description) ? description : ''
 
   // ======== counter ======== //
-  const list_length = list?.length ?? 0;
-  const resources_count = Object.entries(resources)?.length ?? 0;
-  const errors_has = cast.boolean(errors?.length) ?? 0;
+  const list_length = list?.length ?? 0
+  const resources_count = Object.entries(resources)?.length ?? 0
+  const errors_has = cast.boolean(errors?.length) ?? 0
 
   // ======== list parser ======== //
   const {
@@ -297,8 +297,8 @@ export function newForm<
     isUnique: list_isUnique,
     isMany: list_isMany,
     itemFirst: list_itemFirst,
-    itemLast: list_itemLast
-  } = array.parse(list);
+    itemLast: list_itemLast,
+  } = array.parse(list)
 
   // ======================================== //
   // ================ RETURN ================ //
@@ -367,11 +367,11 @@ export function newForm<
     page_isLast,
 
     // ======== output ======== //
-    props_meta,
-    props,
+    props_meta: { ...props_meta },
+    props: { ...props },
 
     // ======== list ======== //
-    list_meta,
+    list_meta: { ...list_meta },
     list,
     list_length,
 
@@ -385,9 +385,9 @@ export function newForm<
     list_itemLast,
 
     // ======== multiple lists ======== //
-    resources_meta,
+    resources_meta: { ...resources_meta },
     resources_count,
-    resources,
+    resources: { ...resources },
 
     // ======== req/res ======== //
     req_isSuccess,
@@ -401,6 +401,6 @@ export function newForm<
 
     // ======== errors ======== //
     errors_has,
-    errors
-  };
+    errors: [...errors],
+  }
 }

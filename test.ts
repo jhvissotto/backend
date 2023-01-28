@@ -1,17 +1,13 @@
-// =========================== //
-// ======== EXAMPLE 1 ======== //
-// =========================== //
-import { app } from '~/src'
+import { error } from '~/src'
+import { newIstance } from '~/src/error'
 
-const canCache = app.comps.auth.defs.canCache
+const A = newIstance()
+const B = newIstance()
 
-console.log('canCache', canCache)
+A.createPush('INVALID_CREDENTIALS')
+B.createPush('INVALID_PASS')
+error.createPush()('INVALID_TOKEN')
 
-// =========================== //
-// ======== EXAMPLE 2 ======== //
-// =========================== //
-import { defs } from '~/src/components/auth/defs'
-
-const { canCache } = defs
-
-console.log('canCache', canCache)
+console.log('A.list', A.list)
+console.log('B.list', B.list)
+console.log('error.list', error.list)

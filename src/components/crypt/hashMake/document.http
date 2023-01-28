@@ -1,0 +1,79 @@
+GET http://localhost:4000/crypt/hashMake?
+# &abc=123
+# &xyz=456
+
+# content-type: application/json
+# Authorization: Basic user:pass
+# Authorization: Bearer abcd
+# X-REQUEST-TYPE: GraphQL
+{ "password": "abc123" }
+
+
+
+// ========================================== //
+// ================ RESPONSE ================ //
+// ========================================== //
+
+
+{
+	"reqId_short": "e23d251ba49",
+	"reqId_v4": "e1848b3f-f1cb-44df-84c7-fa1307d30778",
+	"date_value": 1674866455092,
+	"date_full": "2023-01-28T00:40:55.092Z",
+	"date_formated": "2023-01-27  19:40:55",
+	"cache_enable": null,
+	"cache_response": null,
+	"cache_duration": "",
+	"status_message": "",
+	"status_description": "",
+	"status_code": null,
+	"status_flag": "",
+	"validation_params": {},
+	"validation_query": {},
+	"validation_body": {},
+	"validation_isSanitized": null,
+	"valid_user": null,
+	"valid_pass": null,
+	"valid_credentials": null,
+	"user_level": null,
+	"user_levelReq": null,
+	"user_isStaff": null,
+	"staff_level": null,
+	"staff_levelReq": null,
+	"token_valid": null,
+	"token_user": "",
+	"token_server": "",
+	"token_serverDuration": "",
+	"apiKey_valid": null,
+	"apiKey_user": "",
+	"apiKey_server": "",
+	"retryNumber": 0,
+	"pagined": null,
+	"page_key": 0,
+	"page_items": 0,
+	"page_number": 0,
+	"page_isLast": null,
+	"props_meta": {},
+	"props": {
+		"hash": "$2b$10$1T9xyBoUk94RY0gC77u4Ku8LbZE317DqLW7v2cthquRHUO/9o5MeS"
+	},
+	"list_meta": {},
+	"list": [],
+	"list_length": 0,
+	"list_isEmpty": true,
+	"list_isFilled": false,
+	"list_isZero": true,
+	"list_isUnique": false,
+	"list_isMany": false,
+	"resources_meta": {},
+	"resources_count": 0,
+	"resources": {},
+	"req_isSuccess": null,
+	"req_isOk": null,
+	"req_isError": null,
+	"req_hasWarns": null,
+	"errors_inDatabase": null,
+	"errors_inServices": null,
+	"errors_has": false,
+	"errors": []
+}

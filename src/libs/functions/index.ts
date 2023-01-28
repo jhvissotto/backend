@@ -1,11 +1,12 @@
-export * as array from "./array";
-export * as byte from "./byte";
-export * as cast from "./cast";
-export * as check from "./check";
-export * as convert from "./convert";
-export * as dt from "./dt";
-export * as number from "./number";
-export * as obj from "./object";
-export * from "./delay";
-export * as string from "./string";
-export * as url from "./url";
+export * as array from './array'
+export * as byte from './byte'
+export * as cast from './cast'
+export * as check from './check'
+export * as convert from './convert'
+export * as dt from './dt'
+export * as math from './math'
+export * as number from './number'
+export * as obj from './object'
+export * from './delay'
+export * as string from './string'
+export * as url from './url'

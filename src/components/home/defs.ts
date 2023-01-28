@@ -1,16 +1,16 @@
-import type { SchemaReq } from ".";
-import { createDef } from "~/src/components";
-import { level } from "~/src/navigation";
-import { qs } from "~/src/libs/utils/url";
+import type { SchemaReq } from '.'
+import { createDef } from '~/src/components'
+import { level } from '~/src/navigation'
+import { qs } from '~/src/libs/utils/url'
 
 export const defs = createDef<SchemaReq.Params, SchemaReq.Query>({
-  name: "home",
+  name: 'home',
   active: true,
-  method: "get",
-  pattern: "/",
+  method: 'get',
+  pattern: '/',
   url: (params, query) => qs.v2.stringifyUrl({ url: `/home`, query }),
-  user_levelReq: level.user.L0_Public.N,
+  user_levelReq: level.user.L0_Free.N,
   staff_levelReq: level.staff.L0_Dev.N,
   canSanitize: null,
-  canCache: null
-});
+  canCache: null,
+})

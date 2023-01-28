@@ -1,10 +1,15 @@
-import { server } from '~/src'
-import { swagger } from '~/src/document'
+// global
 import { config, env, __directories } from '~/src/global'
-import { router } from '~/src/navigation'
+// libs
 import { Express } from '~/src/libs/packs'
+import { logger, favicon, parsers, headers } from '~/src/libs/extensions/express'
 import { environment, path } from '~/src/libs/helpers'
-import { logger, cors, favicon, parsers, header } from '~/src/libs/extensions/express'
+// app
+import { server, E } from '~/src'
+import { router } from '~/src/navigation'
+import { swagger } from '~/src/document'
+// local
+// import {  } from '.'
 
 export function initialize() {
   // ======== env ======== //
@@ -15,8 +20,8 @@ export function initialize() {
   server.express.use(logger.middleware(mode))
 
   // ======== security ======== //
-  server.express.use(cors({ origin: config().allowedOrigins }))
-  server.express.use(header.frameguard({ action: 'sameorigin' }))
+  server.express.use(headers.cors({ origin: config().allowedOrigins }))
+  // server.express.use(headers.set.frameguard({ action: 'sameorigin' }))
 
   // ======== parsers ======== //
   server.express.use(parsers.bearerToken())
@@ -33,8 +38,8 @@ export function initialize() {
   server.express.use('/static', Express.static(__directories.public))
 
   // ======== swagger ======== //
-  server.express.use('/api-docs', swagger.UI())
-  server.express.use('/api-docs', swagger.initialize())
+  server.express.use('/swagger', swagger.UI())
+  server.express.use('/swagger', swagger.initialize())
 
   // ======== apollo ======== //
   // apollo.server.start().then(() => {
@@ -42,6 +47,7 @@ export function initialize() {
   // });
 
   // ======== routes ======== //
+  server.express.use(E.middleware)
   router.initialize()
   server.express.use(router.express)
 

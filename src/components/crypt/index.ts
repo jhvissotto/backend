@@ -1,1 +1,2 @@
-export * as genSalt from "./genSalt";
+export * as hashMake from './hashMake'
+export * as saltCreate from './saltCreate'

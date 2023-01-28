@@ -1,6 +1,5 @@
-export * from "./cache";
-export * from "./cors";
-export * from "./favicon";
-export * from "./header";
-export * as logger from "./logger";
-export * as parsers from "./parsers";
+export * from './cache'
+export * from './favicon'
+export * as headers from './headers'
+export * as logger from './logger'
+export * as parsers from './parsers'

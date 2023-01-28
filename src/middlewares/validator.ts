@@ -11,7 +11,6 @@ export type Validation = {
 
 // prettier-ignore
 export const validator = (schema: Z.AnyZodObject, { canSanitize = false }) => async (req: mids.Req, res: mids.Res, next: mids.Next) => {
-  console.log('schema', schema)
 
 
   // ======== define variables ======== //

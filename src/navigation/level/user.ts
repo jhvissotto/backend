@@ -1,5 +1,5 @@
 export const user = {
-  L0_Public:     { N: 0, access: "Public" },
+  L0_Free:       { N: 0, access: "Free" },
   L1_Freemium:   { N: 1, access: "Freemium" },
   L2_Registered: { N: 2, access: "Registered" },
   L3_Trial:      { N: 3, access: "Trial" },

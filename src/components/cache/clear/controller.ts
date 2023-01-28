@@ -1,19 +1,19 @@
-import { ctrl } from "~/src";
-import type { SchemaReq } from ".";
-
-import { cache } from "~/src";
-// import { Cache } from "~/src/libs/extensions/express";
+import { cache, ctrl } from '~/src'
+import type { SchemaReq } from '.'
 
 export async function _ctrl(
   req: ctrl.Req<SchemaReq.Params, SchemaReq.Query, SchemaReq.Body>,
   res: ctrl.Res
 ) {
-  const { params, query, body } = req;
-  const {} = req.params;
-  const {} = req.query;
-  const {} = req.body;
+  const { params, query, body } = req
+  const {} = req.params
+  const {} = req.query
+  const {} = req.body
 
-  await cache.clear.v2();
+  const { validation } = req
+  const { locals } = res
 
-  return res.status(200).json({ sucess: true });
+  await cache.clear.v2()
+
+  return res.json({ success: true })
 }

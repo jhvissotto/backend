@@ -1,4 +1,4 @@
-import type { Methods } from '~/src/navigation/router/types'
+import type { Methods } from '~/src/navigation/router'
 
 export function createDef<Params = {}, Query = {}>({
   name,
