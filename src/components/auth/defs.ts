@@ -1,5 +1,5 @@
 // libs
-import { qs } from '~/src/libs/utils/url'
+import { qs } from '~/src/libs/utils/link'
 // app
 import { createDef } from '~/src/components'
 import { level } from '~/src/navigation'

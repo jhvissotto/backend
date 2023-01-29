@@ -1,1 +1,1 @@
-export { Chance } from "chance";
+export { Chance } from 'chance'

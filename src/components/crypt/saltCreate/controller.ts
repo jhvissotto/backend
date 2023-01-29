@@ -1,6 +1,6 @@
 import { config } from '~/src/global'
 import { ctrl } from '~/src'
-import { crypt } from '~/src/security'
+import { bcrypt } from '~/src/security'
 import type { SchemaReq } from '.'
 import { defs } from '.'
 
@@ -28,7 +28,7 @@ export async function _ctrl(
     errors: validation.errors,
   })
 
-  const { salt } = crypt.salt_create(rounds)
+  const { salt } = bcrypt.salt_create(rounds)
 
   resp = ctrl.newForm({
     ...resp,

@@ -1,6 +1,6 @@
 import { config } from '~/src/global'
 import { ctrl, E } from '~/src'
-import { crypt } from '~/src/security'
+import { bcrypt } from '~/src/security'
 import type { SchemaReq } from '.'
 import { defs } from '.'
 
@@ -28,10 +28,11 @@ export async function _ctrl(
     errors: validation.errors,
   })
 
-  const encryption = crypt.hash_make(password)
+  const encryption = bcrypt.hash_make(password)
 
   if (encryption.error) {
-    locals.errors.push(E.catcher(encryption.error))
+    // locals.errors.push(E.catcher(encryption.error))
+    locals.errors.push(encryption.error)
   }
 
   resp = ctrl.newForm({

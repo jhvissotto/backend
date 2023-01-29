@@ -1,1 +1,1 @@
-export { faker } from "@faker-js/faker";
+export { faker } from '@faker-js/faker'

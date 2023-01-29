@@ -1,5 +1,5 @@
-import { mids } from "~/src";
-import { createMiddleware } from "~/src/cache/createMiddleware";
+import { mids } from '~/src'
+import { createMiddleware } from '~/src/cache/createMiddleware'
 
 // prettier-ignore
 export function cache({ canCache = false }, ...props: Parameters<typeof createMiddleware>) {

@@ -1,10 +1,11 @@
 import { z } from '~/src/libs/utils/validator'
 import { cast } from '~/src/libs/functions'
+import { model } from '~/src/database'
 
 // prettier-ignore
 export const schemaReq = {
   params: z.object({
-    table: z.string()
+    table: z.enum(model.tables)
   }),
   query: z.object({
     wk: z.string().optional(),

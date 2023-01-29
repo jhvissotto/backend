@@ -1,3 +1,7 @@
-export * from './hash_make'
-export * from './hash_match'
-export * from './salt_create'
+export * from './keyFrom'
+export * from './preset'
+export * from './config'
+
+export * from './cipher'
+export * from './decipher'
+export * from './generate'

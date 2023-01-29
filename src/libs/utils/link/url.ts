@@ -1,0 +1,8 @@
+// export { default as v1 } from 'uri-js'
+// export { default as v2 } from 'parseurl'
+// export { default as v3 } from 'url'
+// export { default as v4 } from 'url-parse'
+// export { default as v5 } from 'url-parse-lax'
+// export { default as v6 } from 'parse-url'
+// export { default as v7 } from 'parseuri'
+// export { default as v8 } from 'urijs'

@@ -1,7 +1,7 @@
 import { is } from '~/src/libs/functions/check'
 import { array, cast } from '~/src/libs/functions'
 import { format } from '~/src/libs/utils/dt/format'
-import { id } from '~/src/libs/utils'
+import { id } from '~/src/libs/utils/calc'
 import { status } from '.'
 
 type OBJ = object | {}

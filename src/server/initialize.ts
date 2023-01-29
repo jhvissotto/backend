@@ -1,5 +1,5 @@
 // global
-import { config, env, __directories } from '~/src/global'
+import { config, env, __dir } from '~/src/global'
 // libs
 import { Express } from '~/src/libs/packs'
 import { logger, favicon, parsers, headers } from '~/src/libs/extensions/express'
@@ -34,8 +34,8 @@ export function initialize() {
   server.express.disable('etag')
 
   // ======== public ======== //
-  server.express.use(favicon(path.join(__directories.public, 'favicon.ico')))
-  server.express.use('/public', Express.static(__directories.public))
+  server.express.use(favicon(path.join(__dir.public, 'favicon.ico')))
+  server.express.use('/public', Express.static(__dir.public))
 
   // ======== swagger ======== //
   server.express.use('/swagger', swagger.UI())

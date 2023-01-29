@@ -4,7 +4,7 @@ import { z } from '~/src/libs/utils/validator'
 // app
 import { ctrl, E } from '~/src'
 import { config } from '~/src/global'
-import { crypt, Token } from '~/src/security'
+import { bcrypt, Token } from '~/src/security'
 import { getCredentials } from '~/src/libs/helpers/parse'
 // local
 import type { SchemaReq } from '.'
@@ -56,7 +56,8 @@ export async function _ctrl(
 
   if (check_user.isError) {
     resp.errors_inDatabase = true
-    locals.errors.push(E.catcher(check_user.error))
+    locals.errors.push(check_user.error)
+    // locals.errors.push(E.catcher(check_user.error))
   }
 
   if (!check_user.isUnique) locals.errors.push(E.create('INVALID_USER'))
@@ -68,7 +69,7 @@ export async function _ctrl(
   // ========================== //
   // ======== password ======== //
   // ========================== //
-  const check_pass = crypt.hash_match(
+  const check_pass = bcrypt.hash_match(
     cast.string(credentials.pass),
     cast.string(check_user.itemFirst?.passHash)
   )

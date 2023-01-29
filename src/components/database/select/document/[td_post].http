@@ -2,8 +2,8 @@ GET http://localhost:4000/database/select/td_post?
 # &wk=_id
 # &we==
 # &wv=5
-# &limit=0
-# &offset=0
+# &items=10
+# &page=0
 # &randKey=0
 
 # content-type: application/json
@@ -18,7 +18,6 @@ GET http://localhost:4000/database/select/td_post?
 // ========================================== //
 // ================ RESPONSE ================ //
 // ========================================== //
-
 
 {
   "reqId_short": "767297de5e3",

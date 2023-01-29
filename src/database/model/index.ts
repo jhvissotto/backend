@@ -21,3 +21,5 @@ export const tr = {
 } as const
 
 export type Tables = ValueOf<typeof td> | ValueOf<typeof tr>
+
+export const tables = [...Object.values(td), ...Object.values(tr)]

@@ -1,6 +1,6 @@
 // libs
 import type { Z } from '~/src/libs/utils/validator'
-import { L } from '~/src/libs/utils'
+import { _ } from '~/src/libs/utils'
 import { resolvers } from '~/src/libs/helpers'
 // app
 import { E, mids } from '~/src'
@@ -35,6 +35,7 @@ export const validator = (schema: Z.AnyZodObject, { canSanitize = false }) => as
   if (isError) {
     validation.hasError = true
     validation.errors.push(E.catcher(error))
+    // validation.errors.push(error)
   } else {
     validation.hasError = false
   }
@@ -43,7 +44,7 @@ export const validator = (schema: Z.AnyZodObject, { canSanitize = false }) => as
   // ======== conditional sanitize ======== //
   if (canSanitize && isSuccess) {
     validation.isSanitized = true
-    L.merge(req, data)
+    _.L.merge(req, data)
   } else {
     validation.isSanitized = false
   }

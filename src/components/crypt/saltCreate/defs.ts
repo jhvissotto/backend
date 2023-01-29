@@ -1,7 +1,7 @@
 import type { SchemaReq } from '.'
 import { createDef } from '~/src/components'
 import { level } from '~/src/navigation'
-import { qs } from '~/src/libs/utils/url'
+import { qs } from '~/src/libs/utils/link'
 
 export const defs = createDef<SchemaReq.Params, SchemaReq.Query>({
   name: 'crypt_saltCreate',

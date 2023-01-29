@@ -9,14 +9,18 @@ export function check<Payload>(
     decodeOpts?: Parameters<typeof jwt.v3.decode>[1]
 ) {
 
-    const { content, error, isValid } = jwt.v3.verify<Payload>(
+
+    const { content: content_decoded, isDecoded } = jwt.v3.decode<Payload>(token, decodeOpts)
+    
+    const { content: content_verified, error, isValid } = jwt.v3.verify<Payload>(
         token, 
         secret || env().APP_KEY_PRIVATE, 
         verifyOpts
     )
     
-    const { isDecoded } = jwt.v3.decode<Payload>(token, decodeOpts)
 
+
+    const content = content_verified || content_decoded
     
     return { content, error, isValid, isDecoded }
 }

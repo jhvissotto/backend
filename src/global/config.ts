@@ -1,10 +1,4 @@
-// global
-// import {  } from '~/src/global'
-// libs
 import { cors } from '~/src/libs/helpers'
-// app
-// import {  } from '~/src'
-// local
 import { env } from '.'
 
 export const config = () => {
@@ -13,6 +7,7 @@ export const config = () => {
   return {
     appName: 'Backend',
     salt,
+    cryptIV: '5de006283df4d5b5d3d457d9b35a6cf8',
     allowedOrigins: cors.parseAllowedOrigins(env().CORS_ORIGIN),
     cacheDuration: '8 hours',
     tokenExpiration: '3 hours',

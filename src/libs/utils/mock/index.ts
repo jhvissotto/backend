@@ -1,2 +1,2 @@
-export * from "./chance";
-export * from "./faker";
+export * from './chance'
+export * from './faker'

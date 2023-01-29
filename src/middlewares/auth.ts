@@ -1,11 +1,16 @@
-import { mids } from "~/src";
-import { Z } from "~/src/libs/utils/validator";
-import { getCredentials } from "~/src/libs/helpers/parse";
+import { mids } from '~/src'
+import { Token } from '~/src/security'
 
 // prettier-ignore
-export const auth = (schema: Z.AnyZodObject) => async (req: mids.Req, res: mids.Res, next: mids.Next) => {
+export const auth = async (req: mids.Req, res: mids.Res, next: mids.Next) => {
 
-  const { credentials } = getCredentials(req)
+  const { token } = req
+
+  const { content, error, isValid, isDecoded } = Token.check(token)
+
+
+  const {  } = content.payload
+
 
 
 

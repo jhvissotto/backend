@@ -8,8 +8,8 @@ export async function _ctrl(
   res: ctrl.Res
 ) {
   const { params, query, body } = req
-  const {} = req.params
-  const {} = req.query
+  const { table } = req.params
+  const { wk, we, wv, items, page, randKey } = req.query
   const {} = req.body
 
   const { validation } = req
@@ -27,14 +27,15 @@ export async function _ctrl(
     errors: validation.errors,
   })
 
+  // prettier-ignore
   const querySelect = await services.querySelect({
-    ...params,
-    ...query,
+    table, wk, we, wv, items, page, randKey,
   })
 
   if (querySelect.isError) {
     resp.errors_inDatabase = true
-    locals.errors.push(E.catcher(querySelect.error))
+    locals.errors.push(querySelect.error)
+    // locals.errors.push(E.catcher(querySelect.error))
   }
 
   resp = ctrl.newForm({

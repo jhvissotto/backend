@@ -1,8 +1,8 @@
-export * as ctrl from './controllers'
 export * as api from './api'
 // export * as apollo from "./apollo";
 export * as cache from './cache'
 export * as comps from './components'
+export * as ctrl from './controllers'
 export * as database from './database'
 export * as db from './db'
 export * as doc from './document'
