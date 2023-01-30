@@ -1,4 +1,4 @@
-import { z } from '~/src/libs/utils/validator'
+import { z } from '~/src/libs/helpers/schema'
 import { cast } from '~/src/libs/functions'
 import { model } from '~/src/database'
 

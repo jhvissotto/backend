@@ -1,12 +1,12 @@
-export function phoneToNumber(formatedCallNumber: string): number {
+export function phoneToNumber(formatedCallNumber: string) {
   const cleanString = formatedCallNumber
-    .replace("+", "")
-    .replace("(", "")
-    .replace(")", "")
-    .replace(/ /g, "")
-    .replace("-", "");
+    .replace('+', '')
+    .replace('(', '')
+    .replace(')', '')
+    .replace(/ /g, '')
+    .replace('-', '')
 
-  const pureNumber = Number(cleanString);
+  const pureNumber = Number(cleanString)
 
-  return pureNumber;
+  return pureNumber
 }

@@ -1,4 +1,4 @@
-import { jwt } from "~/src/libs/utils";
+import { jwt } from '~/src/libs/utils'
 
 // prettier-ignore
 export function verify(...[token, secretOrPublicKey, options]: Parameters<typeof jwt.v1.verify>):
@@ -23,6 +23,7 @@ export function verify(...[token, secretOrPublicKey, options]: Parameters<typeof
       error: null
     };
   } catch (error) {
+    console.warn('>> error:', error)
     return {
       content: null,
       isValid: false,

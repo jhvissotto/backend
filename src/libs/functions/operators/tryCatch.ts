@@ -20,6 +20,7 @@ export function tryCatch<
     result = fnTry()
 
   } catch (e) {
+    console.warn('>> error:', e)
     error = e
     if (fnCatch) catched = fnCatch(error)
 

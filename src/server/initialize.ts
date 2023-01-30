@@ -53,6 +53,6 @@ export function initialize() {
 
   // ======== listen ======== //
   server.express.listen(env().PORT, () => {
-    console.log(`Server listening: http://localhost:${env().PORT}`)
+    console.log(`>> Server listening: http://localhost:${env().PORT}`)
   })
 }

@@ -233,7 +233,7 @@ export function newForm<
 
     // ======== errors ======== //
     // errors_has?: TRI;
-    errors?: Array<Error | void>
+    errors?: Array<Error | any>
   },
   canUpdateStatus = false
 ) {
@@ -401,6 +401,6 @@ export function newForm<
 
     // ======== errors ======== //
     errors_has,
-    errors: [...errors],
+    errors,
   }
 }

@@ -41,7 +41,7 @@ export async function _ctrl(
   resp = ctrl.newForm({
     ...resp,
     list: querySelect.data,
-    errors: locals.errors,
+    errors: resp.errors.concat(locals.errors),
   })
 
   return res.json(resp)

@@ -7,4 +7,3 @@ export * as link from './link'
 // export * as mock from "./mock";
 export * as sting from './string'
 export * from './q'
-export * as validator from './validator'

@@ -1,5 +1,5 @@
 // libs
-import type { Z } from '~/src/libs/utils/validator'
+import type { Z } from '~/src/libs/helpers/schema'
 import { _ } from '~/src/libs/utils'
 import { resolvers } from '~/src/libs/helpers'
 // app

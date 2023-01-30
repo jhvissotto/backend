@@ -1,25 +1,29 @@
 import { crypt } from '~/src/libs/helpers'
+import { json } from '~/src/libs/functions'
 import { config } from '.'
 
 // prettier-ignore
 export function decipher<Payload>(ciphered, key = config.key, iv = config.iv) {
 
   // prepare
-  let CIPHERED = Buffer.from(ciphered, 'hex')
-  let      KEY = Buffer.from(     key, 'hex')
-  let       IV = Buffer.from(      iv, 'hex')
+  const CIPHERED  = Buffer.from(ciphered, 'hex')
+  const KEY       = Buffer.from(key,      'hex')
+  const IV        = Buffer.from(iv,       'hex')
   
   
   // instance
-  let decipher = crypt.createDecipheriv(config.algo, KEY, IV)
+  const decipher = crypt.createDecipheriv(config.algo, KEY, IV)
   
 
-  // transform
-  let payload = Buffer.concat([
+  // deciphering
+  const deciphered = Buffer.concat([
     decipher.update(CIPHERED), 
     decipher.final()
-  ]).toString() as Payload
+  ]).toString() 
   
+  
+  // formating
+  const payload = json.parse<Payload>(deciphered).outcome
 
 
   // response

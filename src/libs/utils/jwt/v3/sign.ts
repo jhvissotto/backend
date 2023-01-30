@@ -1,8 +1,8 @@
-import { jwt } from "~/src/libs/utils";
+import { jwt } from '~/src/libs/utils'
 
-type Args = Parameters<typeof jwt.v1.sign>;
-type Key = Args[1];
-type Opts = Args[2];
+type Args = Parameters<typeof jwt.v1.sign>
+type Key = Args[1]
+type Opts = Args[2]
 
 // prettier-ignore
 export function sign<     Payload >(

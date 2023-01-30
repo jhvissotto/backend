@@ -1,14 +1,17 @@
-import type { SchemaReq } from '.'
+// libs
+import { qs } from '~/src/libs/utils/link'
+// app
 import { createDef } from '~/src/components'
 import { level } from '~/src/navigation'
-import { qs } from '~/src/libs/utils/link'
+// local
+import type { SchemaReq } from '.'
 
 export const defs = createDef<SchemaReq.Params, SchemaReq.Query>({
-  name: 'crypt_saltCreate',
+  name: 'security_keygen',
   active: true,
-  method: 'get',
-  pattern: '/crypt/saltCreate',
-  url: (params, query) => qs.v2.stringifyUrl({ url: `/crypt/saltCreate`, query }),
+  method: 'use',
+  pattern: '/security/keygen',
+  url: (params, query) => qs.v2.stringifyUrl({ url: `/security/keygen`, query }),
   user_levelReq: level.user.L0_Free.N,
   staff_levelReq: level.staff.L0_Dev.N,
   canSanitize: true,

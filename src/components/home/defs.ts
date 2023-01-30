@@ -1,7 +1,10 @@
-import type { SchemaReq } from '.'
+// libs
+import { qs } from '~/src/libs/utils/link'
+// app
 import { createDef } from '~/src/components'
 import { level } from '~/src/navigation'
-import { qs } from '~/src/libs/utils/link'
+// local
+import type { SchemaReq } from '.'
 
 export const defs = createDef<SchemaReq.Params, SchemaReq.Query>({
   name: 'home',

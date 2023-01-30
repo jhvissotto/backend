@@ -1,10 +1,12 @@
-import { config } from '~/src/global'
 import { crypt } from '~/src/libs/utils'
+import { config } from '.'
 
-type Args = Parameters<typeof crypt.v1.hash_make>
+type Password = Parameters<typeof crypt.v1.hash_make>[0]
+type SaltOrRounds = Parameters<typeof crypt.v1.hash_make>[1]
 
-export function hash_make(password: Args[0], saltOrRounds?: Args[1]) {
+// prettier-ignore
+export function hash_make(...[password, saltOrRounds = config.salt]: [Password, SaltOrRounds?]) {
   // foo
-  const result = crypt.v2.hash_make(password, saltOrRounds || config().salt)
+  const result = crypt.v2.hash_make(password, saltOrRounds)
   return result
 }

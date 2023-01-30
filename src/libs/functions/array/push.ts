@@ -1,10 +1,14 @@
 // prettier-ignore
 export function push<Base, Add>(base: Base, add: Add | Add[]) {
 
+  // checks
+  const base_isArray = Array.isArray(base)
+  const  add_isArray = Array.isArray(add)
+
 
 
   // ======== base is not array ======== //
-  if (!Array.isArray(base)) {
+  if (!base_isArray) {
     
     // return base without changes
     return base
@@ -16,8 +20,8 @@ export function push<Base, Add>(base: Base, add: Add | Add[]) {
   // ======== base is array ======== //
 
   // add is list
-  if (Array.isArray(add)) {
-    base.push(...add);
+  if (add_isArray) {
+    base.push(...add)
     return base
   }
   

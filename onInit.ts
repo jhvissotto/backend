@@ -1,10 +1,6 @@
 // import { config as envInit } from 'dotenv'
-import { genSaltSync } from 'bcrypt'
 
 export function onInit() {
+  console.log('>> System initialized')
   // envInit()
-
-  const salt = genSaltSync()
-  global['salt'] = salt
-  globalThis['salt'] = salt
 }

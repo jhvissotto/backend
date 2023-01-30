@@ -1,10 +1,11 @@
+// global
+import { config } from '~/src/global'
 // libs
 import { cast } from '~/src/libs/functions'
-import { z } from '~/src/libs/utils/validator'
+import { z } from '~/src/libs/helpers/schema'
 // app
 import { ctrl, E } from '~/src'
-import { config } from '~/src/global'
-import { bcrypt, Token } from '~/src/security'
+import { bcrypt, Token, crypt, formats } from '~/src/security'
 import { getCredentials } from '~/src/libs/helpers/parse'
 // local
 import type { SchemaReq } from '.'
@@ -85,22 +86,31 @@ export async function _ctrl(
   // ======================= //
   if (check_user.isUnique && check_pass.isValid) {
 
-    const { subject, payload } = Token.defs.USER_ACCESS
-    const { token } = Token.create<z.infer<typeof payload>>({ 
-      payload: {
-        user_id: credentials.user,
-        user_level: check_user.itemFirst.pk_level
-      }  
-    }, null, { subject })
+    
+    const { subject, zSchema } = formats.USER_ACCESS
+    type Payload = z.infer<typeof zSchema>
+
+
+    const { ciphered } = crypt.cipher<Payload>({
+      // user_isStaff: 
+      user_id: credentials.user,
+      user_level: check_user.itemFirst.pk_level
+    })
+
+    const { token } = Token.create({ 
+      payload: ciphered, 
+      options: { subject } 
+    })
 
     resp.token_server = token
   }
 
 
 
+  
   resp = ctrl.newForm({
     ...resp, 
-    errors: locals.errors 
+    errors: resp.errors.concat(locals.errors),
   })
 
   return res.json(resp)

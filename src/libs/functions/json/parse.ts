@@ -27,6 +27,7 @@ export function parse<Outcome>(input, reviver?: Parameters<typeof JSON.parse>[1]
     isSuccess = true
     isError   = false
   } catch (e) {
+    console.warn('>> error:', e)
     outcome   = input as typeof input
     error     = e
     isSuccess = false

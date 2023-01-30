@@ -27,6 +27,7 @@ export function stringify(input, replacer?: Parameters<typeof JSON.stringify>[1]
     isSuccess = true
     isError   = false
   } catch (e) {
+    console.warn('>> error:', e)
     outcome   = input as typeof input
     error     = e
     isSuccess = false

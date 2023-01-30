@@ -18,6 +18,7 @@ export function hash_make(...args: Parameters<typeof crypt.v1.hash_make>):
       error: null,
     }
   } catch (error) {
+    console.warn('>> error:', error)
     return {
       hash: null,
       error,

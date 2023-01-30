@@ -18,6 +18,7 @@ export function hash_match(...args: Parameters<typeof crypt.v1.hash_match>):
       error: null,
     }
   } catch (error) {
+    console.warn('>> error:', error)
     return {
       isValid: null,
       error,

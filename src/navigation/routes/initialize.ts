@@ -1,8 +1,22 @@
-import { auth, cache, crypt, database, home, test } from '~/src/components'
+import { security, auth, cache, database, home, test } from '~/src/components'
 import { routes } from '.'
 
 // prettier-ignore
 export function initialize() {
+  // ========================== //
+  // ======== SECURITY ======== //
+  // ========================== //
+  routes.add({
+    name:         security.keygen.defs.name,
+    active:       security.keygen.defs.active,
+    method:       security.keygen.defs.method,
+    pattern:      security.keygen.defs.pattern,
+    ctrl:         security.keygen._ctrl
+  }, {
+    z_schema:     security.keygen.z_schemaReq,
+    canSanitize:  security.keygen.defs.canSanitize,
+    canCache:     security.keygen.defs.canCache
+  })
   // ====================== //
   // ======== AUTH ======== //
   // ====================== //
@@ -41,31 +55,6 @@ export function initialize() {
     z_schema:     cache.test.z_schemaReq,
     canSanitize:  cache.test.defs.canSanitize,
     canCache:     cache.test.defs.canCache
-  })
-  // ======================= //
-  // ======== CRYPT ======== //
-  // ======================= //
-  routes.add({
-    name:         crypt.saltCreate.defs.name,
-    active:       crypt.saltCreate.defs.active,
-    method:       crypt.saltCreate.defs.method,
-    pattern:      crypt.saltCreate.defs.pattern,
-    ctrl:         crypt.saltCreate._ctrl
-  }, {
-    z_schema:     crypt.saltCreate.z_schemaReq,
-    canSanitize:  crypt.saltCreate.defs.canSanitize,
-    canCache:     crypt.saltCreate.defs.canCache
-  })
-  routes.add({
-    name:         crypt.hashMake.defs.name,
-    active:       crypt.hashMake.defs.active,
-    method:       crypt.hashMake.defs.method,
-    pattern:      crypt.hashMake.defs.pattern,
-    ctrl:         crypt.hashMake._ctrl
-  }, {
-    z_schema:     crypt.hashMake.z_schemaReq,
-    canSanitize:  crypt.hashMake.defs.canSanitize,
-    canCache:     crypt.hashMake.defs.canCache
   })
   // ========================== //
   // ======== DATABASE ======== //

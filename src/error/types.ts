@@ -1,3 +1,3 @@
 import { Thrower } from '.'
 
-export type Locals = Array<Thrower | any>
+export type Locals = Array<Error | any>
