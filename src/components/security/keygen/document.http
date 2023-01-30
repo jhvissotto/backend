@@ -1,11 +1,15 @@
-GET http://localhost:4000/crypt/saltCreate?
+POST http://localhost:4000/security/keygen?
 # &rounds=10
 
-# content-type: application/json
+Content-Type: application/json
 # Authorization: Basic user:pass
 # Authorization: Bearer abcd
 # X-REQUEST-TYPE: GraphQL
-# { "body": "1234" }
+{ 
+	"KEY": "xyz456", 
+	"password": "abc123"
+}
+
 
 
 
@@ -13,12 +17,13 @@ GET http://localhost:4000/crypt/saltCreate?
 // ================ RESPONSE ================ //
 // ========================================== //
 
+
 {
-	"reqId_short": "7f64439c42e",
-	"reqId_v4": "215f5825-b745-4ee5-9e88-fb661a7a5eb6",
-	"date_value": 1674861584224,
-	"date_full": "2023-01-27T23:19:44.224Z",
-	"date_formated": "2023-01-27  18:19:44",
+	"reqId_short": "26d0f5e7a92",
+	"reqId_v4": "8c7b61ba-c312-48e5-9963-97699f09df83",
+	"date_value": 1675063747127,
+	"date_full": "2023-01-30T07:29:07.127Z",
+	"date_formated": "2023-01-30  02:29:07",
 	"cache_enable": null,
 	"cache_response": null,
 	"cache_duration": "",
@@ -28,8 +33,11 @@ GET http://localhost:4000/crypt/saltCreate?
 	"status_flag": "",
 	"validation_params": {},
 	"validation_query": {},
-	"validation_body": {},
-	"validation_isSanitized": false,
+	"validation_body": {
+		"KEY": "xyz456",
+		"password": "abc123"
+	},
+	"validation_isSanitized": true,
 	"valid_user": null,
 	"valid_pass": null,
 	"valid_credentials": null,
@@ -53,7 +61,11 @@ GET http://localhost:4000/crypt/saltCreate?
 	"page_isLast": null,
 	"props_meta": {},
 	"props": {
-		"salt": "$2b$10$w1Bx16X0cX7tCPv5qIJlke"
+		"bcrypt_salt": "$2b$10$Ig7vWcrW4ZM66FbI9WM8au",
+		"bcrypt_passHash": "$2b$10$BpiAbfRC6aNum2lC6CA0oOukRJUbslglKLcSL6Nv5YVj4d9wXC.tO",
+		"crypt_generated_iv": "026d79e8ae038177f1336d154b48e2b5",
+		"crypt_generated_key": "e85fcc278f8101993731948a0aef0dd21143b9bfcff1d24c75b8694a8f92bef4",
+		"crypt_converted_key": "c92b27f043f1cd721c73b8faeaabf7c16e9800fbf28cc373"
 	},
 	"list_meta": {},
 	"list": [],

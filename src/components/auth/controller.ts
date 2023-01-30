@@ -43,7 +43,7 @@ export async function _ctrl(
   const { credentials } = getCredentials(req)
   
   if (credentials.missingAny) {
-    locals.errors.push(E.create("MISSING_CREDENTIALS"))
+    locals.errors.push(E.create("INVALID_CREDENTIALS"))
   }
 
 

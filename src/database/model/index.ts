@@ -2,6 +2,7 @@ import { ValueOf } from '~/src/libs/Types'
 
 export * from './td_level'
 export * from './td_post'
+export * from './td_staff'
 export * from './td_user'
 
 export * from './tr_post_level'
@@ -11,6 +12,7 @@ export * from './tr_user_post'
 export const td = {
   level: 'td_level',
   post: 'td_post',
+  staff: 'td_staff',
   user: 'td_user',
 } as const
 

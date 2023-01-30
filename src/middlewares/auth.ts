@@ -12,7 +12,7 @@ export const auth = (user_levelReq: number, staff_levelReq: number) => async (re
 
   type Payload = z.infer<typeof formats.USER_ACCESS.zSchema>
   
-  const { content, error, isValid, isDecoded } = Token.check<Payload>(token)
+  const { content, error, isValid, isExpired, isDecoded } = Token.check<Payload>({ token })
 
   // const levelDiff = (user_level - user_levelReq)
 

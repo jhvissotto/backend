@@ -1,15 +1,16 @@
-import { jwt } from "~/src/libs/utils";
+import { jwt } from '~/src/libs/utils'
 
 // prettier-ignore
-export function decode(...[token, options]: Parameters<typeof jwt.v1.decode>) : {
-    content: ReturnType<typeof jwt.v1.decode>;
-    isDecoded: true;
+export function decode(...[token, options]: Parameters<typeof jwt.v1.decode>): 
+    | {
+    content:    ReturnType<typeof jwt.v1.decode>;
+    isDecoded:  true;
   } | {
-    content: null;
-    isDecoded: false;
-  } {
+    content:    null;
+    isDecoded:  false;
+  }   {
   //
-  // foo
+  // ================ foo ================ //
   //
   const content = jwt.v1.decode(token, options);
 
