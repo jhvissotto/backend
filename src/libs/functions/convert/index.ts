@@ -1,3 +1,3 @@
-export * from "./bufferToStream";
-export * from "./listToArray";
-export * from "./phoneToNumber";
+export * as bufferToStream from './bufferToStream'
+export * from './listToArray'
+export * from './phoneToNumber'

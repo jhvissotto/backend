@@ -10,6 +10,7 @@ import { getCredentials } from '~/src/libs/helpers/parse'
 // local
 import type { SchemaReq } from '.'
 import { defs, services } from '.'
+import { promise } from '~/src/libs/helpers'
 
 // prettier-ignore
 export async function _ctrl(
@@ -46,10 +47,15 @@ export async function _ctrl(
     locals.errors.push(E.create("INVALID_CREDENTIALS"))
   }
 
+  // const { } = promise.v3.props({
+  //   a: new Promise()
+  // })
 
-  // ========================== //
-  // ======== database ======== //
-  // ========================== //
+
+
+  // =============================== //
+  // ======== database user ======== //
+  // =============================== //
   const check_user = await services.getUserInfoById({
     id_user: credentials.user
   })
@@ -66,6 +72,26 @@ export async function _ctrl(
   resp.valid_user = check_user.isUnique
 
 
+  // ================================ //
+  // ======== database staff ======== //
+  // ================================ //
+  const check_staff = await services.getStaffById({
+    id_user: credentials.user
+  })
+
+
+  if (check_staff.isError) {
+    resp.errors_inDatabase = true
+    locals.errors.push(check_staff.error)
+    // locals.errors.push(E.catcher(check_user.error))
+  }
+
+  if (!check_staff.isUnique) locals.errors.push(E.create('INVALID_USER'))
+  
+  resp.valid_user = check_staff.isUnique
+
+
+  Promise.all([])
   
   // ========================== //
   // ======== password ======== //

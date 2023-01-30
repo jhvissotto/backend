@@ -1,4 +1,5 @@
 export * from './Axios'
+export * from './Ejs'
 // export * as Apollo from "./Apollo";
 export * as Express from './Express'
 export * as Formidable from './Formidable'

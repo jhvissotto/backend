@@ -1,4 +1,4 @@
-import { security, auth, cache, database, home, test } from '~/src/components'
+import { security, auth, cache, database, start } from '~/src/components'
 import { routes } from '.'
 
 // prettier-ignore
@@ -74,26 +74,38 @@ export function initialize() {
   // ======== START ======== //
   // ======================= //
   routes.add({
-    name:         test.defs.name,
-    active:       test.defs.active,
-    method:       test.defs.method,
-    pattern:      test.defs.pattern,
-    ctrl:         test._ctrl
+    name:         start.returnRequest.defs.name,
+    active:       start.returnRequest.defs.active,
+    method:       start.returnRequest.defs.method,
+    pattern:      start.returnRequest.defs.pattern,
+    ctrl:         start.returnRequest._ctrl
   }, {
-    z_schema:     test.z_schemaReq,
-    canSanitize:  test.defs.canSanitize,
-    canCache:     test.defs.canCache
+    z_schema:     start.returnRequest.z_schemaReq,
+    canSanitize:  start.returnRequest.defs.canSanitize,
+    canCache:     start.returnRequest.defs.canCache
   })
   
   routes.add({
-    name:         home.defs.name,
-    active:       home.defs.active,
-    method:       home.defs.method,
-    pattern:      home.defs.pattern,
-    ctrl:         home._ctrl
+    name:         start.test.defs.name,
+    active:       start.test.defs.active,
+    method:       start.test.defs.method,
+    pattern:      start.test.defs.pattern,
+    ctrl:         start.test._ctrl
   }, {
-    z_schema:     home.z_schemaReq,
-    canSanitize:  home.defs.canSanitize,
-    canCache:     home.defs.canCache
+    z_schema:     start.test.z_schemaReq,
+    canSanitize:  start.test.defs.canSanitize,
+    canCache:     start.test.defs.canCache
+  })
+  
+  routes.add({
+    name:         start.home.defs.name,
+    active:       start.home.defs.active,
+    method:       start.home.defs.method,
+    pattern:      start.home.defs.pattern,
+    ctrl:         start.home._ctrl
+  }, {
+    z_schema:     start.home.z_schemaReq,
+    canSanitize:  start.home.defs.canSanitize,
+    canCache:     start.home.defs.canCache
   })
 }

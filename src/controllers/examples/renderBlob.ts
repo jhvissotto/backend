@@ -2,7 +2,7 @@ export function renderBlob(req, res) {
   const axios = require('axios')
   const Blob = require('blob')
 
-  const url = 'http://localhost:3000/public/dir/file.png'
+  const url = 'http://localhost:3000/public/dir/image.ext'
 
   axios.get(url, { responseType: 'arraybuffer' }).then(({ data }) => {
     let buffer = Buffer.from([data])

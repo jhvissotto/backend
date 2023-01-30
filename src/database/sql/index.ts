@@ -1,1 +1,2 @@
+export * as GET_STAFF_BY_EMAIL from './GET_STAFF_BY_EMAIL'
 export * as GET_USER_INFO_BY_EMAIL from './GET_USER_INFO_BY_EMAIL'

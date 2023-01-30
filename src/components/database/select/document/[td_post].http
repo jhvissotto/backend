@@ -6,7 +6,7 @@ GET http://localhost:4000/database/select/td_post?
 # &page=0
 # &randKey=0
 
-# content-type: application/json
+# Content-Type: application/json
 # Authorization: Basic user:pass
 # Authorization: Bearer abcd
 # X-REQUEST-TYPE: GraphQL
@@ -15,9 +15,9 @@ GET http://localhost:4000/database/select/td_post?
 
 
 
-// ========================================== //
-// ================ RESPONSE ================ //
-// ========================================== //
+# ========================== #
+# ======== RESPONSE ======== #
+# ========================== #
 
 {
   "reqId_short": "767297de5e3",

@@ -13,14 +13,14 @@ export function catcher(err: Error | Error[]) {
   // case error[]
   if (Array.isArray(err)) {
     
-    const e = err.map(({ stack, ...rest }) => rest)
+    const e = err.map(({ stack, ...rest }) => ({ ...rest }))
     return e
   }
   
   
   
   // case error
-  const { name, message } = err;
-  return { name, message };
+  const { stack, ...rest } = err;
+  return { ...rest };
 
 }
