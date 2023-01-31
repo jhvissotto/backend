@@ -1,1 +1,5 @@
-export type { AxiosError as ResError, RawAxiosRequestConfig as ReqOpts } from 'axios'
+// prettier-ignore
+export type { 
+    RawAxiosRequestConfig   as ReqOpts ,
+    AxiosError              as ResError 
+} from 'axios'
