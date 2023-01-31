@@ -1,9 +1,9 @@
-import { __dir } from '~/src/global'
+import { dir } from '~/src/global'
 import { Multer } from '~/src/libs/packs'
 import { calc } from '~/src/libs/functions'
 
 export const instance = Multer.create({
-  dest: __dir.upload,
+  dest: dir.upload,
   // fileFilter: (req, file, cb) => {},
   // preservePath: false,
   // storage: Multer.diskStorage({

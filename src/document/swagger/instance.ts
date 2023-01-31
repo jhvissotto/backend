@@ -1,3 +1,3 @@
-import { Swagger } from "~/src/libs/packs";
+import { Swagger } from '~/src/libs/packs'
 
-export const instance = Swagger.create();
+export const instance = Swagger.create()

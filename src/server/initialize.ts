@@ -1,11 +1,11 @@
 // global
-import { config, env, __dir } from '~/src/global'
+import { config, env, dir } from '~/src/global'
 // libs
 import { Express, Ejs } from '~/src/libs/packs'
 import { logger, favicon, parsers, headers } from '~/src/libs/extensions/express'
-import { environment, path } from '~/src/libs/helpers'
+import { environment } from '~/src/libs/helpers'
 // app
-import { server, E } from '~/src'
+import { __public, server, E, view } from '~/src'
 import { router } from '~/src/navigation'
 import { swagger } from '~/src/document'
 // local
@@ -14,7 +14,7 @@ import { swagger } from '~/src/document'
 // prettier-ignore
 export function initialize() {
   // ======== env ======== //
-  environment.initialize()
+  // environment.initialize()
 
 
   // ======== logger ======== //
@@ -44,13 +44,14 @@ export function initialize() {
 
 
   // ======== public ======== //
-  server.express.use(favicon(path.join(__dir.public, 'favicon.ico')))
-  server.express.use('/public', Express.static(__dir.public))
+  server.express.use(favicon(__public.favicon))
+  server.express.use('/public', Express.static(__public.dirname))
 
-
+  
   // ======== swagger ======== //
   server.express.use('/swagger', swagger.UI())
   server.express.use('/swagger', swagger.initialize())
+
 
   // ======== apollo ======== //
   // apollo.server.start().then(() => {
@@ -59,10 +60,25 @@ export function initialize() {
 
 
   // ======== view ======== //
-  server.express.set('views', __dir.view)
+  server.express.set('views', dir.view)
   server.express.set('view engine', 'html')
   server.express.engine('html', Ejs.renderFile)
+  
+  
+  // ======== html ======== //
+  server.express.use('/homepage', (req, res) => {
+    return res.render(view.html.blank, {
+      document: view.documents.document1,
+      layout:   view.layouts.layout1, 
+      page:     view.pages.page1, 
+      // props
+      props: { 
+        welcome: 'Hello World', 
+      },
+    })
 
+  })
+  
 
   // ======== routes ======== //
   server.express.use(E.middleware)

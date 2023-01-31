@@ -1,3 +1,3 @@
-export * from './__directories'
+export * from './directories'
 export * from './config'
 export * from './env'

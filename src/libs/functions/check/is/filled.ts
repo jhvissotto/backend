@@ -1,5 +1,5 @@
-import { empty as isEmpty } from "./empty";
+import { is } from '~/src/libs/functions/check'
 
 export function filled(input: any) {
-  return !isEmpty(input);
+  return !is.empty(input)
 }

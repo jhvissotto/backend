@@ -1,5 +1,5 @@
 // prettier-ignore
-export async function Img({ 
+export async function loader({ 
     imgSrc, 
     onLoadCallback, 
     onErrorFallback, 

@@ -1,6 +1,6 @@
 import { Formidable } from '~/src/libs/packs'
 import { calc } from '~/src/libs/functions'
-import { __dir } from '~/src/global'
+import { dir } from '~/src/global'
 
 export function initialize(opts?: Parameters<typeof Formidable.create>[0]) {
   // ======================================== //
@@ -8,7 +8,7 @@ export function initialize(opts?: Parameters<typeof Formidable.create>[0]) {
   // ======================================== //
   const instance = Formidable.create({
     // ==== name ==== //
-    uploadDir: __dir.upload,
+    uploadDir: dir.upload,
     // filename: (name, ext, part, form) => '',
     keepExtensions: true,
 

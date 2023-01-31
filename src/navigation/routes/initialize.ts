@@ -1,4 +1,4 @@
-import { security, auth, cache, database, start } from '~/src/components'
+import { security, cache, database, start } from '~/src/components'
 import { routes } from '.'
 
 // prettier-ignore
@@ -17,19 +17,16 @@ export function initialize() {
     canSanitize:  security.keygen.defs.canSanitize,
     canCache:     security.keygen.defs.canCache
   })
-  // ====================== //
-  // ======== AUTH ======== //
-  // ====================== //
   routes.add({
-    name:         auth.defs.name,
-    active:       auth.defs.active,
-    method:       auth.defs.method,
-    pattern:      auth.defs.pattern,
-    ctrl:         auth._ctrl
+    name:         security.auth.defs.name,
+    active:       security.auth.defs.active,
+    method:       security.auth.defs.method,
+    pattern:      security.auth.defs.pattern,
+    ctrl:         security.auth._ctrl
   }, {
-    z_schema:     auth.z_schemaReq,
-    canSanitize:  auth.defs.canSanitize,
-    canCache:     auth.defs.canCache
+    z_schema:     security.auth.z_schemaReq,
+    canSanitize:  security.auth.defs.canSanitize,
+    canCache:     security.auth.defs.canCache
   })
   // ======================= //
   // ======== CACHE ======== //

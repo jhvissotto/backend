@@ -2,7 +2,7 @@ import { env, config } from '~/src/global'
 import * as redis from '~/src/services/redis'
 import { Cache } from '~/src/libs/extensions/express'
 
-export function initialize(opts: Parameters<typeof Cache.options>[0]) {
+export function initialize(opts?: Parameters<typeof Cache.options>[0]) {
   // changing default configs
   return Cache.options({
     debug: env().CACHE_EXPRESS_DEBUG,
