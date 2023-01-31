@@ -1,8 +1,10 @@
+// global
+import { status } from '~/src/common/constants'
+// libs
 import { is } from '~/src/libs/functions/check'
 import { array, cast } from '~/src/libs/functions'
 import { format } from '~/src/libs/utils/dt/format'
 import { id } from '~/src/libs/utils/calc'
-import { status } from '.'
 
 type OBJ = object | {}
 type TRI = boolean | null
@@ -274,15 +276,11 @@ export function newForm<
   }
 
   // ======== status list ======== //
-  const F1 = status.list?.find(i => i.code == status_code)
-  const group = F1?.group
-  const description = F1?.description
+  const message = status?.[status_code]?.message
+  const description = status?.[status_code]?.description
 
-  const F2 = status.general?.find(i => i.group == group)
-  const message = F2?.message
-
-  const status_message = is.filled(message) ? message : ''
-  const status_description = is.filled(description) ? description : ''
+  const status_message = message || ''
+  const status_description = description || ''
 
   // ======== counter ======== //
   const list_length = list?.length ?? 0

@@ -16,7 +16,7 @@ export function initialize() {
   // ======== env ======== //
   // environment.initialize()
 
-
+  
   // ======== logger ======== //
   const mode = environment.is().dev ? 'dev' : null
   server.express.use(logger.middleware(mode))
@@ -34,8 +34,7 @@ export function initialize() {
   server.express.use(parsers.bearerToken())
   server.express.use(parsers.cookie())
   server.express.use(parsers.universalCookies())
-  // server.express.use(parsers.body.json())
-  server.express.use(parsers.body.urlencoded({ extended: true }))
+  server.express.use(Express.urlencoded({ extended: true }))
   server.express.use(Express.json())
 
 
