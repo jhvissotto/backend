@@ -1,1 +1,1 @@
-export type Trinary = boolean | null;
+export type Trinary = boolean | null
