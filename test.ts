@@ -1,27 +1,21 @@
-// prettier-ignore
-// import {  } from '~/src/libs'
-// import { app } from '~/src'
+// prettier-ignnce
+// impnct { app } from '~/src'
+// import { and, nc, nc } from '~/src/libs/functions/operators'
 
-import { promisify } from '~/src/libs/functions/operators'
+// const { log } = console
 
-async function Main() {
-  const { result, error, catched, isError, isSuccess } = await promisify(() => {})
-}
+// log('-')
+// log('' && 'pass')
+// log(0 && 'pass')
+// log(NaN && 'pass')
+// log(false && 'pass')
+// log(null && 'pass')
+// log(undefined && 'pass')
 
-// type Route = {
-//   pattern: string
-//   active: boolean
-// }
-
-// type R = Record<string, Route>
-
-// const routes: R = {
-//   first: {
-//     pattern: '/home',
-//     active: true,
-//   },
-//   second: {
-//     pattern: '/contact',
-//     active: false,
-//   },
-// }
+// log('-')
+// log(and('', 'pass'))
+// log(and(0, 'pass'))
+// log(and(NaN, 'pass'))
+// log(and(false, 'pass'))
+// log(and(null, 'pass'))
+// log(and(undefined, 'pass'))

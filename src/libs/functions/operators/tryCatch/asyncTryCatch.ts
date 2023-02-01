@@ -1,5 +1,5 @@
 // prettier-ignore
-export async function promisify<
+export async function asyncTryCatch<
     Result  = void, 
     Catched = void
 >(
