@@ -1,13 +1,14 @@
 // prettier-ignore
 export async function asyncTryCatch<
 // ================ Arg Type ================ //
-    Result  = void, 
-    Catched = void
->(
+    Result  =   void, 
+    Catched =   void
 // ================ arguments ================ //
+>({ fnTry, fnCatch, prms = 'reflect' }: {
     fnTry:      (             ) => Result, 
-    fnCatch?:   (error?: Error) => Catched
-): 
+    fnCatch?:   (error?: Error) => Catched,
+    prms?:      'reflect' | 'resolve' | 'reject'  
+}): 
 // ================ Return Type ================ //
 Promise<{
     result:     ReturnType<typeof fnTry>,
@@ -22,31 +23,38 @@ Promise<{
     isSuccess:  false,
     isError:    true,
 }> {
-
+// ================ Foo Body ================ //
     return new Promise((resolve, reject) => {
+
+        let resp, result, error, catched, isSuccess, isError
         // ================ try ================ //
         try {
-            const result = fnTry()
-            resolve({
-                result:     result,
-                error:      null,
-                catched:    null,
-                isSuccess:  true,
-                isError:    false,
-            })
+            result      = fnTry()
+            error       = null
+            catched     = null
+            isSuccess   = true
+            isError     = false
 
         // ================ catch ================ //
         } catch (error) {
             console.warn('>> error:', error)
 
-            const catched = fnCatch?.(error)
-            reject({
-                result:     null,
-                error:      error,
-                catched:    catched,
-                isSuccess:  false,
-                isError:    true,
-            })
+            result      = null
+            error       = error
+            catched     = fnCatch?.(error)
+            isSuccess   = false
+            isError     = true
+        }
+
+        
+        // ================ resolver ================ //
+        resp = { result, error, catched, isSuccess, isError }
+
+        switch (prms) {
+            case 'resolve': resolve(resp)
+            case 'reject':   reject(resp)
+            case 'reflect': 
+                isSuccess ? resolve(resp) : reject(resp)
         }
     })
     
