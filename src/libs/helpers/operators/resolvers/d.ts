@@ -3,7 +3,7 @@ import { array } from '~/src/libs/functions'
 // import { is } from '~/src/libs/functions/check'
 
 // prettier-ignore
-export async function r<
+export async function d<
 // ================ Arg Types ================ //
   Data, 
   Fallback  = any, 

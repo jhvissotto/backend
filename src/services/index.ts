@@ -1,4 +1,4 @@
-export * as email from "./email";
-export * as keyv from "./keyv";
-export * as redis from "./redis";
-export * as sms from "./sms";
+export * as email from './email'
+export * as keyval from './keyval'
+export * as redis from './redis'
+export * as sms from './sms'

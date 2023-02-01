@@ -1,10 +1,10 @@
 // libs
-import { resolvers } from '~/src/libs/helpers'
+import { resolvers } from '~/src/libs/helpers/operators'
 // app
 import { self } from '~/src/api'
 // local
-import type { SchemaReq } from '../'
-import { defs } from '../'
+import type { SchemaReq } from '..'
+import { defs } from '..'
 
 // prettier-ignore
 export async function api({ params, query, body }: {

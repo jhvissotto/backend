@@ -1,5 +1,5 @@
 // import { env } from '~/src/global'
-// import { keyv } from '~/src/services'
+// import { keyval } from '~/src/services'
 // import { environment } from '~/src/libs/helpers'
 // import { CreateServer, plugins, utils } from '~/src/libs/packs/Apollo'
 
@@ -17,7 +17,7 @@ export function initialize() {
   //   //   // ttl: 300_000, // 5 mins
   //   // }),
   //   cache: env().CACHE_APOLLO_ENABLE
-  //     ? new utils.ErrorsAreMissesCache(new utils.KeyvAdapter(keyv.apollo.redis))
+  //     ? new utils.ErrorsAreMissesCache(new utils.keyvalAdapter(keyval.apollo.redis))
   //     : undefined,
   //   plugins: [
   //     // plugins.responseCache({

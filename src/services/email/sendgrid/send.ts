@@ -1,5 +1,5 @@
 import { config } from '~/src/global'
-import { resolvers } from '~/src/libs/helpers'
+import { resolvers } from '~/src/libs/helpers/operators'
 import { client, prepare } from '.'
 
 // prettier-ignore

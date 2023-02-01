@@ -30,8 +30,8 @@ export function tryCatch<
     isError   = false
     // ================ catch ================ //
   } catch (e) {  
-    if (fnCatch) 
-    catched   = fnCatch(error)
+    if (fnCatch)
+    catched   = fnCatch?.(e)
     error     = e
     isSuccess = false
     isError   = true

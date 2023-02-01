@@ -1,4 +1,4 @@
-export * from './Keyv'
+export * from './KeyVal'
 export * as calc from './calc'
 export * as cors from './cors'
 export * from './crypt'

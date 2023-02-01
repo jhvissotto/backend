@@ -1,5 +1,5 @@
 import { knex, sql } from '~/src/database'
-import { resolvers } from '~/src/libs/helpers'
+import { resolvers } from '~/src/libs/helpers/operators'
 
 export async function getUserInfoById({ id_user }) {
   // sql
