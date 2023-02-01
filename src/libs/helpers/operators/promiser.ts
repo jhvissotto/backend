@@ -6,14 +6,14 @@ export function promiser<
     Result  = void, 
     Catched = void
 // ================ Arguments ================ //
->({ cond, data, error, call, fall, prms, wait } : {
-    cond:   boolean, 
+>({ cond = true, data, error, call, fall, prms = 'reflect', delay = 0 } : {
+    cond?:  boolean, 
     data?:  D, 
     error?: E, 
     call?:  (data?:  D) => Result, 
     fall?:  (error?: E) => Catched, 
-    prms:   'resolve' | 'reject', 
-    wait:   number,
+    prms?:  'reflect' | 'resolve' | 'reject', 
+    delay?: number,
 }): 
 // ================ Return Type ================ //
 Promise<{
@@ -69,9 +69,12 @@ Promise<{
 
         // ================ resolver ================ //
         setTimeout(() => {
-            if (prms == 'resolve') resolve(resp)
-            if (prms == 'reject')   reject(resp)
-        }, wait)
+            if (prms == 'resolve')    resolve(resp)
+            if (prms == 'reject' )     reject(resp)
+            if (prms == 'reflect') {
+                cond ? resolve(resp) : reject(resp)
+            } 
+        }, delay)
 
     })
 }

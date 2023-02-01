@@ -1,11 +1,15 @@
 // prettier-ignore
 export async function asyncTryCatch<
+// ================ Arg Type ================ //
     Result  = void, 
     Catched = void
 >(
+// ================ arguments ================ //
     fnTry:      (             ) => Result, 
     fnCatch?:   (error?: Error) => Catched
-): Promise<{
+): 
+// ================ Return Type ================ //
+Promise<{
     result:     ReturnType<typeof fnTry>,
     error:      null,
     catched:    null,
@@ -18,6 +22,7 @@ export async function asyncTryCatch<
     isSuccess:  false,
     isError:    true,
 }> {
+
     return new Promise((resolve, reject) => {
         // ================ try ================ //
         try {
@@ -44,4 +49,5 @@ export async function asyncTryCatch<
             })
         }
     })
+    
 }

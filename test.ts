@@ -2,7 +2,7 @@
 // import { app } from '~/src'
 // import {  } from '~/src/libs'
 
-import { promiser } from '~/src/libs/functions/operators'
+import { promiser } from '~/src/libs/helpers/operators'
 
 // async function asyncFoo(): Promise<{ data: string; error: string }> {
 //   return new Promise((resolve, reject) => {
@@ -16,7 +16,7 @@ import { promiser } from '~/src/libs/functions/operators'
 async function Main() {
   await promiser({
     cond: true,
-    prms: 'resolve',
+    prms: 'reject',
     wait: 1500,
   })
 }

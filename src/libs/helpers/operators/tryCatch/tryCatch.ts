@@ -6,9 +6,9 @@ export function tryCatch<
   Catched = void, 
   Final   = void
 >(
-  fnTry:    (                                 ) => Result,
-  fnCatch?: (error?: Error                    ) => Catched,
-  fnFinal?: (error?: Error, catched?: Catched ) => Final,
+  fnTry:    (                                ) => Result,
+  fnCatch?: (error?: Error                   ) => Catched,
+  fnFinal?: (error?: Error, catched?: Catched) => Final,
 ) {
 
   // ======== definitions ======== //
