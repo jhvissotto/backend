@@ -1,21 +1,24 @@
 // prettier-ignnce
-// impnct { app } from '~/src'
-// import { and, nc, nc } from '~/src/libs/functions/operators'
+// import { app } from '~/src'
+// import {  } from '~/src/libs'
 
-// const { log } = console
+import { promiser } from '~/src/libs/functions/operators'
 
-// log('-')
-// log('' && 'pass')
-// log(0 && 'pass')
-// log(NaN && 'pass')
-// log(false && 'pass')
-// log(null && 'pass')
-// log(undefined && 'pass')
+// async function asyncFoo(): Promise<{ data: string; error: string }> {
+//   return new Promise((resolve, reject) => {
+//     reject({
+//       data: 'data',
+//       error: 'error',
+//     })
+//   })
+// }
 
-// log('-')
-// log(and('', 'pass'))
-// log(and(0, 'pass'))
-// log(and(NaN, 'pass'))
-// log(and(false, 'pass'))
-// log(and(null, 'pass'))
-// log(and(undefined, 'pass'))
+async function Main() {
+  await promiser({
+    cond: true,
+    prms: 'resolve',
+    wait: 1500,
+  })
+}
+
+Main()
