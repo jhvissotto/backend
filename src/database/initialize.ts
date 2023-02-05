@@ -8,5 +8,13 @@ export function initialize(...args: Parameters<typeof Knex.create>) {
     console.log('>> Database connected')
   })
 
+  knex.on('start', builder => {
+    console.log('>> onStat:', builder.toQuery())
+  })
+
+  knex.on('query', query => {
+    console.log('>> onQuery', query)
+  })
+
   return { knex }
 }

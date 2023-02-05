@@ -1,1 +1,2 @@
-export * from "./fullFilled";
+export * from './arrayOf'
+export * from './fullFilled'

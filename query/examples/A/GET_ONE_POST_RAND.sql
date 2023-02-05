@@ -1,0 +1,5 @@
+SELECT *
+FROM td_post
+
+ORDER BY RAND()
+LIMIT 1

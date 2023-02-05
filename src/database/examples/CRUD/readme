@@ -1,0 +1,11 @@
+Links
+https://stackoverflow.com/questions/21660791/what-is-the-main-difference-between-patch-and-put-request
+https://stackoverflow.com/questions/31089221/what-is-the-difference-between-put-post-and-patch
+https://stackoverflow.com/questions/71062702/how-do-put-post-or-patch-request-differ-ultimately
+https://stackoverflow.com/questions/28459418/use-of-put-vs-patch-methods-in-rest-api-real-life-scenarios
+
+GET - Read
+POST - Create
+PUT - Replace - Create | Update
+PATCH - Update
+DELETE - Delete

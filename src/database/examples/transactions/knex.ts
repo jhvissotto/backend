@@ -1,4 +1,4 @@
-import { knex } from '..'
+import { knex } from '~/src/database'
 
 // ============================ //
 // ======== Example #1 ======== //
