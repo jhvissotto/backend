@@ -1,3 +1,27 @@
+// import { WITH } from './query/builder2/WITH'
+// import { tv_ } from './query/builder2/VISIBLE'
+import { CHECK } from './query/builder2/CHECK'
+
+const x = CHECK({
+  table: 'post',
+  by: 'SLUG',
+  langs: ['en', 'pt'],
+  slug: 'title-123',
+})
+
+console.log('x', x)
+
+// // prettier-ignore
+// const qs = WITH([
+//     tv_('user'),
+//     tv_('post'),
+// ])
+
+// console.log('qs', qs)
+
+// const q = tv_('user', { hasLaunchDate: true })
+// console.log('q', q)
+
 // // import { cast } from '~/src/libs/functions'
 // // import { app } from '~/src'
 // // import { Knex } from '~/src/libs/packs'

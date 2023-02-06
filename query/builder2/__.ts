@@ -1,3 +1,3 @@
-export function _(toogle) {
+export function __(toogle) {
   return toogle ? '' : '--'
 }

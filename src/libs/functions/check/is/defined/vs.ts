@@ -2,26 +2,17 @@
 export function vs(input: any) {
 
     
-    // ======== undefined ======== //
+    // undefined
     if (input === undefined)
     return false
 
 
-
-    // ======== string ======== //
-    if (typeof input == 'string') {
-        
-        // undefined
-        if (input == '')
-        return false
-
-
-        // default
-        return true
-    }
+    // string empty
+    if (typeof input == 'string'  &&  input == '') 
+    return false
 
 
 
-    // ======== default ======== //
+    // default
     return true
 }
