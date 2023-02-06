@@ -7,10 +7,10 @@ import { WHERE } from './WHERE'
 
 // prettier-ignore
 export function CHECK(props: { 
-    table:  string,
+    table:  Args.Table,
     by:     'PK' | 'SLUG',
-    pk?:    string | number,
-    slug?:  string,
+    pk?:    Args.PK,
+    slug?:  Args.Slug,
     langs:  Args.Langs[]
 }) {
 
@@ -27,7 +27,7 @@ export function CHECK(props: {
     // query
     return `
         ${WITH([
-            tv_(table)
+            tv_(table),
         ])}
 
         SELECT ${fld('pk', table)}

@@ -3,7 +3,7 @@ import { Args } from './Args'
 // prettier-ignore
 export function fld(
     fk:     Args.FldKey,  
-    field:  string | number, 
+    field:  Args.Field, 
     lang?:  Args.Langs
 ) {
 

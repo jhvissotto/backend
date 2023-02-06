@@ -1,6 +1,6 @@
 import { has } from '~/src/libs/functions/check'
 import type { Args } from '..'
-import { _ } from '..'
+import { __ } from '..'
 
 // prettier-ignore
 export const QS = (props?: {
@@ -41,15 +41,15 @@ export const QS = (props?: {
         
           FROM    td_!table
 
-        ${_(KEY  )}  WHERE (
-        ${_(PK  )}      td_!table.pk_!table   = :pk_!table
-        ${_(SLUG)}      td_!table.slug_!table = :slug_!table
-        ${_(KEY  )}  )
+        ${__(KEY  )}  WHERE (
+        ${__(PK  )}      td_!table.pk_!table   = :pk_!table
+        ${__(SLUG)}      td_!table.slug_!table = :slug_!table
+        ${__(KEY  )}  )
         
-        ${_(ONE )}  LIMIT  1
-        ${_(MANY)}  LIMIT  :limit
+        ${__(ONE )}  LIMIT  1
+        ${__(MANY)}  LIMIT  :limit
 
-        ${_(OFF )}  OFFSET :offset
+        ${__(OFF )}  OFFSET :offset
     `
 
     

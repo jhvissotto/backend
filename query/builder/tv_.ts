@@ -1,9 +1,10 @@
+import { Args } from './Args'
 import { __ } from './__'
 import { tbl } from './tbl'
 
 // prettier-ignore
 export function tv_(
-    table: string, 
+    table: Args.Table, 
     opts?: { hasLaunchDate?: boolean }
 ) {
     // options

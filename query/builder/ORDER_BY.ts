@@ -4,9 +4,9 @@ import { priority } from './priority'
 
 // prettier-ignore
 export function ORDER_BY(Sort: Args.Sort, props?: {
-  field?:     string,
+  field?:     Args.Field,
   priority?:  Parameters<typeof priority>[0], 
-  randKey?:   Parameters<typeof RAND>[0],
+  randKey?:   Args.RandKey,
   lang?:      Args.Langs,
 }) {
 

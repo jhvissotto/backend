@@ -6,11 +6,11 @@ import { where_slug } from './where_slug'
 
 // prettier-ignore
 export function WHERE(list: Array<{
-    field:  string
+    field:  Args.Field
     by:     Args.BY,
-    pk?:    string | number
-    slug?:  string
-    rn?:    number
+    pk?:    Args.PK
+    slug?:  Args.Slug
+    rn?:    Args.RN
 }>, langs: Args.Langs[]) 
 
 {

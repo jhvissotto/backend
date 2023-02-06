@@ -3,9 +3,9 @@ import { Args } from './Args'
 // prettier-ignore
 export function tbl(
   tk:       Args.TblKey, 
-  tableX:   string,
-  tableY?:  string,
-  tableZ?:  string,
+  tableX:   Args.Table,
+  tableY?:  Args.Table,
+  tableZ?:  Args.Table,
 ) {
 
   if (tableY && tableZ) return `${tk}_${tableX}_${tableY}_${tableZ}`

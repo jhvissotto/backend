@@ -1,19 +1,29 @@
 export module Args {
   // prettier-ignore
   // export type COMMAND = 'SELECT' | 'INSERT' | 'UPSERT' | 'UPDATE' | 'DELETE'
-  // export type COUNT = '' | 'ALL' | 'ONE' | 'MANY'
-  // export type Table = string
-  // export type PK = number | string
-  // export type Slug = number | string
+  // export type GET = '' | 'ALL' | 'ONE' | 'MANY'
 
   export type TblKey = 'tv' | 'td' | 'tr' | 'tn' | 'tb'
   export type FldKey = 'id' | 'pk' | 'fk' | 'slug' | 'rn'
 
+  export type Table = string
+  export type Field = string
+
+  //
+
   export type BY = 'PK' | 'SLUG' | 'RN'
   export type Langs = '' | 'en' | 'fr' | 'es' | 'pt' | 'it'
 
+  export type PK = number | string
+  export type Slug = string
+  export type RN = number
+
+  //
+
   export type Items = number
   export type Page = number
+
+  export type RandKey = number | string
 
   export type Sort =
     // ======== ARBITRARY ======== //

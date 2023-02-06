@@ -4,7 +4,7 @@ import { Args } from './Args'
 // prettier-ignore
 export function where_slug(
     langs:  Args.Langs[],
-    field:  string,
+    field:  Args.Field,
     value?: string, 
 ) {
     // ================ check ================ //
