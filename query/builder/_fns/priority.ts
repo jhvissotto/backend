@@ -1,3 +1,4 @@
+import { check } from '~/src/libs/functions/'
 import { is } from '~/src/libs/functions/array'
 
 type Field = string
@@ -9,7 +10,12 @@ type List = Item[]
 // prettier-ignore
 export function priority(input: Item | List) {
 
+    // input is empty
+    if (check.is.empty(input))
+    return ``
+    
 
+    
     // input is List
     if (is.arrayOf(input).array) {
 

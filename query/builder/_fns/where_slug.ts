@@ -1,5 +1,5 @@
-import { valueOrBind } from '../builder2/valueOrBind'
-import { Args } from './Args'
+import { Args } from '../Args'
+import { valueOrBind } from './valueOrBind'
 
 // prettier-ignore
 export function where_slug(
@@ -39,7 +39,7 @@ export function where_slug(
         has_lang.it ? slugs.it : null,
     ]
     .filter(Boolean)
-    .join('\n OR ')
+    .join(' OR \n')
 
 
 

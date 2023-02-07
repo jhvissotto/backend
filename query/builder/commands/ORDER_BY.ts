@@ -1,19 +1,20 @@
-import { Args } from './Args'
-import { RAND } from './RAND'
-import { priority } from './priority'
+import { Args } from '../Args'
+import { RAND } from '../_fns/RAND'
+import { priority } from '../_fns/priority'
 
 // prettier-ignore
 export function ORDER_BY(Sort: Args.Sort, props?: {
   field?:     Args.Field,
-  priority?:  Parameters<typeof priority>[0], 
+  priorities?:Parameters<typeof priority>[0], 
   randKey?:   Args.RandKey,
   lang?:      Args.Langs,
 }) {
 
   // props
-  const field   = props?.field
-  const randKey = props?.randKey
-  const lang    = props?.lang
+  const field       = props?.field
+  const priorities  = props?.priorities
+  const randKey     = props?.randKey
+  const lang        = props?.lang
   
   
 
@@ -28,7 +29,7 @@ export function ORDER_BY(Sort: Args.Sort, props?: {
     // ================ RANDOM ================ //
     // ======================================== //
     case 'RANDOM':            return `ORDER BY ${RAND(randKey)}` 
-    case 'WEIGHT_RAND':       return `ORDER BY ${[priority(props.priority), RAND(randKey)].join(', ')}`        
+    case 'WEIGHT_RAND':       return `ORDER BY ${[priority(priorities), RAND(randKey)].join(', ')}`        
 
 
     // ============================================== //
@@ -54,11 +55,18 @@ export function ORDER_BY(Sort: Args.Sort, props?: {
     case 'COUNT_VIEWS':       return `ORDER BY count_views DESC`
     case 'COUNT_POSTS':       return `ORDER BY count_posts DESC`
     case 'COUNT_SUBS':        return `ORDER BY count_subs DESC`
-
+    
     case 'TOTAL_VIEWS':       return `ORDER BY total_views DESC`
     case 'TOTAL_POSTS':       return `ORDER BY total_posts DESC`
     case 'AVG_VIEWS_TO_POST': return `ORDER BY avg_viewsToPost DESC`
 
+
+    // ========================================= //
+    // ================ DEFAULT ================ //
+    // ========================================= //
+    case 'OMIT':              return ``
+    case '':                  return ``
+    default:                  return ``
   }
 
 }

@@ -1,15 +1,40 @@
 // import { WITH } from './query/builder2/WITH'
 // import { tv_ } from './query/builder2/VISIBLE'
-import { CHECK } from './query/builder2/CHECK'
+// import { CHECK } from './query/builder2/CHECK'
 
-const x = CHECK({
-  table: 'post',
-  by: 'SLUG',
-  langs: ['en', 'pt'],
-  slug: 'title-123',
+import { CHECK } from './query/builder/queries/CHECK'
+import { GET_ONE_X_BY_ID } from './query/builder/queries/GET_ONE_X_BY_ID'
+
+CHECK({
+    withVisible: true,
+    table: 'user',
+    by: 'PK',
+    pk: 'email123',
 })
 
-console.log('x', x)
+// prettier-ignore
+// const { name, qs } = GET_ONE_X_BY_ID({
+//     tableX: ['tv', 'user'],
+//     by: 'PK',
+//     pk: 'email123'
+// }, {
+//     langs: ['en'],
+//     items: 50,
+// })
+
+// console.log('name', name)
+// console.log('qs', qs)
+
+// prettier-ignore
+
+// const x = CHECK({
+//   table: 'post',
+//   by: 'SLUG',
+//   langs: ['en', 'pt'],
+//   slug: 'title-123',
+// })
+
+// console.log('x', x)
 
 // // prettier-ignore
 // const qs = WITH([

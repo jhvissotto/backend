@@ -1,18 +1,3 @@
--- ========================================= --
--- ================ VISIBLE ================ --
--- ========================================= --
-tv_table AS (
-    SELECT * FROM td_table
-    WHERE ( 
-            isVisible_field 
-        AND launchDate <= CURRENT_TIMESTAMP 
-    )
-)
-
-
--- ====================================== --
--- ================ FROM ================ --
--- ====================================== --
 WITH
 tv_post,
 tv_tag,
@@ -42,7 +27,7 @@ tf_post_tag AS (
         slug_en_post    = :slug_post OR  
         slug_pt_post    = :slug_post
         rn_post         = 1 
-
+    
         pk_tag          = :pk_tag
         slug_en_tag     = :slug_tag OR  
         slug_pt_tag     = :slug_tag
@@ -51,20 +36,11 @@ tf_post_tag AS (
 )
 
 
--- ======================================== --
--- ================ SELECT ================ --
--- ======================================== --
 SELECT * 
 FROM tf_post_tag
 
-
--- SORT --
 ORDER BY :sort
 
--- ONE --
-LIMIT 1
--- MANY --
+LIMIT  1
 LIMIT  :items
 OFFSET :items * :page
-
-

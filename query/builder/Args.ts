@@ -1,13 +1,16 @@
 export module Args {
   // prettier-ignore
   // export type COMMAND = 'SELECT' | 'INSERT' | 'UPSERT' | 'UPDATE' | 'DELETE'
-  // export type GET = '' | 'ALL' | 'ONE' | 'MANY'
+  export type GET = '' | 'ALL' | 'ONE' | 'MANY'
 
-  export type TblKey = 'tv' | 'td' | 'tr' | 'tn' | 'tb'
+  export type TblKey = 'td' | 'tr' | 'tv' | 'tj' | 'tn' | 'tf' | 'tq' | 'tb'
   export type FldKey = 'id' | 'pk' | 'fk' | 'slug' | 'rn'
 
   export type Table = string
   export type Field = string
+
+  export type Join = '' | 'LEFT' | 'RIGHT'
+  export type Steps = '1' | '2'
 
   //
 
@@ -26,6 +29,8 @@ export module Args {
   export type RandKey = number | string
 
   export type Sort =
+    | ''
+    | 'OMIT'
     // ======== ARBITRARY ======== //
     | 'SORT_NUMBER'
     // ======== RANDOM ======== //

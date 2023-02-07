@@ -1,20 +1,20 @@
-import { Args } from './Args'
-import { __ } from './__'
-import { fld } from './fld'
-import { valueOrBind } from './valueOrBind'
-import { where_slug } from './where_slug'
+import { Args } from '../Args'
+import { __ } from '../_fns/__'
+import { fld } from '../_fns/fld'
+import { valueOrBind } from '../_fns/valueOrBind'
+import { where_slug } from '../_fns/where_slug'
 
 // prettier-ignore
-export function WHERE(list: Array<{
+export function WHERES(list: Array<{
     field:  Args.Field
     by:     Args.BY,
     pk?:    Args.PK
     slug?:  Args.Slug
     rn?:    Args.RN
-}>, langs: Args.Langs[]) 
+}>, langs?: Args.Langs[]) {
 
-{
-    return `
+    
+    const qs = `
         WHERE (
             ${list.map(i => {
 
@@ -27,7 +27,10 @@ export function WHERE(list: Array<{
                     ${__(SLUG)} ${where_slug(langs, i.field, i.slug)}
                     ${__(RN)}   ${fld('rn', i.field)} = ${valueOrBind(fld('rn', i.field), i.rn)}
                 `
-            }).join('\n')}
+            }).join('\n AND \n')}
         )
-    ` 
+    `
+
+    // console.log('qs', qs)
+    return qs
 }

@@ -1,5 +1,5 @@
 WITH
-tb_numered_post_tag AS (
+tn_post_tag AS (
     SELECT *
     ,   ROW_NUMBER() OVER(PARTITION BY post ORDER BY RAND()) AS rn_post
 
@@ -10,7 +10,7 @@ tb_numered_post_tag AS (
 )
 
 SELECT *
-FROM tb_numered_post_tag
+FROM tn_post_tag
 WHERE rn_post = 1 
 
 LIMIT  :items

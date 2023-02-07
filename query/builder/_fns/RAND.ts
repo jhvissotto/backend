@@ -1,5 +1,5 @@
 import { has } from '~/src/libs/functions/check'
-import { Args } from './Args'
+import { Args } from '../Args'
 
 // foo
 export function RAND(key?: Args.RandKey) {

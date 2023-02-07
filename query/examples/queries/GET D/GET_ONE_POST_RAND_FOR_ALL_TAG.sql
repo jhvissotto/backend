@@ -1,5 +1,5 @@
 WITH 
-tb_numered_post_tag AS (
+tn_post_tag AS (
     SELECT *
     ,   ROW_NUMBER() OVER(PARTITION BY tag ORDER BY RAND()) AS rn_tag
 
@@ -10,5 +10,5 @@ tb_numered_post_tag AS (
 )
 
 SELECT *
-FROM tb_numered_post_tag
+FROM tn_post_tag
 WHERE rn_tag = 1
