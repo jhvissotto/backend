@@ -9,7 +9,7 @@ export const v3 = {
     // ====================================== //
         // ids
         id_bson_field:          z.string(),
-        id_ainc_field:          z.string(),
+        id_ainc_field:          z.number(),
         id_uuid_field:          z.string(),
         id_short_field:         z.string(),
 
@@ -81,8 +81,8 @@ export const v3 = {
 
         // location 2
         address_street:          z.string(),
-        address_buildNum:        z.string(),
-        address_flatNum:         z.string(),
+        address_buildNum:        z.number(),
+        address_flatNum:         z.number(),
         address_ref:             z.string(),
         
         // accomodation
@@ -281,18 +281,18 @@ export const v3 = {
         price_3w:                z.number(),
 
         // unit price
-        price_1u:                z.string(),
-        price_2u:                z.string(),
-        price_3u:                z.string(),
-        price_10u:               z.string(),
-        price_20u:               z.string(),
-        price_30u:               z.string(),
-        price_100u:              z.string(),
-        price_200u:              z.string(),
-        price_300u:              z.string(),
-        price_1000u:             z.string(),
-        price_2000u:             z.string(),
-        price_3000u:             z.string(),
+        price_1u:                z.number(),
+        price_2u:                z.number(),
+        price_3u:                z.number(),
+        price_10u:               z.number(),
+        price_20u:               z.number(),
+        price_30u:               z.number(),
+        price_100u:              z.number(),
+        price_200u:              z.number(),
+        price_300u:              z.number(),
+        price_1000u:             z.number(),
+        price_2000u:             z.number(),
+        price_3000u:             z.number(),
 
 
 

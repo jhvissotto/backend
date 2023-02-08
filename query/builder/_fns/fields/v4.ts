@@ -9,7 +9,7 @@ export type v4 = {
     // ====================================== //
         // ids
         id_bson_field:          string,
-        id_ainc_field:          string,
+        id_ainc_field:          number,
         id_uuid_field:          string,
         id_short_field:         string,
 
@@ -81,8 +81,8 @@ export type v4 = {
 
         // location 2
         address_street:          string,
-        address_buildNum:        string,
-        address_flatNum:         string,
+        address_buildNum:        number,
+        address_flatNum:         number,
         address_ref:             string,
         
         // accomodation
@@ -281,18 +281,18 @@ export type v4 = {
         price_3w:                number,
 
         // unit price
-        price_1u:                string,
-        price_2u:                string,
-        price_3u:                string,
-        price_10u:               string,
-        price_20u:               string,
-        price_30u:               string,
-        price_100u:              string,
-        price_200u:              string,
-        price_300u:              string,
-        price_1000u:             string,
-        price_2000u:             string,
-        price_3000u:             string,
+        price_1u:                number,
+        price_2u:                number,
+        price_3u:                number,
+        price_10u:               number,
+        price_20u:               number,
+        price_30u:               number,
+        price_100u:              number,
+        price_200u:              number,
+        price_300u:              number,
+        price_1000u:             number,
+        price_2000u:             number,
+        price_3000u:             number,
 
 
 

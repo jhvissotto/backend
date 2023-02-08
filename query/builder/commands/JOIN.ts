@@ -22,7 +22,7 @@ export function JOIN(_left: Elem, _right: Elem, opts?: {
     
     const LEFT  = join == 'LEFT'
     const RIGHT = join == 'RIGHT'
-    const FLAG  = LEFT || RIGHT || ''
+    const FLAG  = LEFT ? 'LEFT' : RIGHT ? 'RIGHT' : ''
     const JOIN  = `JOIN ${FLAG}`
 
     

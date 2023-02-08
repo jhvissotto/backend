@@ -1,8 +1,13 @@
-.sql
-select
-update
+- add in db
+  alias
+  adjective
+  IPODate
+  ticker
+  businessSector
+  businessIndustry
 
-.js
-get
-set
-         
+- images sources
+  lorempicsum
+  lorempixel
+  placeholder
+  unsplash

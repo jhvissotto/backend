@@ -9,7 +9,7 @@ export function v2(field: string) {
         // ====================================== //
             // ids
             id_bson_field:          { key: `id_bson_${field}`,      type: z.string()    },
-            id_ainc_field:          { key: `id_ainc_${field}`,      type: z.string()    },
+            id_ainc_field:          { key: `id_ainc_${field}`,      type: z.number()    },
             id_uuid_field:          { key: `id_uuid_${field}`,      type: z.string()    },
             id_short_field:         { key: `id_short_${field}`,     type: z.string()    },
 
@@ -81,8 +81,8 @@ export function v2(field: string) {
 
             // location 2
             address_street:         { key: `address_street`,        type: z.string()    },
-            address_buildNum:       { key: `address_buildNum`,      type: z.string()    },
-            address_flatNum:        { key: `address_flatNum`,       type: z.string()    },
+            address_buildNum:       { key: `address_buildNum`,      type: z.number()    },
+            address_flatNum:        { key: `address_flatNum`,       type: z.number()    },
             address_ref:            { key: `address_ref`,           type: z.string()    },
             
             // accomodation
@@ -281,18 +281,18 @@ export function v2(field: string) {
             price_3w:               { key: `price_3w`,              type: z.number()    },
 
             // unit price
-            price_1u:               { key: `price_1u`,              type: z.string()    },
-            price_2u:               { key: `price_2u`,              type: z.string()    },
-            price_3u:               { key: `price_3u`,              type: z.string()    },
-            price_10u:              { key: `price_10u`,             type: z.string()    },
-            price_20u:              { key: `price_20u`,             type: z.string()    },
-            price_30u:              { key: `price_30u`,             type: z.string()    },
-            price_100u:             { key: `price_100u`,            type: z.string()    },
-            price_200u:             { key: `price_200u`,            type: z.string()    },
-            price_300u:             { key: `price_300u`,            type: z.string()    },
-            price_1000u:            { key: `price_1000u`,           type: z.string()    },
-            price_2000u:            { key: `price_2000u`,           type: z.string()    },
-            price_3000u:            { key: `price_3000u`,           type: z.string()    },
+            price_1u:               { key: `price_1u`,              type: z.number()    },
+            price_2u:               { key: `price_2u`,              type: z.number()    },
+            price_3u:               { key: `price_3u`,              type: z.number()    },
+            price_10u:              { key: `price_10u`,             type: z.number()    },
+            price_20u:              { key: `price_20u`,             type: z.number()    },
+            price_30u:              { key: `price_30u`,             type: z.number()    },
+            price_100u:             { key: `price_100u`,            type: z.number()    },
+            price_200u:             { key: `price_200u`,            type: z.number()    },
+            price_300u:             { key: `price_300u`,            type: z.number()    },
+            price_1000u:            { key: `price_1000u`,           type: z.number()    },
+            price_2000u:            { key: `price_2000u`,           type: z.number()    },
+            price_3000u:            { key: `price_3000u`,           type: z.number()    },
 
 
 

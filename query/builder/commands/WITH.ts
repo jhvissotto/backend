@@ -1,12 +1,12 @@
 import { __ } from '../_fns/__'
 
-// prettier-ignore
-export function WITH(list: Array<{
-    cte: string,
-    disable?: boolean,
-}>) {
+type Elem = [string, { disable?: boolean }?]
+type List = Elem[]
 
-    const list_flt = list.filter(i => !i?.disable)
+// prettier-ignore
+export function WITH(list: List) {
+
+    const list_flt = list.filter(([cte, opts]) => !opts?.disable)
 
     const hasWith = Boolean(list_flt?.length)
 
@@ -14,7 +14,7 @@ export function WITH(list: Array<{
 
     const qs = `
         ${__(hasWith)} WITH 
-        ${list_flt.map(i => i.cte).join('\n,\n')}
+        ${list_flt.map(([cte, opts]) => cte).join('\n,\n')}
     `
 
     

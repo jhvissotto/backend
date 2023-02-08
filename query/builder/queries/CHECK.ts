@@ -24,7 +24,7 @@ export function CHECK({ withVisible, table, by, pk, slug, langs }: {
     // query
     const qs = `
         ${WITH([
-            { cte: tv_(table), disable: !withVisible },
+            [tv_(table), { disable: !withVisible }],
         ])}
 
         SELECT ${fld('pk', table)}

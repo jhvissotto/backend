@@ -1,0 +1,73 @@
+import { faker } from '.'
+
+export const {
+  arrayElement,
+  arrayElements,
+  fake,
+  maybe,
+  mustache,
+  objectKey,
+  objectValue,
+  regexpStyleStringParse,
+  replaceCreditCardSymbols,
+  replaceSymbolWithNumber,
+  replaceSymbols,
+  shuffle,
+  slugify,
+  unique,
+  uniqueArray,
+} = faker.helpers
+
+// prettier-ignore
+export function all({
+  arrayElement                = [],
+  arrayElements               = [],
+  fake                        = [],
+  maybe                       = [],
+  mustache                    = [],
+  objectKey                   = [],
+  objectValue                 = [],
+  regexpStyleStringParse      = [],
+  replaceCreditCardSymbols    = [],
+  replaceSymbolWithNumber     = [],
+  replaceSymbols              = [],
+  shuffle                     = [],
+  slugify                     = [],
+  unique                      = [],
+  uniqueArray                 = [],
+}: {
+  arrayElement?:               Parameters<typeof faker.helpers.arrayElement>,
+  arrayElements?:              Parameters<typeof faker.helpers.arrayElements>,
+  fake?:                       Parameters<typeof faker.helpers.fake>,
+  maybe?:                      Parameters<typeof faker.helpers.maybe>,
+  mustache?:                   Parameters<typeof faker.helpers.mustache>,
+  objectKey?:                  Parameters<typeof faker.helpers.objectKey>,
+  objectValue?:                Parameters<typeof faker.helpers.objectValue>,
+  regexpStyleStringParse?:     Parameters<typeof faker.helpers.regexpStyleStringParse>,
+  replaceCreditCardSymbols?:   Parameters<typeof faker.helpers.replaceCreditCardSymbols>,
+  replaceSymbolWithNumber?:    Parameters<typeof faker.helpers.replaceSymbolWithNumber>,
+  replaceSymbols?:             Parameters<typeof faker.helpers.replaceSymbols>,
+  shuffle?:                    Parameters<typeof faker.helpers.shuffle>,
+  slugify?:                    Parameters<typeof faker.helpers.slugify>,
+  unique?:                     Parameters<typeof faker.helpers.unique>,
+  uniqueArray?:                Parameters<typeof faker.helpers.uniqueArray>,
+}) {
+
+  return {
+    arrayElement:              faker.helpers.arrayElement(              ...arrayElement),
+    arrayElements:             faker.helpers.arrayElements(             ...arrayElements),
+    fake:                      faker.helpers.fake(                      ...fake),
+    maybe:                     faker.helpers.maybe(                     ...maybe),
+    mustache:                  faker.helpers.mustache(                  ...mustache),
+    objectKey:                 faker.helpers.objectKey(                 ...objectKey),
+    objectValue:               faker.helpers.objectValue(               ...objectValue),
+    regexpStyleStringParse:    faker.helpers.regexpStyleStringParse(    ...regexpStyleStringParse),
+    replaceCreditCardSymbols:  faker.helpers.replaceCreditCardSymbols(  ...replaceCreditCardSymbols),
+    replaceSymbolWithNumber:   faker.helpers.replaceSymbolWithNumber(   ...replaceSymbolWithNumber),
+    replaceSymbols:            faker.helpers.replaceSymbols(            ...replaceSymbols),
+    shuffle:                   faker.helpers.shuffle(                   ...shuffle),
+    slugify:                   faker.helpers.slugify(                   ...slugify),
+    unique:                    faker.helpers.unique(                    ...unique),
+    uniqueArray:               faker.helpers.uniqueArray(               ...uniqueArray),
+  }
+}

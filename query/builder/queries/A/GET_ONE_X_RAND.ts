@@ -7,31 +7,50 @@ import { WITH } from '../../commands/WITH'
 import { tv_ } from '../../parts/tv_'
 import { ORDER_BY } from '../../commands/ORDER_BY'
 
-type OrderBy = Parameters<typeof ORDER_BY>[1]
+// type Join = Parameters<typeof JOIN>[2]
+// type RowNum = Parameters<typeof RN>
+// type Where = Omit<SetOptional<Parameters<typeof WHERE>[0], 'field'>, 'rn'>
+type OrderBy = Parameters<typeof ORDER_BY>
 
 // prettier-ignore
 export function GET_ONE_X_RAND(
-    _tableX: {
+    X: {
         tableX:       Args.Table,
         withVisible?: boolean,
         tv_Opts?:     Parameters<typeof tv_>[1],
     }, 
-    props?: OrderBy & {
-        // langs?: Args.Langs[],
-        // items?: number,
-        // page?:  number, 
+    props?: {
+        // ======== opts ======== //
+        // join?:      Join,
+        // rowNum?:    RowNum[1] & RowNum[2],
+        // ======== props ======== //
+        langs?:   Args.Langs[],
+        // sort:     OrderBy[0],
+        order?:   OrderBy[1],
+        stream?:  { items?: number, page?: number },
     }
 ) {
     
-    // args
-    const { tableX } = _tableX
+    // args tables
+    const { tableX } = X
+    // const { tableY } = Y
 
+    // args opts
+    // const {} = props 
+
+    // args props
+    const { order } = props
+        
     // const langs = props?.langs
-    // const items = props?.items
-    // const page  = props?.page  || 0
-    
+    // const items = props?.stream?.items
+    // const page  = props?.stream?.page  || 0
 
     
+
+    // define
+    const fr = X.withVisible ? 'tv' : 'td'
+
+
     
     // name
     const name = `GET_ONE_${tableX}_RAND`
@@ -39,19 +58,18 @@ export function GET_ONE_X_RAND(
     // query
     const qs = `
         ${WITH([
-            { cte: tv_(tableX, _tableX?.tv_Opts), disable: !_tableX.withVisible }
+            [tv_(tableX, X?.tv_Opts), { disable: !X.withVisible }]
         ])}
         
         SELECT *
-        FROM ${tbl(_tableX.withVisible ? 'tv' : 'td', tableX)}
+        FROM ${tbl(fr, tableX)}
 
         
-        ${ORDER_BY('WEIGHT_RAND', props)}
+        ${ORDER_BY('WEIGHT_RAND', order)}
         -- LIMIT 1
     `
     
 
-    // return
-    console.log('qs', qs)
+    // console.log('qs', qs)
     return { name, qs }
 }

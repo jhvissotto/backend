@@ -1,13 +1,3 @@
-// // prettier-ignore
-// export function query(
-//     get:    'GEL_ALL' | 'GEL_MANY' | 'GEL_ONE',
-//     post:   string,
-//     rand:   '' | 'RAND',
-
-//     tag:    string
-// ) {
-// }
-
 let x
 
 x.GET('ALL', 'post')
