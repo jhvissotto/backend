@@ -21,8 +21,10 @@ export type v4 = {
         // status
         isVisible_field:        boolean,
         launchDate:             Date,
-        // numeric
+        // code
         codeNumber_field:       number,
+        codeText_field:         string,
+        // 
         sortNumber_field:       number,
 
 
@@ -106,8 +108,16 @@ export type v4 = {
         // title
         title_en_field:          string,
         title_pt_field:          string,
-    
+        // alias
+        alias:                   string,
+        alias_en_field:          string,
+        alias_pt_field:          string,
+        // adjective
+        adjective:               string,
+        adjective_en_field:      string,
+        adjective_pt_field:      string,
 
+        
     // ======================================= //
     // ================ TEXTS ================ //
     // ======================================= //
@@ -193,6 +203,14 @@ export type v4 = {
         count_likes:            number, 
 
 
+    // ========================================== //
+    // ================ BUSINESS ================ //
+    // ========================================== //
+        IPODate:                Date, 
+        businessSector:         string, 
+        businessIndustry:       string, 
+
+
     // ====================================== //
     // ================ WORK ================ //
     // ====================================== //
@@ -210,6 +228,8 @@ export type v4 = {
         hour_start:             number,
         hour_end:               number,
 
+        work_24h:               boolean,
+
         work_fullTime:          boolean,
         work_partTime:          boolean,
         
@@ -217,9 +237,18 @@ export type v4 = {
         work_night:             boolean,
 
 
+    // ======================================== //
+    // ================ CRYPTO ================ //
+    // ======================================== //
+        wallet_btc:             string,
+        wallet_eth:             string,
+
+
     // ======================================= //
     // ================ PRICE ================ //
     // ======================================= //
+        currency:                string,
+        
         // by day
         price_weekday:           number,
         price_weekend:           number,

@@ -30,6 +30,8 @@ db.getCollection('collection').insert([{
         // launchDate:             Date,
         // // numeric
         // codeNumber_field:       0,
+        // codeText_field:         '',
+        // // 
         // sortNumber_field:       0,
 
 
@@ -113,6 +115,14 @@ db.getCollection('collection').insert([{
         // // title
         // title_en_field:          '',
         // title_pt_field:          '',
+        // // alias
+        // alias_field:             '',
+        // alias_en_field:          '',
+        // alias_pt_field:          '',
+        // // adjective
+        // adjective_field:         '',
+        // adjective_en_field:      '',
+        // adjective_pt_field:      '',
     
 
     // ======================================= //
@@ -200,6 +210,14 @@ db.getCollection('collection').insert([{
         // count_likes:            0, 
 
 
+    // ========================================== //
+    // ================ BUSINESS ================ //
+    // ========================================== //
+        // IPODate:                Date,
+        // businessSector:         '',    
+        // businessIndustry:       '',    
+
+
     // ====================================== //
     // ================ WORK ================ //
     // ====================================== //
@@ -217,6 +235,8 @@ db.getCollection('collection').insert([{
         // hour_start:             0.0,
         // hour_end:               0.0,
 
+        // work_24h:               false,
+
         // work_fullTime:          false,
         // work_partTime:          false,
         
@@ -224,9 +244,18 @@ db.getCollection('collection').insert([{
         // work_night:             false,
 
 
+    // ======================================== //
+    // ================ CRYPTO ================ //
+    // ======================================== //
+        // wallet_btc:             '',
+        // wallet_eth:             '',
+    
+
     // ======================================= //
     // ================ PRICE ================ //
     // ======================================= //
+        // currency:               '',
+
         // // by day
         // price_weekday:           0.0,
         // price_weekend:           0.0,

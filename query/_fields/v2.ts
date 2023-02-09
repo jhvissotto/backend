@@ -21,8 +21,10 @@ export function v2(field: string) {
             // status
             isVisible_field:        { key: `isVisible_${field}`,    type: z.boolean()   },
             launchDate:             { key: `launchDate`,            type: z.date()      },
-            // numeric
+            // code
             codeNumber_field:       { key: `codeNumber_${field}`,   type: z.number()    },
+            codeText_field:         { key: `codeText_${field}`,     type: z.string()    },
+            // 
             sortNumber_field:       { key: `sortNumber_${field}`,   type: z.number()    },
 
 
@@ -100,12 +102,20 @@ export function v2(field: string) {
         // ================ NAMES ================ //
         // ======================================= //
             // name
-            name_field:             { key: `name_${field}`,         type: z.string()    },
-            nameFirst_field:        { key: `nameFirst_${field}`,    type: z.string()    },
-            nameLast_field:         { key: `nameLast_${field}`,     type: z.string()    },
+            name_field:             { key: `name_${field}`,                 type: z.string()    },
+            nameFirst_field:        { key: `nameFirst_${field}`,            type: z.string()    },
+            nameLast_field:         { key: `nameLast_${field}`,             type: z.string()    },
             // title
-            title_en_field:         { key: `title_en_${field}`,     type: z.string()    },
-            title_pt_field:         { key: `title_pt_${field}`,     type: z.string()    },
+            title_en_field:         { key: `title_en_${field}`,             type: z.string()    },
+            title_pt_field:         { key: `title_pt_${field}`,             type: z.string()    },
+            // alias
+            alias:                  { key: `alias${field}`,                 type: z.string()    },
+            alias_en_field:         { key: `alias_en_field${field}`,        type: z.string()    },
+            alias_pt_field:         { key: `alias_pt_field${field}`,        type: z.string()    },
+            // adjective
+            adjective:              { key: `adjective${field}`,             type: z.string()    },
+            adjective_en_field:     { key: `adjective_en_field${field}`,    type: z.string()    },
+            adjective_pt_field:     { key: `adjective_pt_field${field}`,    type: z.string()    },
         
 
         // ======================================= //
@@ -191,6 +201,14 @@ export function v2(field: string) {
             // stats
             count_views:            { key: `count_views`,           type: z.number()    }, 
             count_likes:            { key: `count_likes`,           type: z.number()    }, 
+            
+            
+        // ========================================== //
+        // ================ BUSINESS ================ //
+        // ========================================== //
+            IPODate:                { key: `IPODate`,               type: z.date()      }, 
+            businessSector:         { key: `businessSector`,        type: z.string()    }, 
+            businessIndustry:       { key: `businessIndustry`,      type: z.string()    }, 
 
 
         // ====================================== //
@@ -210,6 +228,8 @@ export function v2(field: string) {
             hour_start:             { key: `hour_start`,            type: z.number()    },
             hour_end:               { key: `hour_end`,              type: z.number()    },
     
+            work_24h:               { key: `work_24h`,              type: z.boolean()   },
+            
             work_fullTime:          { key: `work_fullTime`,         type: z.boolean()   },
             work_partTime:          { key: `work_partTime`,         type: z.boolean()   },
             
@@ -217,9 +237,18 @@ export function v2(field: string) {
             work_night:             { key: `work_night`,            type: z.boolean()   },
 
 
+        // ======================================== //
+        // ================ CRYPTO ================ //
+        // ======================================== //
+            wallet_btc:             { key: `wallet_btc`,            type: z.string()    }, 
+            wallet_eth:             { key: `wallet_eth`,            type: z.string()    }, 
+
+            
         // ======================================= //
         // ================ PRICE ================ //
         // ======================================= //
+            currency:               { key: `currency`,              type: z.string()    },
+            
             // by day
             price_weekday:          { key: `price_weekday`,         type: z.number()    },
             price_weekend:          { key: `price_weekend`,         type: z.number()    },

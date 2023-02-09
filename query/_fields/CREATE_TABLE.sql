@@ -26,6 +26,8 @@ CREATE TABLE `table`  (
     -- `launchDate`            datetime                                                              NULL      DEFAULT NULL                                            ,
     -- -- numeric
     -- `codeNumber_field`      int                                                                   NULL      DEFAULT NULL                                            ,
+    -- `codeText_field`        varchar   (255)   CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci    NULL      DEFAULT NULL                                            ,
+    -- -- 
     -- `sortNumber_field`      int                                                                   NULL      DEFAULT NULL                                            ,
 
 
@@ -109,6 +111,14 @@ CREATE TABLE `table`  (
     -- -- title
     -- `title_en_field`        varchar   (255)   CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci    NULL      DEFAULT NULL                                            ,    
     -- `title_pt_field`        varchar   (255)   CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci    NULL      DEFAULT NULL                                            ,    
+    -- -- alias
+    -- `alias_field`           varchar   (255)   CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci    NULL      DEFAULT NULL                                            ,    
+    -- `alias_en_field`        varchar   (255)   CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci    NULL      DEFAULT NULL                                            ,    
+    -- `alias_pt_field`        varchar   (255)   CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci    NULL      DEFAULT NULL                                            ,    
+    -- -- adjective
+    -- `adjective_field`       varchar   (255)   CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci    NULL      DEFAULT NULL                                            ,    
+    -- `adjective_en_field`    varchar   (255)   CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci    NULL      DEFAULT NULL                                            ,    
+    -- `adjective_pt_field`    varchar   (255)   CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci    NULL      DEFAULT NULL                                            ,    
 
 
   -- ======================================= --
@@ -196,6 +206,14 @@ CREATE TABLE `table`  (
     -- `count_likes`           int                                                                   NULL      DEFAULT NULL                                            ,
 
 
+  -- ========================================== --
+  -- ================ BUSINESS ================ --
+  -- ========================================== --
+    -- `IPODate`               datetime                                                              NULL      DEFAULT NUll                                            ,  
+    -- `businessSector`        varchar   (255)   CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci    NULL      DEFAULT NULL                                            ,    
+    -- `businessIndustry`      varchar   (255)   CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci    NULL      DEFAULT NULL                                            ,    
+
+
   -- ====================================== --
   -- ================ WORK ================ --
   -- ====================================== --
@@ -213,6 +231,8 @@ CREATE TABLE `table`  (
     -- `hour_start`            time                                                                  NULL      DEFAULT NULL                                            ,
     -- `hour_end`              time                                                                  NULL      DEFAULT NULL                                            ,
 
+    -- `work_24h`              bit       (1)                                                         NULL      DEFAULT NULL                                            ,
+    
     -- `work_fullTime`         bit       (1)                                                         NULL      DEFAULT NULL                                            ,
     -- `work_partTime`         bit       (1)                                                         NULL      DEFAULT NULL                                            ,
     
@@ -220,9 +240,18 @@ CREATE TABLE `table`  (
     -- `work_night`            bit       (1)                                                         NULL      DEFAULT NULL                                            ,
 
 
+  -- ======================================== --
+  -- ================ CRYPTO ================ --
+  -- ======================================== --
+    -- `wallet_btc`            varchar   (255)   CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci    NULL      DEFAULT NULL                                            ,
+    -- `wallet_eth`            varchar   (255)   CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci    NULL      DEFAULT NULL                                            ,
+
+
   -- ======================================= --
   -- ================ PRICE ================ --
   -- ======================================= --
+    -- `currency`              varchar   (255)   CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci    NULL      DEFAULT NULL                                            ,
+    
     -- -- by day
     -- `price_weekday`         decimal   (10, 2)                                                     NULL      DEFAULT NULL                                            ,
     -- `price_weekend`         decimal   (10, 2)                                                     NULL      DEFAULT NULL                                            ,

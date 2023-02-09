@@ -21,8 +21,10 @@ export function v1(field: string) {
             // status
             isVisible_field:        `isVisible_${field}`,
             launchDate:             `launchDate`,
-            // numeric
+            // code
             codeNumber_field:       `codeNumber_${field}`,
+            codeText_field:         `codeText_${field}`,
+            // 
             sortNumber_field:       `sortNumber_${field}`,
 
 
@@ -106,6 +108,14 @@ export function v1(field: string) {
             // title
             title_en_field:         `title_en_${field}`,
             title_pt_field:         `title_pt_${field}`,
+            // alias
+            alias:                  `alias`,
+            alias_en_field:         `alias_en_field`,
+            alias_pt_field:         `alias_pt_field`,
+            // adjective
+            adjective:              `adjective`,
+            adjective_en_field:     `adjective_en_field`,
+            adjective_pt_field:     `adjective_pt_field`,
         
 
         // ======================================= //
@@ -193,6 +203,14 @@ export function v1(field: string) {
             count_likes:            `count_likes`, 
 
 
+        // ========================================== //
+        // ================ BUSINESS ================ //
+        // ========================================== //
+            IPODate:                `IPODate`,
+            businessSector:         `businessSector`,
+            businessIndustry:       `businessIndustry`,
+
+
         // ====================================== //
         // ================ WORK ================ //
         // ====================================== //
@@ -210,6 +228,8 @@ export function v1(field: string) {
             hour_start:             `hour_start`,
             hour_end:               `hour_end`,
     
+            work_24h:               `work_24h`,
+
             work_fullTime:          `work_fullTime`,
             work_partTime:          `work_partTime`,
             
@@ -217,9 +237,18 @@ export function v1(field: string) {
             work_night:             `work_night`,
 
 
+        // ======================================== //
+        // ================ CRYPTO ================ //
+        // ======================================== //
+            wallet_btc:             `wallet_btc`,
+            wallet_eth:             `wallet_eth`,
+
+
         // ======================================= //
         // ================ PRICE ================ //
         // ======================================= //
+            currency:               `currency`,
+            
             // by day
             price_weekday:          `price_weekday`,
             price_weekend:          `price_weekend`,
@@ -295,7 +324,6 @@ export function v1(field: string) {
             price_3000u:            `price_3000u`,
 
 
-
         // ======================================= //
         // ================ DATES ================ //
         // ======================================= //
@@ -303,7 +331,6 @@ export function v1(field: string) {
             create_field:           `create_${field}`,
             update_field:           `update_${field}`,
             delete_field:           `delete_${field}`,
-
 
     }
 }

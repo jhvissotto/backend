@@ -21,8 +21,10 @@ SELECT
         -- status
         isVisible_field,
         launchDate,
-        -- numeric
+        -- code
         codeNumber_field,
+        codeText_field,
+        -- 
         sortNumber_field,
 
 
@@ -106,6 +108,14 @@ SELECT
         -- title
         title_en_field,
         title_pt_field,
+        -- alias
+        alias,
+        alias_en_field,
+        alias_pt_field,
+        -- adjective
+        adjective,
+        adjective_en_field,
+        adjective_pt_field,
     
 
     -- ======================= --
@@ -193,6 +203,14 @@ SELECT
         count_likes, 
 
 
+    -- ========================== --
+    -- ======== BUSINESS ======== --
+    -- ========================== --
+        IPODate,
+        businessSector,
+        businessIndustry,
+
+
     -- ====================== --
     -- ======== WORK ======== --
     -- ====================== --
@@ -210,16 +228,27 @@ SELECT
         hour_start,
         hour_end,
  
-        -- work_fullTime,
+        work_24h,
+
+        work_fullTime,
         work_partTime,
         
         work_day,
         work_night,
 
 
+    -- ======================== --
+    -- ======== CRYPTO ======== --
+    -- ======================== --
+        wallet_btc,
+        wallet_eth,
+
+
     -- ======================= --
     -- ======== PRICE ======== --
     -- ======================= --
+        currency,
+
         -- by day
         price_weekday,
         price_weekend,
@@ -295,7 +324,6 @@ SELECT
         price_3000u,
 
 
-
     -- ======================= --
     -- ======== DATES ======== --
     -- ======================= --
@@ -303,7 +331,6 @@ SELECT
         create_field,
         update_field,
         delete_field,
-
 
 
 FROM table

@@ -21,8 +21,10 @@ export const v3 = {
         // status
         isVisible_field:        z.boolean(),
         launchDate:             z.date(),
-        // numeric
+        // code
         codeNumber_field:       z.number(),
+        codeText_field:         z.string(),
+        // 
         sortNumber_field:       z.number(),
 
 
@@ -106,7 +108,15 @@ export const v3 = {
         // title
         title_en_field:          z.string(),
         title_pt_field:          z.string(),
-    
+        // alias
+        alias:                   z.string(),
+        alias_en_field:          z.string(),
+        alias_pt_field:          z.string(),
+        // adjective
+        adjective:               z.string(),
+        adjective_en_field:      z.string(),
+        adjective_pt_field:      z.string(),
+
 
     // ======================================= //
     // ================ TEXTS ================ //
@@ -193,6 +203,14 @@ export const v3 = {
         count_likes:            z.number(), 
 
 
+    // ========================================== //
+    // ================ BUSINESS ================ //
+    // ========================================== //
+        IPODate:                z.date(), 
+        businessSector:         z.string(), 
+        businessIndustry:       z.string(), 
+
+
     // ====================================== //
     // ================ WORK ================ //
     // ====================================== //
@@ -210,6 +228,8 @@ export const v3 = {
         hour_start:             z.number(),
         hour_end:               z.number(),
 
+        work_24h:               z.boolean(),
+
         work_fullTime:          z.boolean(),
         work_partTime:          z.boolean(),
         
@@ -217,9 +237,18 @@ export const v3 = {
         work_night:             z.boolean(),
 
 
+    // ======================================== //
+    // ================ CRYPTO ================ //
+    // ======================================== //
+        wallet_btc:             z.string(),
+        wallet_eth:             z.string(),
+
+
     // ======================================= //
     // ================ PRICE ================ //
     // ======================================= //
+        currency:                z.string(),
+        
         // by day
         price_weekday:           z.number(),
         price_weekend:           z.number(),
