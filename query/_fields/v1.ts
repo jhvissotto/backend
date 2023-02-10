@@ -194,6 +194,13 @@ export function v1(field: string) {
             thumbImgPortUrl_field:  `thumbImgPortUrl_${field}`,
             thumbVidPortUrl_field:  `thumbVidPortUrl_${field}`,
 
+            
+            // video resolution
+            resolution:             `resolution`,
+            has1080:                `has1080`,
+            has720:                 `has720`,
+            has480:                 `has480`,
+            
 
         // ========================================= //
         // ================ NUMBERS ================ //
@@ -235,6 +242,9 @@ export function v1(field: string) {
             
             work_day:               `work_day`,
             work_night:             `work_night`,
+
+            // online
+            makeVideoCall:          `makeVideoCall`,
 
 
         // ======================================== //

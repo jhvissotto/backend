@@ -195,6 +195,13 @@ export const v3 = {
         thumbVidPortUrl_field:   z.string(),
 
 
+        // video resolution
+        resolution:              z.number(),
+        has1080:                 z.boolean(),
+        has720:                  z.boolean(),
+        has480:                  z.boolean(),
+        
+
     // ========================================= //
     // ================ NUMBERS ================ //
     // ========================================= //
@@ -235,6 +242,9 @@ export const v3 = {
         
         work_day:               z.boolean(),
         work_night:             z.boolean(),
+
+        // online
+        makeVideoCall:          z.boolean(),
 
 
     // ======================================== //

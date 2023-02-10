@@ -195,6 +195,13 @@ export type v4 = {
         thumbVidPortUrl_field:   string,
 
 
+        // video resolution
+        resolution:              number,
+        has1080:                 boolean,
+        has720:                  boolean,
+        has480:                  boolean,
+
+
     // ========================================= //
     // ================ NUMBERS ================ //
     // ========================================= //
@@ -235,6 +242,9 @@ export type v4 = {
         
         work_day:               boolean,
         work_night:             boolean,
+
+        // online
+        makeVideoCall:          boolean,
 
 
     // ======================================== //

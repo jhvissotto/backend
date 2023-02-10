@@ -198,6 +198,13 @@ CREATE TABLE `table`  (
     -- `thumbVidPortUrl_field` varchar   (255)   CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci    NULL      DEFAULT NULL                                            ,    
 
 
+    -- video resolution
+    -- `resolution`            int                                                                   NULL      DEFAULT NULL                                            ,
+    -- `has1080`               bit       (1)                                                         NULL      DEFAULT NULL                                            ,
+    -- `has720`                bit       (1)                                                         NULL      DEFAULT NULL                                            ,
+    -- `has480`                bit       (1)                                                         NULL      DEFAULT NULL                                            ,
+
+
   -- ========================================= --
   -- ================ NUMBERS ================ --
   -- ========================================= --
@@ -238,6 +245,9 @@ CREATE TABLE `table`  (
     
     -- `work_day`              bit       (1)                                                         NULL      DEFAULT NULL                                            ,
     -- `work_night`            bit       (1)                                                         NULL      DEFAULT NULL                                            ,
+
+    -- -- online
+    -- `makeVideoCall`         bit       (1)                                                         NULL      DEFAULT NULL                                            ,
 
 
   -- ======================================== --

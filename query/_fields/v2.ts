@@ -195,6 +195,13 @@ export function v2(field: string) {
             thumbVidPortUrl_field:  { key: `thumbVidPortUrl_${field}`,  type: z.string()    },
 
 
+            // video resolution
+            resolution:             { key: `resolution`,            type: z.number()        },
+            has1080:                { key: `has1080`,               type: z.boolean()       },
+            has720:                 { key: `has720`,                type: z.boolean()       },
+            has480:                 { key: `has480`,                type: z.boolean()       },
+
+
         // ========================================= //
         // ================ NUMBERS ================ //
         // ========================================= //
@@ -235,6 +242,9 @@ export function v2(field: string) {
             
             work_day:               { key: `work_day`,              type: z.boolean()   },
             work_night:             { key: `work_night`,            type: z.boolean()   },
+            
+            // online
+            makeVideoCall:          { key: `makeVideoCall`,         type: z.boolean()   },
 
 
         // ======================================== //

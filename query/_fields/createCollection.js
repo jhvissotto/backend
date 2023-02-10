@@ -201,6 +201,13 @@ db.getCollection('collection').insert([{
         // thumbImgPortUrl_field:   '',
         // thumbVidPortUrl_field:   '',
 
+        
+        // // video resolution
+        // resolution:             0, 
+        // has1080:                false,
+        // has720:                 false,
+        // has480:                 false,
+        
 
     // ========================================= //
     // ================ NUMBERS ================ //
@@ -242,6 +249,9 @@ db.getCollection('collection').insert([{
         
         // work_day:               false,
         // work_night:             false,
+        
+        // // online
+        // makeVideoCall:          false,
 
 
     // ======================================== //

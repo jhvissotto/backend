@@ -195,6 +195,13 @@ SELECT
         thumbVidPortUrl_field,
 
 
+        -- video resolution
+        resolution,
+        has1080,
+        has720,
+        has480,
+
+
     -- ========================= --
     -- ======== NUMBERS ======== --
     -- ========================= --
@@ -235,6 +242,9 @@ SELECT
         
         work_day,
         work_night,
+
+        -- online
+        makeVideoCall,
 
 
     -- ======================== --
