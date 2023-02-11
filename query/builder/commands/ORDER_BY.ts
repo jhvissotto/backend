@@ -52,13 +52,21 @@ export function ORDER_BY(Sort: Args.Sort, props?: {
     // ======================================= //
     // ================ STATS ================ //
     // ======================================= //
-    case 'COUNT_VIEWS':       return `ORDER BY count_views DESC`
-    case 'COUNT_POSTS':       return `ORDER BY count_posts DESC`
-    case 'COUNT_SUBS':        return `ORDER BY count_subs DESC`
+    // byPost
+    case 'COUNT_VIEWS':       return `ORDER BY count_views  DESC`
+    case 'COUNT_LIKES':       return `ORDER BY count_likes  DESC`
+
+    // byUser, byTag
+    case 'COUNT_POSTS':       return `ORDER BY count_posts  DESC`
+    case 'COUNT_USERS':       return `ORDER BY count_users  DESC`
     
-    case 'TOTAL_VIEWS':       return `ORDER BY total_views DESC`
-    case 'TOTAL_POSTS':       return `ORDER BY total_posts DESC`
-    case 'AVG_VIEWS_TO_POST': return `ORDER BY avg_viewsToPost DESC`
+    // byUser, byTag
+    case 'TOTAL_VIEWS':       return `ORDER BY total_views  DESC`
+    case 'TOTAL_LIKES':       return `ORDER BY total_likes  DESC`
+    
+    // byUser, byTag
+    case 'AVG_VIEWS':         return `ORDER BY avg_views    DESC`
+    case 'AVG_LIKES':         return `ORDER BY avg_likes    DESC`
 
 
     // ========================================= //

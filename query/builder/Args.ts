@@ -46,10 +46,16 @@ export module Args {
     | 'NEWEST'
     | 'OLDEST'
     // ======== STATS ======== //
+    // byPost
     | 'COUNT_VIEWS'
+    | 'COUNT_LIKES'
+    // byUser, byTag
     | 'COUNT_POSTS'
-    | 'COUNT_SUBS'
+    | 'COUNT_USERS'
+    // byUser, byTag
     | 'TOTAL_VIEWS'
-    | 'TOTAL_POSTS'
-    | 'AVG_VIEWS_TO_POST'
+    | 'TOTAL_LIKES'
+    // byUser, byTag
+    | 'AVG_VIEWS'
+    | 'AVG_LIKES'
 }

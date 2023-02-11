@@ -1,21 +1,11 @@
-// ======== data ======== //
+// // const input = {
+// //   welcome: 'Hello World',
+// // }
+// const input = [
+//   [1, 2],
+//   [3, 4],
+// ]
 
-// users
-// count_subs
+// const abc = JSON.stringify(input, null, 2)
 
-// posts
-// count_views
-// count_likes
-
-// tags
-
-// ======== aggs ======== //
-
-// total_posts_by_users
-// total_views_by_users
-// total_likes_by_users
-
-// total_users_by_tags
-// total_posts_by_tags
-// total_views_by_Tags
-// total_likes_by_Tags
+// console.log('abc', abc)
