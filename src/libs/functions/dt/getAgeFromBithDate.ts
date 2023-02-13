@@ -1,5 +1,5 @@
-import moment from "moment";
+import moment from 'moment'
 
 export function getAgeFromBithDate(birthDate: Date) {
-  return moment().diff(moment(birthDate), "years");
+  return moment().diff(moment(birthDate), 'years')
 }

@@ -1,1 +1,2 @@
-export * from "./getAgeFromBithDate";
+export * from './conv'
+export * from './getAgeFromBithDate'

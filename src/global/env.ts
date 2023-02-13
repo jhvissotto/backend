@@ -1,5 +1,6 @@
 import { environment } from '~/src/libs/helpers'
 import { is } from '~/src/libs/functions/check'
+import { cast } from '~/src/libs/functions'
 
 // prettier-ignore
 export function env() {
@@ -7,6 +8,10 @@ export function env() {
   const { env } = process
 
   return {
+    // ====================================== //
+    // ================ MAIN ================ //
+    // ====================================== //
+    
     // SERVER
     NODE_ENV:         env.NODE_ENV,
     PORT:             env.PORT,
@@ -48,38 +53,39 @@ export function env() {
     CACHE_EXPRESS_ENABLE:   is.True.vs(env.CACHE_EXPRESS_ENABLE),
     CACHE_EXPRESS_DEBUG:    is.True.vs(env.CACHE_EXPRESS_DEBUG),
 
+    // API_SELF
+    CACHE_APISELF_ENABLE:   is.True.vs(env.CACHE_APISELF_ENABLE),
+    CACHE_APISELF_HOURS:    cast.number(env.CACHE_APISELF_HOURS),
 
 
-
+    
     // ========================================== //
     // ================ SERVICES ================ //
     // ========================================== //
 
     // EMAIL
-    SGM_KEY_API:        env.SGM_KEY_API,
+    SGM_KEY_API:            env.SGM_KEY_API,
 
-    NODEMAILER_HOST:    env.NODEMAILER_HOST,
-    NODEMAILER_PORT:    Number(env.NODEMAILER_PORT),
-    NODEMAILER_USER:    env.NODEMAILER_USER,
-    NODEMAILER_PASS:    env.NODEMAILER_PASS,
+    NODEMAILER_HOST:        env.NODEMAILER_HOST,
+    NODEMAILER_PORT:        Number(env.NODEMAILER_PORT),
+    NODEMAILER_USER:        env.NODEMAILER_USER,
+    NODEMAILER_PASS:        env.NODEMAILER_PASS,
 
     // SMS
-    NEXMO_KEY_PUBLIC:   env.NEXMO_KEY_PUBLIC,
-    NEXMO_KEY_PRIVATE:  env.NEXMO_KEY_PRIVATE,
+    NEXMO_KEY_PUBLIC:       env.NEXMO_KEY_PUBLIC,
+    NEXMO_KEY_PRIVATE:      env.NEXMO_KEY_PRIVATE,
+    
+    // ASSETS
+    CLOUDINARY_CLOUD_NAME:  env.CLOUDINARY_CLOUD_NAME,
+    CLOUDINARY_KEY_API:     env.CLOUDINARY_KEY_API,
+    CLOUDINARY_KEY_SECRET:  env.CLOUDINARY_KEY_SECRET,
 
+    // STORAGE
+    S3_KEY_PUBLIC:          env.S3_KEY_PUBLIC,
+    S3_KEY_PRIVATE:         env.S3_KEY_PRIVATE,
+    S3_BUCKET:              env.S3_BUCKET,
+    S3_REGION:              env.S3_REGION,
 
-
-    // ========================================= //
-    // ================ STORAGE ================ //
-    // ========================================= //
-
-    // DBX
-    DBX_KEY_API:  env.DBX_KEY_API,
-
-    // AMAZON
-    S3_ID:        env.S3_ID,
-    S3_KEY:       env.S3_KEY,
-    S3_BUCKET:    env.S3_BUCKET,
-    S3_REGION:    env.S3_REGION,
+    DBX_KEY_API:            env.DBX_KEY_API,
   }
 }

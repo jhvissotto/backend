@@ -1,1 +1,1 @@
-export type { ResError } from "~/src/libs/packs/Axios/types";
+export type { ResError } from '~/src/libs/packs/Axios/types'

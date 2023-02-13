@@ -30,3 +30,11 @@ https://marketplace.visualstudio.com/items?itemName=frigus02.vscode-sql-tagged-t
 - IMAGES
   Sharp
   Jimp
+
+- Amazon
+  aws4
+  aws-sdk
+
+- Cloudinary
+  https://www.npmjs.com/package/cloudinary
+  https://www.npmjs.com/package/cloudinary-core

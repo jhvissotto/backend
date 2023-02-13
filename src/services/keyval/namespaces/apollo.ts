@@ -1,7 +1,7 @@
 import { env } from '~/src/global'
-import { KeyVal } from '~/src/libs/helpers'
+import { keyval } from '~/src/services'
 
-export const redis = new KeyVal({
+export const apollo = keyval.create({
   namespace: 'apollo',
   uri: env().REDIS_URL,
 })

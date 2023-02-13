@@ -1,11 +1,11 @@
-// // const input = {
-// //   welcome: 'Hello World',
-// // }
-// const input = [
-//   [1, 2],
-//   [3, 4],
-// ]
+// import { retry } from './src/libs/utils'
 
-// const abc = JSON.stringify(input, null, 2)
+// async function fn() {}
 
-// console.log('abc', abc)
+// retry.v1.wrap(fn, {})
+// retry.v2(fn, {})
+// retry.v3(fn, {})
+// retry.v4(fn, {})
+
+// const c = new AbortController()
+// c.abort()

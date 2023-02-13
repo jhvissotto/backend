@@ -15,15 +15,15 @@
 // // ======================================== //
 // // ================ UPLOAD ================ //
 // // ======================================== //
-// import Dropbox from "dropbox-v2-api"
-// import fs from "file-system"
+// import Dropbox from 'dropbox-v2-api'
+// import fs from 'file-system'
 
 // const dbx = Dropbox.authenticate({ token: KEY_API })
 
 // dbx({
-//   resource: "files/upload",
-//   parameters: { path: "/dir/file.ext" },
-//   readStream: fs.createReadStream(__public + "/dir/file.ext")
+//   resource: 'files/upload',
+//   parameters: { path: '/dir/file.ext' },
+//   readStream: fs.createReadStream(__public + '/dir/file.ext')
 // }, (error, result, response) => {})
 
 // //
@@ -34,7 +34,7 @@
 // // ====================================== //
 // import dbx from '@cloudcmd/dropbox'
 
-// await dbx.mkdir(KEY_API, "/dirname")
-// await dbx.copy(KEY_API, "/file.ext", "/dir/file.ext")
-// await dbx.move(KEY_API, "/file.ext", "/dir/file.ext")
-// await dbx.remove(KEY_API, "/dir/file.ext")
+// await dbx.mkdir(KEY_API, '/dirname')
+// await dbx.copy(KEY_API, '/file.ext', '/dir/file.ext')
+// await dbx.move(KEY_API, '/file.ext', '/dir/file.ext')
+// await dbx.remove(KEY_API, '/dir/file.ext')

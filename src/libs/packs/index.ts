@@ -1,6 +1,8 @@
-export * from './Axios'
-export * from './Ejs'
+export * as AWS from './AWS'
 // export * as Apollo from "./Apollo";
+export * from './Axios'
+export * from './Cloudinary'
+export * from './EJS'
 export * as Express from './Express'
 export * as Formidable from './Formidable'
 export * as Knex from './Knex'
