@@ -10,7 +10,7 @@ export function create(
 ) {
 
     // arguments
-    const { uri, ...opts } = options
+    const { uri, store, ...opts } = options
 
 
     

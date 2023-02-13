@@ -1,1 +1,1 @@
-export type { ManagedUpload, ObjectCannedACL, SendData } from 'aws-sdk/clients/s3'
+export type { ManagedUpload, ObjectCannedACL } from 'aws-sdk/clients/s3'
