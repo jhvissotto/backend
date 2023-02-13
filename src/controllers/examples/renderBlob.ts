@@ -1,6 +1,6 @@
 export function renderBlob(req, res) {
   const axios = require('axios')
-  const Blob = require('blob')
+  // const Blob = require('blob')
 
   const url = 'http://localhost:3000/public/dir/image.ext'
 

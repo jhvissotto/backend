@@ -1,5 +1,5 @@
 // global
-import { status } from '~/src/common/constants'
+import { status } from '~/src/web'
 // libs
 import { is } from '~/src/libs/functions/check'
 import { array, cast } from '~/src/libs/functions'

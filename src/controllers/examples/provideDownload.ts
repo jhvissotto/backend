@@ -1,6 +1,13 @@
+import { fs, path } from '~/src/libs/helpers/system'
+
+const dirFile = path.v1.join('__public', './dir/img.ext')
+
 export function provideDownload(req, res) {
-  const fs = require('fs-extra')
-  const buf = fs.readFileSync('./public/dir/image.ext')
-  res.end(buf)
-  // strm.pipe(res)
+  // ================ stream ================ //
+  const stream = fs.extra.createReadStream(dirFile)
+  stream.pipe(res)
+
+  // ================ buffer ================ //
+  const buffer = fs.extra.readFileSync(dirFile)
+  return res.end(buffer)
 }

@@ -8,7 +8,7 @@ import { is } from '~/src/libs/functions/check'
 import { view } from '~/src'
 
 // prettier-ignore
-export async function clone_article(req, res) {
+export async function article(req, res) {
     try {
         // ======================================== //
         // ================ inputs ================ //
@@ -82,14 +82,14 @@ export async function clone_article(req, res) {
         // ================ html ================ //
         // ====================================== //
         // transform to html
-        let content = $.html()
+        let document = $.html()
 
         // adjust links 
-        content = content.replace(new RegExp('="/', 'gim'), '="https://telegra.ph/')
+        document = document.replace(new RegExp('="/', 'gim'), '="https://telegra.ph/')
 
         // remove javascripts
-        content = content.replace(new RegExp('src="https://telegra.ph/js/quill.min.js(.*?)"', 'gim'), '')
-        content = content.replace(new RegExp('src="https://telegra.ph/js/core.min.js(.*?)"', 'gim'), '')
+        document = document.replace(new RegExp('src="https://telegra.ph/js/quill.min.js(.*?)"', 'gim'), '')
+        document = document.replace(new RegExp('src="https://telegra.ph/js/core.min.js(.*?)"', 'gim'), '')
 
         
 
@@ -99,7 +99,7 @@ export async function clone_article(req, res) {
         // ========================================== //
         // ================ response ================ //
         // ========================================== //
-        return res.render(view.html.blank, { document: content }) 
+        return res.render(view.html.blank, { document }) 
 
     } catch (error) {
         console.warn('>> error:', error)

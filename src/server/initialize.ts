@@ -1,5 +1,5 @@
 // global
-import { config, env, dir } from '~/src/global'
+import { config, env, __dir } from '~/src/global'
 // libs
 import { Express, EJS } from '~/src/libs/packs'
 import { logger, favicon, parsers, headers } from '~/src/libs/extensions/express'
@@ -59,7 +59,7 @@ export function initialize() {
 
 
   // ======== view ======== //
-  server.express.set('views', dir.view)
+  server.express.set('views', __dir.view)
   server.express.set('view engine', 'html')
   server.express.engine('html', EJS.renderFile)
   
