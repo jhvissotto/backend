@@ -64,28 +64,28 @@ export function env() {
     // ========================================== //
 
     // EMAIL
-    SGM_KEY_API:            env.SGM_KEY_API,
+    SGM_KEY_TOKEN:            env.SGM_KEY_TOKEN,
 
-    NODEMAILER_HOST:        env.NODEMAILER_HOST,
-    NODEMAILER_PORT:        Number(env.NODEMAILER_PORT),
-    NODEMAILER_USER:        env.NODEMAILER_USER,
-    NODEMAILER_PASS:        env.NODEMAILER_PASS,
+    NODEMAILER_HOST:          env.NODEMAILER_HOST,
+    NODEMAILER_PORT:          Number(env.NODEMAILER_PORT),
+    NODEMAILER_USER:          env.NODEMAILER_USER,
+    NODEMAILER_PASS:          env.NODEMAILER_PASS,
 
     // SMS
-    NEXMO_KEY_PUBLIC:       env.NEXMO_KEY_PUBLIC,
-    NEXMO_KEY_PRIVATE:      env.NEXMO_KEY_PRIVATE,
+    NEXMO_KEY_PUBLIC:         env.NEXMO_KEY_PUBLIC,
+    NEXMO_KEY_PRIVATE:        env.NEXMO_KEY_PRIVATE,
     
     // ASSETS
-    CLOUDINARY_CLOUD_NAME:  env.CLOUDINARY_CLOUD_NAME,
-    CLOUDINARY_KEY_API:     env.CLOUDINARY_KEY_API,
-    CLOUDINARY_KEY_SECRET:  env.CLOUDINARY_KEY_SECRET,
+    CLOUDINARY_CLOUD_NAME:    env.CLOUDINARY_CLOUD_NAME,
+    CLOUDINARY_KEY_PUBLIC:    env.CLOUDINARY_KEY_PUBLIC,
+    CLOUDINARY_KEY_PRIVATE:   env.CLOUDINARY_KEY_PRIVATE,
 
     // STORAGE
-    S3_KEY_PUBLIC:          env.S3_KEY_PUBLIC,
-    S3_KEY_PRIVATE:         env.S3_KEY_PRIVATE,
-    S3_BUCKET:              env.S3_BUCKET,
-    S3_REGION:              env.S3_REGION,
+    S3_KEY_PUBLIC:            env.S3_KEY_PUBLIC,
+    S3_KEY_PRIVATE:           env.S3_KEY_PRIVATE,
+    S3_BUCKET:                env.S3_BUCKET,
+    S3_REGION:                env.S3_REGION,
 
-    DBX_KEY_API:            env.DBX_KEY_API,
+    DBX_KEY_TOKEN:            env.DBX_KEY_TOKEN,
   }
 }

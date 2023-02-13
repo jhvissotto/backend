@@ -1,1 +1,1 @@
-export { default as Ejs } from 'ejs'
+export { default as EJS } from 'ejs'

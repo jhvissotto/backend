@@ -1,3 +1,3 @@
-import { createServer } from "~/src/libs/packs/Express";
+import { createServer } from '~/src/libs/packs/Express'
 
-export const express = createServer();
+export const express = createServer()

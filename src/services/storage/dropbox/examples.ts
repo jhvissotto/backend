@@ -3,7 +3,7 @@
 // // ====================================== //
 // import fetch from 'isomorphic-fetch'
 // const Dropbox = require('dropbox').Dropbox
-// const dbx = new Dropbox({ accessToken: KEY_API, fetch })
+// const dbx = new Dropbox({ accessToken: KEY_TOKEN, fetch })
 
 // const [{ name }] = await dbx.filesListFolder({ path: '' }).then(reply => reply.entries)
 
@@ -18,7 +18,7 @@
 // import Dropbox from 'dropbox-v2-api'
 // import fs from 'file-system'
 
-// const dbx = Dropbox.authenticate({ token: KEY_API })
+// const dbx = Dropbox.authenticate({ token: KEY_TOKEN })
 
 // dbx({
 //   resource: 'files/upload',
@@ -34,7 +34,7 @@
 // // ====================================== //
 // import dbx from '@cloudcmd/dropbox'
 
-// await dbx.mkdir(KEY_API, '/dirname')
-// await dbx.copy(KEY_API, '/file.ext', '/dir/file.ext')
-// await dbx.move(KEY_API, '/file.ext', '/dir/file.ext')
-// await dbx.remove(KEY_API, '/dir/file.ext')
+// await dbx.mkdir(KEY_TOKEN, '/dirname')
+// await dbx.copy(KEY_TOKEN, '/file.ext', '/dir/file.ext')
+// await dbx.move(KEY_TOKEN, '/file.ext', '/dir/file.ext')
+// await dbx.remove(KEY_TOKEN, '/dir/file.ext')
