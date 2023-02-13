@@ -3,18 +3,8 @@ import { array } from '~/src/libs/functions'
 // import { is } from '~/src/libs/functions/check'
 
 // prettier-ignore
-export async function r<
-// ================ Arg Types ================ //
-  Response, 
-  Fallback  = any, 
-  E         = Error
->(
-// ================ Arguments ================ //
-  promise,
-  fallback?: Fallback
-): 
-// ================ Return Type ================ //
-Promise<{
+export async function d<Response, E = Error>(promise): Promise<
+  {
     // resolver
     duration:     number
     response:     Response
@@ -32,7 +22,7 @@ Promise<{
       isMany:     boolean
       itemFirst:  ArrayElement<Response>
       itemLast:   ArrayElement<Response>
-} | {
+  } | {
     // resolver
     duration:     number
     response:     Response
@@ -50,10 +40,10 @@ Promise<{
       isMany:     null
       itemFirst:  null
       itemLast:   null
-} | {
+  } | {
     // resolver
     duration:     number
-    response:     typeof fallback | null
+    response:     null 
     error:        E | Error
     isSuccess:    false
     isError:      true
@@ -68,7 +58,8 @@ Promise<{
       isMany:     null
       itemFirst:  null
       itemLast:   null
-}> {
+  }
+> {
   const start = Date.now()
 
   return await promise
@@ -114,7 +105,7 @@ Promise<{
       return {
         // resolver
         duration,
-        response:   fallback ?? null,
+        response:   null, 
         error,
         isSuccess:  false,
         isError:    true,
