@@ -17,7 +17,7 @@ export function empty(input: any) {
   return true
 
 
-  // ======== undefined ======== //
+  // ======== array ======== //
   if (Array.isArray(input)) {
     if (input?.length == 0) 
     return true

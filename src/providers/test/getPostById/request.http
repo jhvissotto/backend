@@ -1,0 +1,50 @@
+GET https://jsonplaceholder.typicode.com/posts/1?
+# &abc=123
+# &xyz=456
+
+# Content-Type: application/json
+# Authorization: Basic user:pass
+# Authorization: Bearer abcd
+# X-REQUEST-TYPE: GraphQL
+# { "body": "1234" }
+
+
+
+# ========================== #
+# ======== RESPONSE ======== #
+# ========================== #
+
+HTTP/1.1 200 OK
+Date: Tue, 14 Feb 2023 21:41:49 GMT
+Content-Type: application/json; charset=utf-8
+Transfer-Encoding: chunked
+Connection: close
+X-Powered-By: Express
+X-Ratelimit-Limit: 1000
+X-Ratelimit-Remaining: 999
+X-Ratelimit-Reset: 1673323873
+Vary: Origin, Accept-Encoding
+Access-Control-Allow-Credentials: true
+Cache-Control: max-age=43200
+Pragma: no-cache
+Expires: -1
+X-Content-Type-Options: nosniff
+Etag: W/"124-yiKdLzqO5gfBrJFrcdJ8Yq0LGnU"
+Via: 1.1 vegur
+CF-Cache-Status: HIT
+Age: 11593
+Server-Timing: cf-q-config;dur=7.9999999798019e-06
+Report-To: {"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report\/v3?s=CSCX0NlaWSxiXxy060uJBhDpFCeuWHCIaeFkSZ5%2Bv73IKSp9UoRnogaYB%2BAxAP8J%2BS0gNl2uR7IAjjo7dLeA6jDIEGg5cVdNEwx9cfAdoirvmlzaF%2FnZqOx5Rp2rzrZy%2BBiAsLoiN4Wx4b8cv6pK"}],"group":"cf-nel","max_age":604800}
+NEL: {"success_fraction":0,"report_to":"cf-nel","max_age":604800}
+Server: cloudflare
+CF-RAY: 7998f85a8ec04d53-GRU
+Content-Encoding: gzip
+alt-svc: h3=":443"; ma=86400, h3-29=":443"; ma=86400
+
+{
+  "userId": 1,
+  "id": 1,
+  "title": "sunt aut facere repellat provident occaecati excepturi optio reprehenderit",
+  "body": "quia et suscipit\nsuscipit recusandae consequuntur expedita et cum\nreprehenderit molestiae ut ut quas totam\nnostrum rerum est autem sunt rem eveniet architecto"
+}
+

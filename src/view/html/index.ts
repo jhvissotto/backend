@@ -1,4 +1,4 @@
-import { path } from '~/src/libs/helpers'
+import { path } from '~/src/libs/helpers/system'
 
 // prettier-ignore
 export const html = {

@@ -4,14 +4,14 @@ import { dt } from '~/src/libs/functions'
 
 // prettier-ignore
 export const axios = create({
-  baseURL: env().BASE_URL,
+  baseURL: env().API_SELF_BASE_URL,
 }, {
   adapters: {
     cache: {
-      enabledByDefault: env().CACHE_APISELF_ENABLE,
+      enabledByDefault: env().API_SELF_CACHE_ENABLE,
     },
     cache_LRU: {
-      ttl: dt.conv({ hr: env().CACHE_APISELF_HOURS }).ms,
+      ttl: dt.conv({ hr: env().API_SELF_CACHE_HOURS }).ms,
     }
   }
 })

@@ -1,4 +1,4 @@
-export * as api from './api'
+export * as Api from './api'
 // export * as apollo from "./apollo";
 export * as cache from './cache'
 export * as common from './common'
@@ -15,6 +15,7 @@ export * as mids from './middlewares'
 export * as keys from './keys'
 export * as libs from './libs'
 export * as nav from './navigation'
+export * as providers from './providers'
 export * from './public'
 // export * as schemas from "./schemas";
 export * as security from './security'

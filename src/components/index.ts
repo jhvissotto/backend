@@ -1,4 +1,4 @@
-export * from './createDef'
+export * from './createDefs'
 
 export * as cache from './cache'
 export * as database from './database'

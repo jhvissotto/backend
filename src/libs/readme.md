@@ -27,14 +27,17 @@ SQL
 https://www.npmjs.com/package/sql-highlight
 https://marketplace.visualstudio.com/items?itemName=frigus02.vscode-sql-tagged-template-literals
 
-- IMAGES
-  Sharp
-  Jimp
+IMAGES
+Sharp
+Jimp
 
-- Amazon
-  aws4
-  aws-sdk
+Amazon
+https://www.npmjs.com/package/aws4
+https://www.npmjs.com/package/aws-sdk
 
-- Cloudinary
-  https://www.npmjs.com/package/cloudinary
-  https://www.npmjs.com/package/cloudinary-core
+Cloudinary
+https://www.npmjs.com/package/cloudinary
+https://www.npmjs.com/package/cloudinary-core
+
+LocalDB
+https://www.npmjs.com/package/lowdb
