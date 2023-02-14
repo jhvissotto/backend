@@ -28,6 +28,7 @@
     "blob": "^0.1.0",
     "bluebird": "^3.7.2",
     "body-parser": "^1.20.1",
+    "box-node-sdk": "^2.8.1",
     "bson-objectid": "^2.0.4",
     "chance": "^1.1.9",
     "cheerio": "^1.0.0-rc.12",
