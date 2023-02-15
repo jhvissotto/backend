@@ -1,6 +1,6 @@
 import { faker } from '.'
 
-export const samplte = {
+export const sample = {
   abstract: 'https://loremflickr.com/640/480/abstract',
   animals: 'https://loremflickr.com/640/480/animals',
   avatar:

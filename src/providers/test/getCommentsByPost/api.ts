@@ -11,18 +11,16 @@ type Schema = endpoints.getCommentsByPost.Schema
 const defs = endpoints.getCommentsByPost.defs
 
 // prettier-ignore
-export async function api({ params, query, body }: {
-  params?:  Schema['params']
-  query?:   Schema['query']
-  body?:    Schema['body']
-}, 
-  opts?:    Parameters<typeof Api.test.axios>[1]
+export async function api(
+  req:   Schema, 
+  opts?: Parameters<typeof Api.test.axios>[1]
 ) {
+  
   
   const call = await resolvers.obj.d<Response>(Api.test.axios({
     method: defs.method,
-    url:    defs.url(params, query),
-    data:   body,
+    url:    defs.url(req?.params, req?.query),
+    data:   req?.body,
     ...opts
   }))
 

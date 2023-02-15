@@ -1,5 +1,3 @@
-// import { retry } from './src/libs/utils'
-
 import { providers } from './src'
 
 // async function fn() {}
@@ -12,6 +10,6 @@ import { providers } from './src'
 // const c = new AbortController()
 // c.abort()
 
-// const { data, error, isError } = await providers.test.getPostById.api({
-//   params: { id_post: 123 },
-// })
+const { data, error, isError } = await providers.test.getPostById.api({
+  params: { id_post: 123 },
+})

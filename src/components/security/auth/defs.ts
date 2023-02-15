@@ -6,7 +6,7 @@ import { level } from '~/src/navigation'
 // local
 import { SchemaReq } from '.'
 
-export const defs = createDefs<SchemaReq.Params, SchemaReq.Query>({
+export const defs = createDefs<Schema['params'], Schema['query']>({
   name: 'auth',
   active: true,
   method: 'get',

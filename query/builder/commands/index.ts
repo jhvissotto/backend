@@ -1,4 +1,5 @@
 export * from './AS'
+export * from './DR'
 export * from './JOIN'
 export * from './ORDER_BY'
 export * from './PARTITION_BY'

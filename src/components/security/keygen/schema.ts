@@ -1,7 +1,7 @@
 import { z } from '~/src/libs/helpers/schema'
 import { cast } from '~/src/libs/functions'
 
-export const schemaReq = {
+export const schema = z.object({
   params: z.object({}),
   query: z.object({
     rounds: z.preprocess(x => cast.number(x) || undefined, z.number().optional()),
@@ -10,12 +10,6 @@ export const schemaReq = {
     KEY: z.string().optional(),
     password: z.string().optional(),
   }),
-}
+})
 
-export const z_schemaReq = z.object(schemaReq)
-
-export module SchemaReq {
-  export type Params = z.infer<typeof schemaReq.params>
-  export type Query = z.infer<typeof schemaReq.query>
-  export type Body = z.infer<typeof schemaReq.body>
-}
+export type Schema = z.infer<typeof schema>

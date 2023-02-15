@@ -1,6 +1,6 @@
 import { faker } from '.'
 
-export const samplte = {
+export const sample = {
   avatar:
     'https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/1136.jpg',
   color: '#22043a',

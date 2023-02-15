@@ -63,7 +63,7 @@ export function initialize() {
     pattern:      database.select.defs.pattern,
     ctrl:         database.select._ctrl
   }, {
-    z_schema:     database.select.z_schemaReq,
+    z_schema:     database.select.schema,
     canSanitize:  database.select.defs.canSanitize,
     canCache:     database.select.defs.canCache
   })
@@ -89,7 +89,7 @@ export function initialize() {
     pattern:      start.test.defs.pattern,
     ctrl:         start.test._ctrl
   }, {
-    z_schema:     start.test.z_schemaReq,
+    z_schema:     start.test.schema,
     canSanitize:  start.test.defs.canSanitize,
     canCache:     start.test.defs.canCache
   })

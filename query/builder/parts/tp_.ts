@@ -29,7 +29,10 @@ export function tp_(tableX: Args.Table, tableY: Args.Table,
         ,
         ts_post AS (
             SELECT 
-                DENSE_RANK() OVER(ORDER BY RAND()) AS sr_post
+                DENSE_RANK() OVER(
+                    -- ORDER BY RAND()
+                    -- ${}
+                ) AS sr_post
                 , td_post.*
                 
             FROM tu_post

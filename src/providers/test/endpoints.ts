@@ -5,9 +5,9 @@ import { createDefs } from '~/src/providers'
 // prettier-ignore
 export module getPosts {
   export type Schema = {
-    params: {  }, 
-    query:  {  }, 
-    body:   {  }, 
+    params?:  never, 
+    query?:   never, 
+    body?:    never, 
   } 
   export const defs = createDefs<Schema['params'], Schema['query']>({
     name:   'getPosts',
@@ -19,9 +19,9 @@ export module getPosts {
 // prettier-ignore
 export module getPostById {
   export type Schema = {
-    params: { id_post: number }, 
-    query:  {  }, 
-    body:   {  }, 
+    params:   { id_post: number }, 
+    query?:   never, 
+    body?:    never, 
   } 
   export const defs = createDefs<Schema['params'], Schema['query']>({
     name:   'getPostById',
@@ -33,9 +33,9 @@ export module getPostById {
 // prettier-ignore
 export module getCommentsByPost {
   export type Schema = {
-    params: {  }, 
-    query:  { postId: number }, 
-    body:   {  }, 
+    params?:  never, 
+    query:    { postId: number }, 
+    body?:    never, 
   } 
   export const defs = createDefs<Schema['params'], Schema['query']>({
     name:   'getCommentsByPost',

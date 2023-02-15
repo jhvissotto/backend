@@ -3,7 +3,7 @@ import { cast } from '~/src/libs/functions'
 import { model } from '~/src/database'
 
 // prettier-ignore
-export const schemaReq = {
+export const schema = z.object({
   params: z.object({
     table: z.enum(model.tables)
   }),
@@ -16,12 +16,6 @@ export const schemaReq = {
     randKey: z.string().optional()
   }),
   body: z.object({})
-};
+})
 
-export const z_schemaReq = z.object(schemaReq)
-
-export module SchemaReq {
-  export type Params = z.infer<typeof schemaReq.params>
-  export type Query = z.infer<typeof schemaReq.query>
-  export type Body = z.infer<typeof schemaReq.body>
-}
+export type Schema = z.infer<typeof schema>

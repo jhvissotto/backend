@@ -6,12 +6,12 @@ import { config } from '~/src/global'
 import { ctrl } from '~/src'
 import { crypt, bcrypt } from '~/src/security'
 // local
-import type { SchemaReq } from '.'
+import type { Schema } from '.'
 import { defs } from '.'
 
 // prettier-ignore
 export async function _ctrl(
-  req: ctrl.Req<SchemaReq.Params, SchemaReq.Query, SchemaReq.Body>,
+  req: ctrl.Req<Schema['params'], Schema['query'], Schema['body']>,
   res: ctrl.Res
 ) {
   const { params, query, body } = req

@@ -1,8 +1,8 @@
 import { ctrl } from '~/src'
-import type { SchemaReq } from '.'
+import type { Schema } from '.'
 
 export async function _ctrl(
-  req: ctrl.Req<SchemaReq.Params, SchemaReq.Query, SchemaReq.Body>,
+  req: ctrl.Req<Schema['params'], Schema['query'], Schema['body']>,
   res: ctrl.Res
 ) {
   const { params, query, body } = req

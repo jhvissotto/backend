@@ -10,9 +10,11 @@ export function PARTITION_BY(
     const isDisabled = disable || is.empty(priorities)
     
     
+    
     const qs = isDisabled ? '' : `--sql
         PARTITION BY ${priorities}
     `
+
 
     // console.log('qs', qs)
     return qs

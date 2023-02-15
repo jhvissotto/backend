@@ -9,12 +9,12 @@ import { ctrl, E } from '~/src'
 import { bcrypt, Token, crypt, formats } from '~/src/security'
 import { getCredentials } from '~/src/libs/helpers/parse'
 // local
-import type { SchemaReq } from '.'
+import type { Schema } from '.'
 import { defs, services } from '.'
 
 // prettier-ignore
 export async function _ctrl(
-  req: ctrl.Req<SchemaReq.Params, SchemaReq.Query, SchemaReq.Body>,
+  req: ctrl.Req<Schema['params'], Schema['query'], Schema['body']>,
   res: ctrl.Res
 ) {
   const { params, query, body } = req
