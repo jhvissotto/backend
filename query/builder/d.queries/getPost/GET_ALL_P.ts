@@ -10,18 +10,8 @@ export function GET_ALL_P(
         tv?:  Parameters<typeof tv_>[1],
         withTableVisible?:  boolean,
     },
-    // props: {
-    //     // items: Args.Items,
-    //     // page:  Args.Page,
-    // },
-    // opts?: {}
 ) {
     
-    // const { 
-    //     // items, page, 
-    //     ..._props 
-    // } = props
-
 
     let qs = `--sql
         -- WITH 
@@ -53,9 +43,6 @@ export function GET_ALL_P(
         },
         names: {
             post: post.name,
-        },
-        values: {
-            // items, page,
         },
     })
 

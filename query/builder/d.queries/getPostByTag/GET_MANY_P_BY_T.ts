@@ -20,16 +20,12 @@ export function GET_MANY_P_BY_T(
         page:  Args.Page,
     },
     opts?: {
-        tj?:    Parameters<typeof tj_>[2],
-        tf?:    Parameters<typeof tf_>[2],
-        // order?: Parameters<typeof ORDER_BY>[1]
+        tj?: Parameters<typeof tj_>[2],
+        tf?: Parameters<typeof tf_>[2],
     }
 ) {
 
-    const { 
-        // items, page, 
-        ..._props 
-    } = props
+    const { items, page, ..._props } = props
 
 
 
@@ -87,7 +83,7 @@ export function GET_MANY_P_BY_T(
             tag:  tag.name,
         },
         values: {
-            // items, page,
+            items, page,
         },
     })
 

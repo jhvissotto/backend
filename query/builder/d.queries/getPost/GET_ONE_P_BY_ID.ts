@@ -4,15 +4,16 @@ import { WITH, ORDER_BY } from '~/query/builder/b.commands'
 import { tf_, tj_, tm_, tp_, tv_ } from '~/query/builder/c.tables'
 
 // prettier-ignore
-export function GET_ONE_P_BY_ID(tableP: Args.Table, 
-    props: {
-        pk: Args.PK,
-    },
-    opts?: {
-        tv?:                Parameters<typeof tv_>[1],
+export function GET_ONE_P_BY_ID(
+    post: {
+        name: Args.Table,
+        pk:   Args.PK,
+        tv?:  Parameters<typeof tv_>[1],
         withTableVisible?:  boolean,
-    }
+    }, 
 ) {
+
+
 
 
     let qs = `--sql
@@ -21,7 +22,7 @@ export function GET_ONE_P_BY_ID(tableP: Args.Table,
         -- tv_post,
         
         ${WITH([
-            [tv_(tableP, opts?.tv), { disable: !opts?.withTableVisible }],
+            [tv_(post.name, post?.tv), { disable: !post?.withTableVisible }],
         ])}
 
         
@@ -44,13 +45,13 @@ export function GET_ONE_P_BY_ID(tableP: Args.Table,
 
     qs = replacer(qs, {
         comments: {
-            withTV: opts?.withTableVisible,
+            withTV: post?.withTableVisible,
         },
         names: {
-            post: tableP,
+            post: post.name,
         },
         values: {
-            pk_post: props.pk,
+            pk_post: post.pk,
         }
     })
 

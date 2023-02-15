@@ -4,11 +4,14 @@ import { WITH, ORDER_BY } from '~/query/builder/b.commands'
 import { tf_, tj_, tm_, tp_, tv_ } from '~/query/builder/c.tables'
 
 // prettier-ignore
-export function GET_ONE_P_RAND(tableP: Args.Table, 
-    opts?: {
-        tv?:                Parameters<typeof tv_>[1],
+export function GET_ONE_P_RAND(
+    post: {
+        name: Args.Table,
+        tv?:  Parameters<typeof tv_>[1],
         withTableVisible?:  boolean,
-        order?:             Parameters<typeof ORDER_BY>[1] 
+    }, 
+    opts?: {
+        order?: Parameters<typeof ORDER_BY>[1] 
     }
 ) {
 
@@ -19,7 +22,7 @@ export function GET_ONE_P_RAND(tableP: Args.Table,
         -- tv_post,
         
         ${WITH([
-            [tv_(tableP, opts?.tv), { disable: !opts?.withTableVisible }],
+            [tv_(post.name, post?.tv), { disable: !post?.withTableVisible }],
         ])}
 
         
@@ -43,10 +46,10 @@ export function GET_ONE_P_RAND(tableP: Args.Table,
 
     qs = replacer(qs, {
         comments: {
-            withTV: opts?.withTableVisible,
+            withTV: post?.withTableVisible,
         },
         names: {
-            post: tableP,
+            post: post.name,
         },
     })
 

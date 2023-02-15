@@ -4,7 +4,7 @@ import { WITH, ORDER_BY } from '~/query/builder/b.commands'
 import { tf_, tj_, tm_, tp_, tv_ } from '~/query/builder/c.tables'
 
 // prettier-ignore
-export function GET_ALL_P_BY_T(
+export function GET_ONE_P_RAND_BY_T(
     post: { 
         name: Args.Table 
         tv?:  Parameters<typeof tv_>[1],
@@ -17,8 +17,9 @@ export function GET_ALL_P_BY_T(
     }, 
     props: Parameters<typeof tf_>[1],
     opts?: {
-        tj?: Parameters<typeof tj_>[2],
-        tf?: Parameters<typeof tf_>[2],
+        tj?:    Parameters<typeof tj_>[2],
+        tf?:    Parameters<typeof tf_>[2]
+        order?: Parameters<typeof ORDER_BY>[1] 
     }
 ) {
 
@@ -42,7 +43,7 @@ export function GET_ALL_P_BY_T(
             [tv_(tag.name,  tag.tv),  { disable: !tag.withTableVisible  }],
 
             [tj_(post.name, tag.name,  opts?.tj)],
-            [tf_(tag.name, props,      opts?.tf)],
+            [tf_(tag.name,  props,     opts?.tf)],
         ])}
 
 
@@ -61,6 +62,11 @@ export function GET_ALL_P_BY_T(
         
         SELECT *
         FROM tq_getPostByTag
+
+        
+        -- ORDER BY RAND()
+        ${ORDER_BY('WEIGHT_RAND', opts?.order)}
+        LIMIT 1
     `
 
 

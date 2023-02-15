@@ -4,16 +4,21 @@ import { WITH, ORDER_BY } from '~/query/builder/b.commands'
 import { tf_, tj_, tm_, tp_, tv_ } from '~/query/builder/c.tables'
 
 // prettier-ignore
-export function GET_MANY_P(tableP: Args.Table, 
+export function GET_MANY_P(
+    post: {
+        name: Args.Table,
+        tv?:  Parameters<typeof tv_>[1],
+        withTableVisible?:  boolean,
+    }, 
     props: {
         items: Args.Items,
         page:  Args.Page,
     },
-    opts?: {
-        tv?:                Parameters<typeof tv_>[1],
-        withTableVisible?:  boolean,
-    }
 ) {
+
+
+    const { items, page, ..._props } = props
+
 
 
     let qs = `--sql
@@ -22,7 +27,7 @@ export function GET_MANY_P(tableP: Args.Table,
         -- tv_post,
         
         ${WITH([
-            [tv_(tableP, opts?.tv), { disable: !opts?.withTableVisible }],
+            [tv_(post.name, post?.tv), { disable: !post?.withTableVisible }],
         ])}
 
 
@@ -45,14 +50,14 @@ export function GET_MANY_P(tableP: Args.Table,
 
     qs = replacer(qs, {
         comments: {
-            withTV: opts?.withTableVisible,
+            withTV: post?.withTableVisible,
         },
         names: {
-            post: tableP,
+            post: post.name,
         },
         values: {
-            items: props.items,
-            page:  props.page,
+            items, 
+            page,
         }
     })
 
