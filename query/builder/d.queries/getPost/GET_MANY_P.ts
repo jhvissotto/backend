@@ -17,10 +17,6 @@ export function GET_MANY_P(
 ) {
 
 
-    const { items, page, ..._props } = props
-
-
-
     let qs = `--sql
         -- WITH 
         -- # optional: 
@@ -56,8 +52,8 @@ export function GET_MANY_P(
             post: post.name,
         },
         values: {
-            items, 
-            page,
+            items: props.items, 
+            page:  props.page,
         }
     })
 

@@ -10,15 +10,14 @@ export function GET_ONE_P_RAND_BY_T(
         tv?:  Parameters<typeof tv_>[1],
         withTableVisible?: boolean,
     }, 
-    tag: { 
+    tag: Parameters<typeof tf_>[1] & { 
         name: Args.Table 
         tv?:  Parameters<typeof tv_>[1],
+        tf?:  Parameters<typeof tf_>[2]
         withTableVisible?: boolean,
     }, 
-    props: Parameters<typeof tf_>[1],
     opts?: {
-        tj?:    Parameters<typeof tj_>[2],
-        tf?:    Parameters<typeof tf_>[2]
+        tj?:    Parameters<typeof tj_>[1],
         order?: Parameters<typeof ORDER_BY>[1] 
     }
 ) {
@@ -42,8 +41,8 @@ export function GET_ONE_P_RAND_BY_T(
             [tv_(post.name, post.tv), { disable: !post.withTableVisible }],
             [tv_(tag.name,  tag.tv),  { disable: !tag.withTableVisible  }],
 
-            [tj_(post.name, tag.name,  opts?.tj)],
-            [tf_(tag.name,  props,     opts?.tf)],
+            [tj_([post.name, tag.name], opts?.tj)],
+            [tf_(  tag.name, tag,        tag?.tf)],
         ])}
 
 

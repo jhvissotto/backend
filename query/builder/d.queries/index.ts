@@ -1,5 +1,5 @@
 export * from './getPost'
 export * from './getPostByTag'
-// export * from './getPostByUserTag'
+export * from './getPostByTagNUser'
 // export * from './getPostWithTag'
 // export * from './getTagWithPost'
