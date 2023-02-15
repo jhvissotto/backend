@@ -6,15 +6,15 @@ import {} from '~/query/builder/b.commands'
 // prettier-ignore
 export function PARTITION_BY(
     priorities?: Parameters<typeof priority>[0],
-    disable?:    boolean
+    avoid?:      boolean
 ) {
     
-    const isDisabled = disable || is.empty(priorities)
+    const isDisabled = avoid || is.empty(priorities)
     
     
     
     const qs = isDisabled ? '' : `--sql
-        PARTITION BY ${priorities}
+        PARTITION BY ${priority(priorities)}
     `
 
 

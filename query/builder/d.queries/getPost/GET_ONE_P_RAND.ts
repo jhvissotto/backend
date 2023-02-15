@@ -18,7 +18,7 @@ export function GET_ONE_P_RAND(
 
     let qs = `--sql
         -- WITH 
-        -- # optional: 
+        -- # optional 
         -- tv_post,
         
         ${WITH([

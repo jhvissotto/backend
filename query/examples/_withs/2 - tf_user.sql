@@ -1,4 +1,6 @@
+-- # optional 
 -- tv_user,
+
 
 tf_user AS (
 	SELECT td_user.* 

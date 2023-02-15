@@ -20,7 +20,7 @@ export function tp_(tableP: Args.Table, tableT: Args.Table,
 
     
     let qs = `--sql
-        -- # optional: 
+        -- # optional 
         -- tv_post,
         -- tf_post,
 

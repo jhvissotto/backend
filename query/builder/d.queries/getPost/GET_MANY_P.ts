@@ -19,7 +19,7 @@ export function GET_MANY_P(
 
     let qs = `--sql
         -- WITH 
-        -- # optional: 
+        -- # optional 
         -- tv_post,
         
         ${WITH([

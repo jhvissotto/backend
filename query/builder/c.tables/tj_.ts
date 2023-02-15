@@ -21,7 +21,7 @@ export function tj_(
 
         
         let qs = `--sql
-            -- # optional: 
+            -- # optional 
             -- tp_post,
             -- tv_post,
             -- tv_tag,
@@ -72,7 +72,7 @@ export function tj_(
 
 
         let qs = `--sql
-            -- # optional: 
+            -- # optional 
             -- tp_post,
 
             tj_post_tag_user AS (

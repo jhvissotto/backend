@@ -7,7 +7,7 @@ export function tg_(tableT: Args.Table, tableP: Args.Table) {
 
 
     let qs = `--sql
-        -- # required:
+        -- # required
         -- tj_tag_post,
 
         tg_tag_post AS (

@@ -1,6 +1,9 @@
 WITH 
+-- # required 
 tj_post_tag,
 tf_tag,
+
+-- # optional 
 -- tv_post,
 -- tv_tag,
 

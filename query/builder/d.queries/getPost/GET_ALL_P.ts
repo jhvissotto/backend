@@ -15,7 +15,7 @@ export function GET_ALL_P(
 
     let qs = `--sql
         -- WITH 
-        -- # optional:  
+        -- # optional  
         -- tv_post,
         
         ${WITH([

@@ -5,14 +5,14 @@ import { ORDER_BY, PARTITION_BY } from '~/query/builder/b.commands'
 // prettier-ignore
 export function tm_(tableP: Args.Table, tableT: Args.Table, 
     props: {
-        many: number,
+        many: Args.Many,
     },
-    partOpts: {
+    partBy: {
         priorities?: Parameters<typeof PARTITION_BY>[0]
         disable?:    Parameters<typeof PARTITION_BY>[1]
     }, 
-    orderOpts: Parameters<typeof ORDER_BY>[1] & { 
-        sort:  Parameters<typeof ORDER_BY>[0] 
+    orderBy:  Parameters<typeof ORDER_BY>[1] & { 
+        sort: Parameters<typeof ORDER_BY>[0] 
     },
     opts?: {
         withTableVisible?:      boolean,
@@ -22,10 +22,12 @@ export function tm_(tableP: Args.Table, tableT: Args.Table,
 
 
     let qs = `--sql
-        -- # optional: 
+
+        -- # optional 
         -- tp_post,
         -- tv_post,
         -- tv_tag,
+
 
         tn_post_tag AS (
             SELECT
@@ -34,8 +36,8 @@ export function tm_(tableP: Args.Table, tableT: Args.Table,
                 ROW_NUMBER() OVER(
                     -- PARTITION BY fk_post 
                     -- ORDER BY RAND()
-                     ${PARTITION_BY(partOpts?.priorities,   partOpts?.disable)} 
-                     ${ORDER_BY(   orderOpts.sort,         orderOpts)}
+                     ${PARTITION_BY(partBy?.priorities,  partBy?.disable)} 
+                     ${ORDER_BY(    orderBy.sort,       orderBy)}
                 ) AS rn_post, -- tag by post
                 
                 td_post.*,
@@ -61,6 +63,7 @@ export function tm_(tableP: Args.Table, tableT: Args.Table,
 
 
 
+    
     qs = replacer(qs, {
         comments: {
             withTV: opts?.withTableVisible,

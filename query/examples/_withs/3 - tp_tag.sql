@@ -1,5 +1,7 @@
+-- # optional 
 -- tv_tag,
 -- tf_tag,
+
 
 tu_tag AS (
 	SELECT DISTINCT fk_tag
@@ -26,6 +28,4 @@ tp_tag AS (
 	BETWEEN (:items_tag *  :page_tag + 1) 
 	AND 	(:items_tag * (:page_tag + 1))
 )
-
-
 

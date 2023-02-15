@@ -1,5 +1,7 @@
+-- # optional 
 -- tv_post,
 -- tf_post,
+
 
 tu_post AS (
 	SELECT DISTINCT fk_post
@@ -26,6 +28,4 @@ tp_post AS (
 	BETWEEN (:items_post *  :page_post + 1) 
 	AND 	(:items_post * (:page_post + 1))
 )
-
-
 

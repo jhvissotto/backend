@@ -1,4 +1,6 @@
+-- # optional 
 -- tv_tag,
+
 
 tf_tag AS (
 	SELECT td_tag.* 

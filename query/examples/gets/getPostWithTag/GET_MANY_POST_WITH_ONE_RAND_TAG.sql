@@ -1,4 +1,5 @@
 WITH
+-- # required 
 tm_post_tag,
 
 

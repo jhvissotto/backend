@@ -22,7 +22,7 @@ export function tf_(table: Args.Table,
     ? `tf_post AS (SELECT td_post * FROM td_post)`
     
     : `--sql
-        -- # optional: 
+        -- # optional 
         -- tv_post,
 
         tf_post AS (

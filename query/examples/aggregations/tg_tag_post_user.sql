@@ -1,4 +1,6 @@
+-- # required 
 -- tj_tag_post_user,
+
 
 tg_tag_post_user AS (
 	SELECT 

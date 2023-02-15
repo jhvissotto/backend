@@ -1,4 +1,6 @@
+-- # required 
 -- tj_user_post,
+
 
 tg_user_post AS (
 	SELECT 

@@ -25,11 +25,11 @@ export function GET_ALL_P_BY_T(
     let qs = `--sql
         -- WITH 
 
-        -- # optional: 
+        -- # optional 
         -- tv_post,
         -- tv_tag,
 
-        -- # required: 
+        -- # required 
         -- tj_post_tag,
         -- tf_tag,
         

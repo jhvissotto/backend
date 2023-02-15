@@ -23,6 +23,7 @@ export module Args {
 
   //
 
+  export type Many = number
   export type Items = number
   export type Page = number
 
