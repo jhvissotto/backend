@@ -27,6 +27,6 @@ export function RN(
     `
 
 
-    console.log('qs', qs)
+    // console.log('qs', qs)
     return qs
 }

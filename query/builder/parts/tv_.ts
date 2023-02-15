@@ -1,46 +1,46 @@
-import { __ } from '../../builder/_fns/__'
-import { Args } from '~/query/builder/Args'
-import { tbl } from '~/query/builder/_fns/tbl'
+import { Args } from '../Args'
+import { __, replacer } from '~/query/builder/_fns'
 
 // prettier-ignore
-export function tv_(
-    table:  Args.Table, 
-    opts?:  { 
-        hasLaunchDate?: boolean 
-        mirror?:        boolean,
+export function tv_(table: Args.Table, 
+    opts?: { 
+        skip?:          boolean, 
+        hasLaunchDate?: boolean,
     }
 ) {
-    // options
-    const hasLaunchDate = opts?.hasLaunchDate
-    const mirror        = opts?.mirror
 
 
 
-    // ================ mirror ================ //
-    if (mirror) {
-        const qs = `
-            ${tbl('tv', table)} AS (
-                SELECT * 
-                FROM ${tbl('td', table)}
-            )
-        `
-        // console.log('qs', qs)
-        return qs
-    }
-
-
-
-    // ================ query ================ //
-    const qs = `
-        ${tbl('tv', table)} AS (
+    let qs = opts?.skip 
+    
+    ? `tv_post AS (SELECT * FROM td_post)`
+    
+    : `--sql
+        tv_post AS (
             SELECT * 
-            FROM ${tbl('td', table)}
+            FROM td_post
+            
             WHERE (
-                    isVisible_${table}
-                ${__(hasLaunchDate)} AND launchDate <= CURRENT_TIMESTAMP
-            )
+                    isVisible_post
+                -- /*hasLaunchDate*/ AND launchDate <= CURRENT_TIMESTAMP
+            )   
         )
     `
+
+    
+
+    qs = replacer(qs, {
+        comments: {
+            hasLaunchDate: opts?.hasLaunchDate, 
+        },
+        names: {
+            post: table, 
+        }, 
+    })
+
+
+
+
     // console.log('qs', qs)
     return qs
 }

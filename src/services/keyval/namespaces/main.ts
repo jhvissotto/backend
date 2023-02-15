@@ -1,5 +1,5 @@
 import { env } from '~/src/global'
-import { keyval } from '~/src/services'
+import * as keyval from '../'
 
 export const main = keyval.create({
   namespace: 'main',

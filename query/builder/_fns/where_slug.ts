@@ -1,3 +1,4 @@
+import { check } from '~/src/libs/functions/array'
 import { Args } from '../Args'
 import { valueOrBind } from './valueOrBind'
 
@@ -8,15 +9,10 @@ export function where_slug(
     value?: string, 
 ) {
     // ================ check ================ //
-    const has_lang = {
-        en: langs?.includes?.('en'),
-        fr: langs?.includes?.('fr'),
-        es: langs?.includes?.('es'),
-        pt: langs?.includes?.('pt'),
-        it: langs?.includes?.('it'),
-    }
+    const { has_lang } = check.langs(langs)
     
     
+
     // ================ prepare key VALUE ================ //
     const _valueOrBind = valueOrBind(`slug_${field}`, value)
     
@@ -43,5 +39,6 @@ export function where_slug(
 
 
 
+    // console.log('qs', qs)
     return qs
 }

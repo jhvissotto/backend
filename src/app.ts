@@ -1,3 +1,6 @@
+export * as keys from './keys'
+export * as libs from './libs'
+
 export * as Api from './api'
 // export * as apollo from "./apollo";
 export * as cache from './cache'
@@ -12,8 +15,6 @@ export * as E from './error'
 export * as graphql from './graphql'
 export * as mids from './middlewares'
 // export * as json from './json'
-export * as keys from './keys'
-export * as libs from './libs'
 export * as nav from './navigation'
 export * as providers from './providers'
 export * from './public'

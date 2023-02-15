@@ -1,51 +1,61 @@
-import { Args } from '~/query/builder/Args'
-import { WHERE } from '../commands/WHERE'
-import { tbls } from '../_fns/tbls'
-import { _ } from '../_fns/_'
-// import { AS } from '../commands/AS'
-
-// type Opts = Omit<Parameters<typeof WHERE>[0], 'field'>
-type Opts = Parameters<typeof WHERE>[0]
+import { Args } from '../Args'
+import { replacer } from '../_fns'
 
 // prettier-ignore
-export function tf_(
-    tables:  Parameters<typeof tbls>[1], 
-    opts:    Opts & {
-        fr?: Args.TblKey, 
-        mirror?: boolean 
-    },
-    langs:   Args.Langs[]
+export function tf_(table: Args.Table, 
+    props: { 
+        BY:     Args.BY 
+        pk?:    Args.PK, 
+        slug?:  Args.Slug, 
+    }, 
+    opts?: { 
+        skip?:              boolean, 
+        withTableVisible?:  boolean,
+    }
 ) {
-
-    // options
-    const fr     = opts?.fr || 'tn'
-    const mirror = opts?.mirror
 
 
     
-    // ================ mirror ================ //
-    if (mirror) {
-        const qs = `
-            ${tbls('tf', tables)} AS (
-                SELECT *
-                FROM ${tbls(fr, tables)}
+    let qs = opts?.skip
+    
+    ? `tf_post AS (SELECT td_post * FROM td_post)`
+    
+    : `--sql
+        -- tv_post,
+
+        tf_post AS (
+            SELECT td_post.* 
+            FROM   td_post
+            
+            -- /*withTV*/ JOIN tv_post  ON  td_post.pk_post  =  tv_post.pk_post
+
+            WHERE (
+            -- /*PK*/       pk_post         = :pk_post
+            -- /*SLUG*/     slug_en_post    = :slug_post  
+            -- /*SLUG*/ OR  slug_pt_post    = :slug_post
             )
-        `
-        // console.log('qs', qs)
-        return qs
-    }
-
-
-
-    // ================ query ================ //
-    const qs = `
-        ${tbls('tf', tables)} AS (
-            SELECT *
-            FROM ${tbls(fr, tables)}
-        
-            ${_(mirror)} ${WHERE(opts, langs)}
         )
     `
+
+
+    
+    qs = replacer(qs, {
+        comments: {
+            withTV: opts?.withTableVisible,
+            PK:     props.BY == 'PK',
+            SLUG:   props.BY == 'SLUG',
+        },
+        names: {
+            post: table,
+        },
+        values: {
+            pk_post:    props?.pk,
+            slug_post:  props?.slug,
+        }
+    })
+
+
+
     // console.log('qs', qs)
     return qs
 }

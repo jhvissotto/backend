@@ -12,6 +12,6 @@ import { providers } from './src'
 // const c = new AbortController()
 // c.abort()
 
-// const { data, error, isSuccess, isError } = await providers.test.getPostById.api({
-//     params: { id_post: 123 }
+// const { data, error, isError } = await providers.test.getPostById.api({
+//   params: { id_post: 123 },
 // })

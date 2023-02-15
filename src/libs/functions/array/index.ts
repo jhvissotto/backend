@@ -1,3 +1,4 @@
+export * as check from './check'
 export * from './clean'
 export * as is from './is'
 export * from './join'

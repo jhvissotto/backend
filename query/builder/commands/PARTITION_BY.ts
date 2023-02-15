@@ -14,6 +14,6 @@ export function PARTITION_BY(
         PARTITION BY ${priorities}
     `
 
-    console.log('qs', qs)
+    // console.log('qs', qs)
     return qs
 }

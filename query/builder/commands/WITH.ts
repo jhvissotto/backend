@@ -18,6 +18,6 @@ export function WITH(list: List) {
     `
 
     
-    console.log('qs', qs)
+    // console.log('qs', qs)
     return qs
 }

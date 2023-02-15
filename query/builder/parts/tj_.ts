@@ -1,53 +1,51 @@
+import { replacer } from '~/query/builder/_fns'
 import { Args } from '../Args'
-import { _ } from '../_fns/_'
-import { tbl } from '../_fns/tbl'
-import { JOIN } from '../commands/JOIN'
-// import { AS } from '../commands/AS'
 
 // prettier-ignore
-export function tj_(
-    left:  Args.Table,
-    right: Args.Table,
+export function tj_(tableP: Args.Table, tableT: Args.Table, 
     opts?: {
-        tl?:    Args.TblKey,
-        tr?:    Args.TblKey,
-        join?:  Args.Join,
-        steps?: Args.Steps
-        mirror?: boolean,
+        withTableVisible?:      boolean,
+        withTablePagination?:   boolean,
     },
 ) {
-    const tl = opts.tl || 'tv'
-    const tr = opts.tr || 'tv'
-    const mirror = opts?.mirror
 
-    
+    let qs = `--sql
+        -- tp_post,
+        -- tv_post,
+        -- tv_tag,
 
-    // ================ mirror ================ //
-    if (mirror) {
-        const qs = `
-            ${tbl('tj', left, right)} AS (
-                SELECT *
-                FROM ${tbl(tl, left)}
-            )
-        `
-        // console.log('qs', qs)
-        return qs
-    }
+        tj_post_tag AS (
+            SELECT
+                -- /*withTP*/ tp_post.sr_post,
+                td_post.*,
+                td_tag.*
+                
+            FROM td_post
+            -- /*withTP*/ JOIN tp_post        ON  td_post.pk_post  =  tp_post.pk_post  
 
+            JOIN tr_post_tag    ON  td_post.pk_post  =  tr_post_tag.fk_post 
+            JOIN td_tag         ON  td_tag.pk_tag    =  tr_post_tag.fk_tag
 
-    
-    // ================ query ================ //
-    const qs = `
-        ${tbl('tj', left, right)} AS (
-            SELECT *
-            FROM ${tbl(tl, left)}
-        
-            ${_(mirror)}  ${JOIN([tl, left], [tr, right], { 
-                join:  opts?.join, 
-                steps: opts?.steps
-            })}
+            -- /*withTV*/ JOIN tv_post        ON  td_post.pk_post  =  tv_post.pk_post
+            -- /*withTV*/ JOIN tv_tag         ON  td_tag.pk_tag    =  tv_tag.pk_tag
         )
     `
+
+
+
+    qs = replacer(qs, {
+        comments: {
+            withTV: opts?.withTableVisible,
+            withTP: opts?.withTablePagination,
+        },
+        names: {
+            post: tableP,
+            tag:  tableT,
+        },
+    })
+
+
+
     // console.log('qs', qs)
     return qs
 }

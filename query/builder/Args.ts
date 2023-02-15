@@ -3,7 +3,7 @@ export module Args {
   // export type COMMAND = 'SELECT' | 'INSERT' | 'UPSERT' | 'UPDATE' | 'DELETE'
   export type GET = '' | 'ALL' | 'ONE' | 'MANY'
 
-  export type TblKey = 'td' | 'tr' | 'tv' | 'tj' | 'tn' | 'tf' | 'tq' | 'tb'
+  export type TblKey = 'td' | 'tr' | 'tv' | 'tf' | 'tp' | 'tn' | 'tm' | 'tj' | 'tq' | 'tb'
   export type FldKey = 'id' | 'pk' | 'fk' | 'slug' | 'rn'
 
   export type Table = string
@@ -14,7 +14,7 @@ export module Args {
 
   //
 
-  export type BY = 'PK' | 'SLUG' | 'RN'
+  export type BY = 'PK' | 'SLUG' // | 'RN'
   export type Langs = '' | 'en' | 'fr' | 'es' | 'pt' | 'it'
 
   export type PK = number | string

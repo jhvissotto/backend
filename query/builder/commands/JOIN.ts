@@ -1,7 +1,7 @@
 import { Args } from '../Args'
 
 type Elem = [Args.TblKey, Args.Table]
-type List = Elem[]
+// type List = Elem[]
 
 // prettier-ignore
 export function JOIN(_left: Elem, _right: Elem, opts?: {
@@ -22,8 +22,12 @@ export function JOIN(_left: Elem, _right: Elem, opts?: {
     
     const LEFT  = join == 'LEFT'
     const RIGHT = join == 'RIGHT'
-    const FLAG  = LEFT ? 'LEFT' : RIGHT ? 'RIGHT' : ''
-    const JOIN  = `JOIN ${FLAG}`
+
+    const FLAG  = 
+        LEFT  ? 'LEFT'  : 
+        RIGHT ? 'RIGHT' : ''
+
+    const JOIN  = `${FLAG} JOIN`
 
     
 
