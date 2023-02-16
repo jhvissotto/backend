@@ -3,7 +3,7 @@ import { __, replacer } from '~/query/builder/a.fns'
 import { ORDER_BY, PARTITION_BY } from '~/query/builder/b.commands'
 
 // prettier-ignore
-export function tg_(tableT: Args.Table, tableP: Args.Table) {
+export function tg_(tag: Args.Table, post: Args.Table) {
 
 
     let qs = `--sql
@@ -33,8 +33,8 @@ export function tg_(tableT: Args.Table, tableP: Args.Table) {
 
     qs = replacer(qs, {
         names: {
-            post: tableP,
-            tag:  tableT,
+            post,
+            tag,
         },
     })
 

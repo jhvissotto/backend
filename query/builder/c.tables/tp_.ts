@@ -3,7 +3,7 @@ import { __, replacer } from '~/query/builder/a.fns'
 import { ORDER_BY, PARTITION_BY } from '~/query/builder/b.commands'
 
 // prettier-ignore
-export function tp_(tableP: Args.Table, tableT: Args.Table, 
+export function tp_(post: Args.Table, tag: Args.Table, 
     props: {
         GET:    Args.GET,
         items?: number,
@@ -63,8 +63,8 @@ export function tp_(tableP: Args.Table, tableT: Args.Table,
             paginated:  props.GET == 'MANY'
         },
         names: {
-            post: tableP,
-            tag:  tableT,
+            post,
+            tag,
         },
         values: {
             items_post: props?.items,

@@ -3,7 +3,7 @@ import { __, replacer } from '~/query/builder/a.fns'
 import { ORDER_BY, PARTITION_BY } from '~/query/builder/b.commands'
 
 // prettier-ignore
-export function tf_(table: Args.Table, 
+export function tf_(post: Args.Table, 
     props: { 
         BY:     Args.BY 
         pk?:    Args.PK, 
@@ -48,7 +48,7 @@ export function tf_(table: Args.Table,
             SLUG:   props.BY == 'SLUG',
         },
         names: {
-            post: table,
+            post,
         },
         values: {
             pk_post:    props?.pk,

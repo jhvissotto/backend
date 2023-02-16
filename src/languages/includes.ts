@@ -1,12 +1,14 @@
+import type { List } from '.'
+
 // prettier-ignore
-export function langs(arr: string[]) {
+export function includes(arr: List[]) {
 
     const has_lang = {
         en: arr?.includes?.('en'),
-        fr: arr?.includes?.('fr'),
         es: arr?.includes?.('es'),
-        pt: arr?.includes?.('pt'),
+        fr: arr?.includes?.('fr'),
         it: arr?.includes?.('it'),
+        pt: arr?.includes?.('pt'),
     }
     
     return { has_lang }

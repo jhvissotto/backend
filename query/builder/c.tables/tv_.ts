@@ -3,7 +3,7 @@ import { __, replacer } from '~/query/builder/a.fns'
 import { ORDER_BY, PARTITION_BY } from '~/query/builder/b.commands'
 
 // prettier-ignore
-export function tv_(table: Args.Table, 
+export function tv_(post: Args.Table, 
     opts?: { 
         skip?:          boolean, 
         hasLaunchDate?: boolean,
@@ -35,7 +35,7 @@ export function tv_(table: Args.Table,
             hasLaunchDate: opts?.hasLaunchDate, 
         },
         names: {
-            post: table, 
+            post, 
         }, 
     })
 

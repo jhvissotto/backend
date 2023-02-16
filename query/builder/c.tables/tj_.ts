@@ -26,6 +26,7 @@ export function tj_(
             -- tv_post,
             -- tv_tag,
     
+
             tj_post_tag AS (
                 SELECT
                 -- /*withTP*/ tp_post.sr_post,
@@ -72,8 +73,13 @@ export function tj_(
 
 
         let qs = `--sql
+        
             -- # optional 
             -- tp_post,
+            -- tv_post
+            -- tv_tag
+            -- tv_user
+
 
             tj_post_tag_user AS (
                 SELECT 
@@ -90,12 +96,21 @@ export function tj_(
             
                 JOIN tr_user_post 	ON  td_post.pk_post  =  tr_user_post.fk_post
                 JOIN td_user       	ON  td_user.pk_user  =  tr_user_post.fk_user
+
+
+                -- /*withTV*/ JOIN tv_post        ON  td_post.pk_post  =  tv_post.pk_post
+                -- /*withTV*/ JOIN tv_tag         ON  td_tag.pk_tag    =  tv_tag.pk_tag
+                -- /*withTV*/ JOIN tv_user        ON  td_user.pk_user  =  tv_user.pk_user
             )
         `
 
 
 
         qs = replacer(qs, {
+            comments: {
+                withTV: opts?.withTableVisible,
+                withTP: opts?.withTablePagination,
+            },
             names: {
                 post,
                 tag,

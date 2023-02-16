@@ -3,7 +3,7 @@ import { __, replacer } from '~/query/builder/a.fns'
 import { ORDER_BY, PARTITION_BY } from '~/query/builder/b.commands'
 
 // prettier-ignore
-export function tm_(tableP: Args.Table, tableT: Args.Table, 
+export function tm_(post: Args.Table, tag: Args.Table, 
     props: {
         many: Args.Many,
     },
@@ -28,6 +28,7 @@ export function tm_(tableP: Args.Table, tableT: Args.Table,
         -- tv_post,
         -- tv_tag,
 
+        
 
         tn_post_tag AS (
             SELECT
@@ -62,7 +63,6 @@ export function tm_(tableP: Args.Table, tableT: Args.Table,
     `
 
 
-
     
     qs = replacer(qs, {
         comments: {
@@ -70,8 +70,8 @@ export function tm_(tableP: Args.Table, tableT: Args.Table,
             withTP: opts?.withTablePagination,
         },
         names: {
-            post: tableP,
-            tag:  tableT,
+            post,
+            tag,
         },
         values: {
             many_tag: props.many,
