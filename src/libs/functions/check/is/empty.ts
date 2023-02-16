@@ -7,8 +7,13 @@ export function empty(input: any) {
   return true
 
 
-  // ======== string ======== //
+  // ======== string empty ======== //
   if (input === "") 
+  return true
+  
+
+  // ======== blank space ======== //
+  if (input === " ") 
   return true
 
 

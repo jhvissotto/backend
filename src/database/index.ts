@@ -1,4 +1,5 @@
-export * from "./knex";
-export * from "./initialize";
-export * as model from "./model";
-export * as sql from "./sql";
+export * from './knex'
+export * from './initialize'
+export * as model from './model'
+export * as query from './query'
+export * as sql from './sql'
