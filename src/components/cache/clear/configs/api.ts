@@ -21,6 +21,6 @@ export async function api(
   }))
 
   
-  // console.log('>> call:', call)
+  // console.log('call', call)
   return call
 }

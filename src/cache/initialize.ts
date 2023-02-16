@@ -8,7 +8,7 @@ export function initialize(opts?: Parameters<typeof Cache.options>[0]) {
     debug: env().CACHE_EXPRESS_DEBUG,
     defaultDuration: config().cacheDuration,
     enabled: env().CACHE_EXPRESS_ENABLE,
-    redisClient: redis.client, // if provided, uses the [node-redis](https://github.com/NodeRedis/node_redis) client instead of [memory-cache](https://github.com/ptarjan/node-cache)
+    redisClient: redis.clients.express, // if provided, uses the [node-redis](https://github.com/NodeRedis/node_redis) client instead of [memory-cache](https://github.com/ptarjan/node-cache)
     // appendKey:        fn(req, res),   // appendKey takes the req/res objects and returns a custom value to extend the cache key
     // headerBlacklist:  [],             // list of headers that should never be cached
     statusCodes: {

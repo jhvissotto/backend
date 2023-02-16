@@ -26,6 +26,7 @@ export async function _ctrl(
   const { locals } = res
 
   let resp = ctrl.newForm({
+    res_version: 1,
     cache_enable: defs.canCache,
     cache_duration: defs.canCache ? config().cacheDuration : "",
     validation_params: req.params,

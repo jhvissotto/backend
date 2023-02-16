@@ -44,7 +44,7 @@ export function env() {
     DB_URL:                   env.DB_URL,
 
     // REDIS
-    REDIS_URL:                env.REDIS_URL,
+    REDIS_BASE_URL:           env.REDIS_BASE_URL,
 
 
 

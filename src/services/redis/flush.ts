@@ -1,53 +1,26 @@
-import { redis } from "~/src/services";
+// libs
+import { useCallback } from '~/src/libs/helpers'
+// local
+import type { Clients } from '.'
+import { createClient, clients } from '.'
 
-export async function flush({
-  // isAsync = true,
-  which = "db",
-}: {
-  // isAsync?: boolean;
-  which?: "db" | "all";
-}): Promise<
-  | {
-      response: any;
-      error: null;
-      isError: false;
-    }
-  | {
-      response: null;
-      error: Error;
-      isError: true;
-    }
-> {
-  //  body
-  // const mode = isAsync ? "ASYNC" : null;
+type Client_Select = ReturnType<typeof createClient>
+
+type CBFn = Parameters<Client_Select['flushdb']>[1]
+
+const { cb } = useCallback<Parameters<CBFn>[1], Parameters<CBFn>[0]>()
+
+type CBThen = ReturnType<typeof cb.then>
+type CBCatch = ReturnType<typeof cb.catch>
+
+//
+export async function flush(client: Clients): Promise<CBThen | CBCatch> {
+  //
+  const client_select = clients[client]
 
   return new Promise((resolve, reject) => {
-    if (which == "db") {
-      // if (isAsync) {
-      //   redis.client.flushdb(mode, (error, response) => {
-      //     if (error) reject({ response: null, error, isError: true });
-      //     else resolve({ response, error: null, isError: false });
-      //   });
-      // } else {
-      redis.client.flushdb((error, response) => {
-        if (error) reject({ response: null, error, isError: true });
-        else resolve({ response, error: null, isError: false });
-      });
-      // }
-    }
-
-    if (which == "all") {
-      // if (isAsync) {
-      //   redis.client.flushall(mode, (error, response) => {
-      //     if (error) reject({ response: null, error, isError: true });
-      //     else resolve({ response, error: null, isError: false });
-      //   });
-      // } else {
-      redis.client.flushall((error, response) => {
-        if (error) reject({ response: null, error, isError: true });
-        else resolve({ response, error: null, isError: false });
-      });
-      // }
-    }
-  });
+    client_select.flushdb((error, response) => {
+      error ? reject(cb.catch(error)) : resolve(cb.then(response))
+    })
+  })
 }

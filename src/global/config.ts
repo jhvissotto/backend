@@ -16,5 +16,10 @@ export const config = () => {
       subject:  'Welcome',
       text:     'Hello World',
     },
+    redisClientsDb: {
+      serverExpress: 1,
+      serverApollo: 2,
+      keyvalMain: 3,
+    },
   }
 }

@@ -1,3 +1,3 @@
-export * from './initialize'
-export * from './client'
+export * from './createClient'
+export * from './clients'
 export * from './flush'

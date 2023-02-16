@@ -1,4 +1,3 @@
-import { check } from '~/src/libs/functions/array'
 import { Args } from '~/src/database/query/builder'
 import { valueOrBind } from '~/src/database/query/builder/a.fns'
 
@@ -9,9 +8,14 @@ export function where_slug(
     value?: string, 
 ) {
     // ================ check ================ //
-    const { has_lang } = check.langs(langs)
-    
-    
+    const has_lang = {
+        en: langs?.includes?.('en'),
+        fr: langs?.includes?.('fr'),
+        es: langs?.includes?.('es'),
+        pt: langs?.includes?.('pt'),
+        it: langs?.includes?.('it'),
+    }    
+
 
     // ================ prepare key VALUE ================ //
     const _valueOrBind = valueOrBind(`slug_${field}`, value)

@@ -1,3 +1,4 @@
+import { array } from '~/src/libs/functions'
 import { Args } from '~/src/database/query/builder'
 import { __, priority, RAND } from '~/src/database/query/builder/a.fns'
 import {} from '~/src/database/query/builder/b.commands'
@@ -29,7 +30,7 @@ export function ORDER_BY(Sort: Args.Sort, props?: {
     // ================ RANDOM ================ //
     // ======================================== //
     case 'RANDOM':            return `ORDER BY ${RAND(randKey)}` 
-    case 'WEIGHT_RAND':       return `ORDER BY ${[priority.v2(priorities), RAND(randKey)].join(', ')}`        
+    case 'WEIGHT_RAND':       return `ORDER BY ${array.join([priority.v2(priorities), RAND(randKey)], ', ')}`        
 
 
     // ============================================== //

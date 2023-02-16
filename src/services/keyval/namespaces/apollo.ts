@@ -1,7 +1,14 @@
-import { env } from '~/src/global'
+// global
+import { env, config } from '~/src/global'
+// libs
+import { link } from '~/src/libs/helpers'
+// local
 import * as keyval from '../'
+
+const baseUrl = env().REDIS_BASE_URL
+const db = config().redisClientsDb.serverApollo
 
 export const apollo = keyval.create({
   namespace: 'apollo',
-  uri: env().REDIS_URL,
+  uri: link.redis.stringify(baseUrl, db),
 })

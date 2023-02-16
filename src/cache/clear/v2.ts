@@ -1,5 +1,5 @@
-import { redis } from "~/src/services";
+import { redis } from '~/src/services'
 
-export async function v2(args?: Parameters<typeof redis.flush>[0]) {
-  return await redis.flush({ ...args });
+export async function v2() {
+  return await redis.flush('express')
 }
