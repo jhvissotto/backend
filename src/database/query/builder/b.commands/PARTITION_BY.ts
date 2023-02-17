@@ -14,7 +14,7 @@ export function PARTITION_BY(
     
     
     
-    const qs = skip ? '' : `--sql
+    const qs = skip ? '' : `-- sql
         PARTITION BY ${priority.v1(priorities, lastPriority)}
     `
 

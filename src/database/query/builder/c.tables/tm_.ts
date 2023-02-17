@@ -21,7 +21,7 @@ export function tm_(post: Args.Table, tag: Args.Table,
 ) {
 
 
-    let qs = `--sql
+    let qs = `-- sql
 
         -- # optional 
         -- tp_post,

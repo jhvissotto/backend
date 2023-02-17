@@ -17,7 +17,7 @@ export function GET_MANY_P(
 ) {
 
 
-    let qs = `--sql
+    let qs = `-- sql
         -- WITH 
         -- # optional 
         -- tv_post,

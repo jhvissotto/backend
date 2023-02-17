@@ -6,7 +6,7 @@ import { ORDER_BY, PARTITION_BY } from '~/src/database/query/builder/b.commands'
 export function tg_(tag: Args.Table, post: Args.Table) {
 
 
-    let qs = `--sql
+    let qs = `-- sql
         -- # required
         -- tj_tag_post,
 

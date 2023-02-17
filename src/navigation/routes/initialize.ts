@@ -13,7 +13,7 @@ export function initialize() {
     pattern:      security.keygen.defs.pattern,
     ctrl:         security.keygen._ctrl
   }, {
-    z_schema:     security.keygen.schema,
+    z_schema:     security.keygen.zSchema,
     canSanitize:  security.keygen.defs.canSanitize,
     canCache:     security.keygen.defs.canCache
   })
@@ -24,7 +24,7 @@ export function initialize() {
     pattern:      security.auth.defs.pattern,
     ctrl:         security.auth._ctrl
   }, {
-    z_schema:     security.auth.schema,
+    z_schema:     security.auth.zSchema,
     canSanitize:  security.auth.defs.canSanitize,
     canCache:     security.auth.defs.canCache
   })
@@ -38,7 +38,7 @@ export function initialize() {
     pattern:      cache.test.defs.pattern,
     ctrl:         cache.test._ctrl
   }, {
-    z_schema:     cache.test.schema,
+    z_schema:     cache.test.zSchema,
     canSanitize:  cache.test.defs.canSanitize,
     canCache:     cache.test.defs.canCache
   })
@@ -49,7 +49,7 @@ export function initialize() {
     pattern:      cache.clear.defs.pattern,
     ctrl:         cache.clear._ctrl
   }, {
-    z_schema:     cache.test.schema,
+    z_schema:     cache.test.zSchema,
     canSanitize:  cache.test.defs.canSanitize,
     canCache:     cache.test.defs.canCache
   })
@@ -63,7 +63,7 @@ export function initialize() {
     pattern:      database.select.defs.pattern,
     ctrl:         database.select._ctrl
   }, {
-    z_schema:     database.select.schema,
+    z_schema:     database.select.zSchema,
     canSanitize:  database.select.defs.canSanitize,
     canCache:     database.select.defs.canCache
   })
@@ -77,7 +77,7 @@ export function initialize() {
     pattern:      start.returnRequest.defs.pattern,
     ctrl:         start.returnRequest._ctrl
   }, {
-    z_schema:     start.returnRequest.schema,
+    z_schema:     start.returnRequest.zSchema,
     canSanitize:  start.returnRequest.defs.canSanitize,
     canCache:     start.returnRequest.defs.canCache
   })
@@ -89,7 +89,7 @@ export function initialize() {
     pattern:      start.test.defs.pattern,
     ctrl:         start.test._ctrl
   }, {
-    z_schema:     start.test.schema,
+    z_schema:     start.test.zSchema,
     canSanitize:  start.test.defs.canSanitize,
     canCache:     start.test.defs.canCache
   })
@@ -101,7 +101,7 @@ export function initialize() {
     pattern:      start.home.defs.pattern,
     ctrl:         start.home._ctrl
   }, {
-    z_schema:     start.home.schema,
+    z_schema:     start.home.zSchema,
     canSanitize:  start.home.defs.canSanitize,
     canCache:     start.home.defs.canCache
   })

@@ -1,9 +1,9 @@
-GET http://localhost:4000/auth?
+GET http://localhost:4000/security/auth?
 # &abc=123
 # &xyz=456
 
 # Content-Type: application/json
-Authorization: Basic user1:pass1
+Authorization: Basic email1:pass1
 # Authorization: Bearer abcd
 # X-REQUEST-TYPE: GraphQL
 # { "body": "1234" }
@@ -14,4 +14,64 @@ Authorization: Basic user1:pass1
 # ======== RESPONSE ======== #
 # ========================== #
 
-
+{
+	"res_version": 1,
+	"reqId_short": "14e8eff1a9c",
+	"reqId_v4": "dd70f1ff-a27e-42bc-aec0-423d1192972c",
+	"date_value": 1676630714992,
+	"date_full": "2023-02-17T10:45:14.992Z",
+	"date_formated": "2023-02-17  05:45:14",
+	"cache_enable": false,
+	"cache_response": null,
+	"cache_duration": "",
+	"status_message": "Successful",
+	"status_description": "OK",
+	"status_code": 200,
+	"status_flag": "success",
+	"validation_params": {},
+	"validation_query": {},
+	"validation_body": {},
+	"validation_isSanitized": false,
+	"valid_user": true,
+	"valid_pass": true,
+	"valid_credentials": null,
+	"user_level": null,
+	"user_levelReq": 0,
+	"user_isStaff": null,
+	"staff_level": null,
+	"staff_levelReq": null,
+	"token_valid": null,
+	"token_user": "",
+	"token_server": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwYXlsb2FkIjoiYWViMzQzZGM3MWMzYjA4YTA5ZTI0MDdiZThiNWU3N2Y3NjliN2Y3Mzk1MDYzYTVmOGI3MDJmOGU2NDdlMjkzMzI3MDQ0YTI4YTdiNDdhNTAwYzNiNzQwOTA5M2Y0ZTY4MDEyMjQ0ZjZiMDVhOWFjN2JiMTM5NGUxZTQzM2Y2YWQiLCJleHAiOjE2NzY2NDE1MTQsImlzcyI6IkJhY2tlbmQiLCJzdWIiOiJVc2VyIEFjY2VzcyJ9.4no2r__V4y8yIHGRVEApTshlvGFcBL2ZIqfXDJB-CZw",
+	"token_serverDuration": "",
+	"apiKey_valid": null,
+	"apiKey_user": "",
+	"apiKey_server": "",
+	"retryNumber": 0,
+	"pagined": null,
+	"page_key": 0,
+	"page_items": 0,
+	"page_number": 0,
+	"page_isLast": null,
+	"props_meta": {},
+	"props": {},
+	"list_meta": {},
+	"list": [],
+	"list_length": 0,
+	"list_isEmpty": true,
+	"list_isFilled": false,
+	"list_isZero": true,
+	"list_isUnique": false,
+	"list_isMany": false,
+	"resources_meta": {},
+	"resources_count": 0,
+	"resources": {},
+	"req_isSuccess": true,
+	"req_isOk": true,
+	"req_isError": false,
+	"req_hasWarns": null,
+	"errors_inDatabase": null,
+	"errors_inServices": null,
+	"errors_has": false,
+	"errors": []
+}

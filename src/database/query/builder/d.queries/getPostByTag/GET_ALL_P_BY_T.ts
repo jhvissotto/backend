@@ -22,7 +22,7 @@ export function GET_ALL_P_BY_T(
 ) {
 
 
-    let qs = `--sql
+    let qs = `-- sql
         -- WITH 
 
         -- # optional 

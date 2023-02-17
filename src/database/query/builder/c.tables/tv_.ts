@@ -16,7 +16,7 @@ export function tv_(post: Args.Table,
     
     ? `tv_post AS (SELECT * FROM td_post)`
     
-    : `--sql
+    : `-- sql
         tv_post AS (
             SELECT * 
             FROM td_post

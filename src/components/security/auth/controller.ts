@@ -7,7 +7,7 @@ import { z } from '~/src/libs/helpers/schema'
 // app
 import { ctrl, E } from '~/src'
 import { bcrypt, Token, crypt, formats } from '~/src/security'
-import { getCredentials } from '~/src/libs/helpers/parse'
+import { auth } from '~/src/libs/helpers'
 // local
 import type { Schema } from '.'
 import { defs, services } from '.'
@@ -39,52 +39,36 @@ export async function _ctrl(
   })
 
 
+
   // ============================= //
   // ======== credentials ======== //
   // ============================= //
-  const { credentials } = getCredentials(req)
+  const { credentials } = auth.Basic.getCredentials(req)
   
   if (credentials.missingAny) {
     locals.errors.push(E.create("INVALID_CREDENTIALS"))
   }
 
 
-
   // ========================== //
   // ======== database ======== //
   // ========================== //
-  const { check_user, check_staff } = await promise.v3.props({
-    check_user:   services.getUserInfoById({ id_user: credentials.user }),
-    check_staff:  services.getStaffById({ id_user: credentials.user }),
+  const call = await promise.v3.props({
+    user: services.getUserById({ pk: credentials.user })
   })
 
+  const user = call.user?.itemFirst
 
 
-  
-  if (check_user.isError) {
+
+  if (call.user.isError) {
     resp.errors_inDatabase = true
-    locals.errors.push(check_user.error)
+    locals.errors.push(call.user.error)
   }
 
-  if (!check_user.isUnique) locals.errors.push(E.create('INVALID_USER'))
+  if (!call.user.isUnique) locals.errors.push(E.create('INVALID_USER'))
   
-  resp.valid_user = check_user.isUnique
-
-
-
-
-
-
-  if (check_staff.isError) {
-    resp.errors_inDatabase = true
-    locals.errors.push(check_staff.error)
-  }
-
-  if (!check_staff.isUnique) locals.errors.push(E.create('INVALID_USER'))
-  
-  resp.valid_user = check_staff.isUnique
-
-
+  resp.valid_user = call.user.isUnique
 
 
 
@@ -94,7 +78,7 @@ export async function _ctrl(
   // ========================== //
   const check_pass = bcrypt.hash_match(
     cast.string(credentials.pass),
-    cast.string(check_user.itemFirst?.passHash)
+    cast.string(call.user.itemFirst?.passHash)
   )
 
 
@@ -103,10 +87,12 @@ export async function _ctrl(
   resp.valid_pass = check_pass.isValid
 
 
+
+
   // ======================= //
   // ======== token ======== //
   // ======================= //
-  if (check_user.isUnique && check_pass.isValid) {
+  if (call.user.isUnique && check_pass.isValid) {
 
     
     const { subject, zSchema } = formats.USER_ACCESS
@@ -114,9 +100,9 @@ export async function _ctrl(
 
 
     const { ciphered } = crypt.cipher<Payload>({
-      // user_isStaff: 
-      user_id: credentials.user,
-      user_level: check_user.itemFirst.pk_level
+      user_isStaff: user?.isStaff, 
+      user_id:      user?.pk_user,
+      user_level:   user?.level_user
     })
 
     const { token } = Token.create({ 
@@ -128,10 +114,12 @@ export async function _ctrl(
   }
 
 
-
   
   resp = ctrl.newForm({
     ...resp, 
+    user_isStaff: user?.isStaff,
+    user_level:   user?.level_user,
+    staff_level:  user?.level_staff,
     errors: resp.errors.concat(locals.errors),
   })
 

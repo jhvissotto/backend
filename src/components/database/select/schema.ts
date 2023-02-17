@@ -3,7 +3,7 @@ import { cast } from '~/src/libs/functions'
 import { model } from '~/src/database'
 
 // prettier-ignore
-export const schema = z.object({
+export const zSchema = z.object({
   params: z.object({
     table: z.enum(model.tables)
   }),
@@ -18,4 +18,4 @@ export const schema = z.object({
   body: z.object({})
 })
 
-export type Schema = z.infer<typeof schema>
+export type Schema = z.infer<typeof zSchema>

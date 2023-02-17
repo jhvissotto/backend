@@ -32,7 +32,7 @@ export function GET_MANY_P_BY_T_U(
 ) {
 
 
-    let qs = `--sql
+    let qs = `-- sql
         -- WITH
 
         -- # optional 

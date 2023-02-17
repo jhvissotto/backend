@@ -19,7 +19,7 @@ export function tp_(post: Args.Table, tag: Args.Table,
 ) {
 
     
-    let qs = `--sql
+    let qs = `-- sql
         -- # optional 
         -- tv_post,
         -- tf_post,

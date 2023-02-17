@@ -31,7 +31,7 @@ export function initialize() {
 
 
   // ======== parsers ======== //
-  server.express.use(parsers.bearerToken())
+  server.express.use(parsers.authBearer.getToken())
   server.express.use(parsers.cookie())
   server.express.use(parsers.universalCookies())
   server.express.use(Express.urlencoded({ extended: true }))

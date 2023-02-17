@@ -78,16 +78,6 @@ export function replacer(qs: string, val: {
     
     
 
-    
-    // ======================================================= //
-    // ======================== names ======================== //
-    // ======================================================= //
-    if (n?.post)                qs = qs.replace(RegExp('post',  'g'),   n.post)
-    if (n?.tag)                 qs = qs.replace(RegExp('tag',   'g'),   n.tag)
-    if (n?.user)                qs = qs.replace(RegExp('user',  'g'),   n.user)
-    
-
-    
 
     // ======================================================== //
     // ======================== values ======================== //
@@ -118,7 +108,17 @@ export function replacer(qs: string, val: {
     if (v?.page_user)           qs = qs.replace(RegExp(':page_user',  'g'),  `${v.page_user}`)
     
 
+
     
+    // ======================================================= //
+    // ======================== names ======================== //
+    // ======================================================= //
+    if (n?.post)                qs = qs.replace(RegExp('post',  'g'),   n.post)
+    if (n?.tag)                 qs = qs.replace(RegExp('tag',   'g'),   n.tag)
+    if (n?.user)                qs = qs.replace(RegExp('user',  'g'),   n.user)
+    
+
+
 
     // console.log('qs', qs)
     return qs

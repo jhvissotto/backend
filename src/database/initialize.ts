@@ -12,9 +12,9 @@ export function initialize(...args: Parameters<typeof Knex.create>) {
     console.log('>> onStat:', builder.toQuery())
   })
 
-  knex.on('query', query => {
-    console.log('>> onQuery', query)
-  })
+  // knex.on('query', query => {
+  //   console.log('>> onQuery', query)
+  // })
 
   return { knex }
 }

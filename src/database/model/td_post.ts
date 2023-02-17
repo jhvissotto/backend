@@ -1,17 +1,19 @@
+// prettier-ignore
 export type TD_post = {
-  id_post: number
-  pk_slug: string
-  title: string
-  text: string
-  crd_post: Date
-  upd_post: Date
+  id_ainc_post:	    number
+  pk_post:	        string
+  title_en_post:    string
+  text_en_post:	    string
+  create_post:	    Date
+  update_post:	    Date
 }
 
+// prettier-ignore
 export const td_post = {
-  id_post: 'id_post',
-  pk_slug: 'pk_slug',
-  title: 'title',
-  text: 'text',
-  crd_post: 'crd_post',
-  upd_post: 'upd_post',
+  id_ainc_post:     'id_ainc_post',
+  pk_post:          'pk_post',
+  title_en_post:    'title_en_post',
+  text_en_post:     'text_en_post',
+  create_post:      'create_post',
+  update_post:      'update_post',
 }

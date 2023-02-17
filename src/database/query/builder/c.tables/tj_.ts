@@ -20,7 +20,7 @@ export function tj_(
         const [post, tag] = tables
 
         
-        let qs = `--sql
+        let qs = `-- sql
             -- # optional 
             -- tp_post,
             -- tv_post,
@@ -72,7 +72,7 @@ export function tj_(
         const [post, tag, user] = tables
 
 
-        let qs = `--sql
+        let qs = `-- sql
         
             -- # optional 
             -- tp_post,

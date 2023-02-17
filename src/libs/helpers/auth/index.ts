@@ -1,2 +1,2 @@
-export * from './basic'
-export * from './bearer'
+export * as Basic from './Basic'
+export * as Bearer from './Bearer'

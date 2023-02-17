@@ -1,7 +1,7 @@
 import { z } from '~/src/libs/helpers/schema'
 import { cast } from '~/src/libs/functions'
 
-export const schema = z.object({
+export const zSchema = z.object({
   params: z.object({}),
   query: z.object({
     rounds: z.preprocess(x => cast.number(x) || undefined, z.number().optional()),
@@ -12,4 +12,4 @@ export const schema = z.object({
   }),
 })
 
-export type Schema = z.infer<typeof schema>
+export type Schema = z.infer<typeof zSchema>

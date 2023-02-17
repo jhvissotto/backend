@@ -5,7 +5,7 @@ import { ORDER_BY, PARTITION_BY } from '~/src/database/query/builder/b.commands'
 // prettier-ignore
 export function tf_(post: Args.Table, 
     props: { 
-        BY:     Args.BY 
+        BY:     Args.BY, 
         pk?:    Args.PK, 
         slug?:  Args.Slug, 
     }, 
@@ -21,7 +21,7 @@ export function tf_(post: Args.Table,
     
     ? `tf_post AS (SELECT td_post * FROM td_post)`
     
-    : `--sql
+    : `-- sql
         -- # optional 
         -- tv_post,
 

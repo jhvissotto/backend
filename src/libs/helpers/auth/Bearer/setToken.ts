@@ -1,4 +1,6 @@
-export function bearer(token: string) {
+import { Token } from '.'
+
+export function setToken(token: Token) {
   if (token) {
     return `Bearer ${token}`
   } else {
@@ -6,5 +8,3 @@ export function bearer(token: string) {
     return null
   }
 }
-
-export type Bearer = ReturnType<typeof bearer>

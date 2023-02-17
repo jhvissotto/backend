@@ -1,2 +1,1 @@
-export * from './getStaffById'
-export * from './getUserInfoById'
+export * from './getUserById'

@@ -36,7 +36,7 @@ export const QS = (props?: {
 
 
     // ======== text ======== // 
-    let qs = `--sql
+    let qs = `-- sql
           SELECT  td_!table.*
         
           FROM    td_!table

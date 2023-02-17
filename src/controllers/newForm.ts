@@ -36,12 +36,12 @@ export function newForm<
     // =========================================================== //
     // ======================== ARGUMENTS ======================== //
     // =========================================================== //
+    // ======== version ======== //
+    res_version = 0,
+
     // ======== id ======== //
     // reqId_short = "",
     // reqId_v4 = "",
-
-    // ======== version ======== //
-    res_version = 0,
 
     // ======== current ======== //
     // date_value = 0,
@@ -141,12 +141,12 @@ export function newForm<
     // =========================================================== //
     // ======================== ARG TYPES ======================== //
     // =========================================================== //
+    // ======== version ======== //
+    res_version?: number
+
     // ======== id ======== //
     // reqId_short?: string;
     // reqId_v4?: string;
-
-    // ======== version ======== //
-    res_version?: number
 
     // ======== current ======== //
     // date_value?: number;
@@ -243,7 +243,7 @@ export function newForm<
     // errors_has?: TRI;
     errors?: Array<Error | any>
   },
-  canUpdateStatus = false
+  canUpdateStatus = true
 ) {
   // ============================================================= //
   // ======================== AUTOMATIONS ======================== //
@@ -282,16 +282,13 @@ export function newForm<
   }
 
   // ======== status list ======== //
-  const message = status?.[status_code]?.message
-  const description = status?.[status_code]?.description
+  const status_message = status?.[status_code]?.message || ''
+  const status_description = status?.[status_code]?.description || ''
 
-  const status_message = message || ''
-  const status_description = description || ''
-
-  // ======== counter ======== //
+  // ======== counters ======== //
   const list_length = list?.length ?? 0
   const resources_count = Object.entries(resources)?.length ?? 0
-  const errors_has = cast.boolean(errors?.length) ?? 0
+  const errors_has = cast.boolean(errors?.length)
 
   // ======== list parser ======== //
   const {
@@ -308,12 +305,12 @@ export function newForm<
   // ======================== RETURN ======================== //
   // ======================================================== //
   return {
+    // ======== version ======== //
+    res_version,
+
     // ======== id ======== //
     reqId_short,
     reqId_v4,
-
-    // ======== version ======== //
-    res_version,
 
     // ======== current ======== //
     date_value,

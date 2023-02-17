@@ -1,4 +1,4 @@
-export * as authBasic from "./authBasic";
-export * from "./bearerToken";
-export * from "./body";
-export * from "./cookie";
+export * as authBasic from './auth_Basic'
+export * as authBearer from './auth_Bearer'
+export * from './body'
+export * from './cookie'

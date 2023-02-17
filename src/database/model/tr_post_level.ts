@@ -1,15 +1,17 @@
+// prettier-ignore
 export type TR_post_level = {
-  id_post_level: number
-  fk_slug: string
-  fk_level: number
-  crd_post_level: Date
-  upd_post_level: Date
+  id_ainc_post_level:   number
+  fk_post:              string
+  fk_level:             number
+  create_post_level:    Date
+  update_post_level:    Date
 }
 
+// prettier-ignore
 export const tr_post_level = {
-  id_post_level: 'id_post_level',
-  fk_slug: 'fk_slug',
-  fk_level: 'fk_level',
-  crd_post_level: 'crd_post_level',
-  upd_post_level: 'upd_post_level',
+  id_ainc_post_level:   'id_ainc_post_level',
+  fk_post:              'fk_post',
+  fk_level:             'fk_level',
+  create_post_level:    'create_post_level',
+  update_post_level:    'update_post_level',
 }

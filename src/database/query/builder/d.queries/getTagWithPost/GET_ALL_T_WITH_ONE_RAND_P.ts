@@ -26,7 +26,7 @@ export function GET_ALL_T_WITH_ONE_RAND_P(
 
 
 
-    let qs = `--sql
+    let qs = `-- sql
         -- # optional 
         -- tp_tag,
         -- tv_tag,

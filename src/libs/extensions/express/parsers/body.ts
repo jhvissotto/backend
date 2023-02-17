@@ -1,1 +1,1 @@
-export { default as body } from "body-parser";
+export { default as body } from 'body-parser'

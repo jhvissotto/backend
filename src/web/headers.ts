@@ -1,5 +1,3 @@
-import { auth } from '~/src/libs/helpers'
-
 export const headers = ({
   // ======== arguments ======== //
   CacheControl,
@@ -8,7 +6,7 @@ export const headers = ({
 }: {
   // ======== arg types ======== //
   CacheControl?: 'no-cache'
-  Authorization?: auth.Bearer // | auth.Basic
+  Authorization?: string
   mode?: 'cors' | 'no-cors'
 }) => {
   // ======== return ======== //
