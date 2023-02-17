@@ -1,7 +1,7 @@
 // libs
 import { resolvers } from '~/src/libs/helpers/operators'
 import { array, calc } from '~/src/libs/functions'
-import { pipe, when } from '~/src/libs/functions/operators'
+import { pipe } from '~/src/libs/functions/operators'
 // app
 import { database } from '~/src'
 

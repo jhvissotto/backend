@@ -4,9 +4,9 @@ import { link } from '~/src/libs/functions'
 import { createDefs } from '~/src/components'
 import { level } from '~/src/navigation'
 // local
-import type { Schema } from '.'
+import { schema } from '.'
 
-export const defs = createDefs<Schema['params'], Schema['query']>({
+export const defs = createDefs<schema.Req['params'], schema.Req['query']>({
   name: 'cache_clear',
   active: true,
   method: 'get',

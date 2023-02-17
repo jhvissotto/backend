@@ -1,4 +1,4 @@
-export type Response = {
+export type Res = {
   userId: number
   id: number
   title: string

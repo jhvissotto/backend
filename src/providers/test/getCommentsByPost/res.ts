@@ -1,4 +1,4 @@
-export type Response = {
+export type Res = {
   postId: number
   id: number
   name: string

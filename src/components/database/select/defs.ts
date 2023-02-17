@@ -4,9 +4,9 @@ import { link } from '~/src/libs/functions'
 import { createDefs } from '~/src/components'
 import { level } from '~/src/navigation'
 // local
-import type { Schema } from '.'
+import type { Request } from '.'
 
-export const defs = createDefs<Schema['params'], Schema['query']>({
+export const defs = createDefs<Request['params'], Request['query']>({
   name: 'database_select',
   active: true,
   method: 'get',

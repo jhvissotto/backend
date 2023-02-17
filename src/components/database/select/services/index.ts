@@ -1,1 +1,1 @@
-export * from "./querySelect";
+export * from './querySelect'

@@ -1,11 +1,13 @@
-import { E, ctrl } from '~/src'
+// global
 import { config } from '~/src/global'
-import type { Schema } from '.'
-import { defs, services } from '.'
+// app
+import { E, ctrl } from '~/src'
+// local
+import { schema, defs, services } from '.'
 
 export async function _ctrl(
-  req: ctrl.Req<Schema['params'], Schema['query'], Schema['body']>,
-  res: ctrl.Res
+  req: ctrl.Req<schema.Req['params'], schema.Req['query'], schema.Req['body']>,
+  res: ctrl.Res<schema.Res>
 ) {
   const { params, query, body } = req
   const { table } = req.params
@@ -36,7 +38,6 @@ export async function _ctrl(
   if (querySelect.isError) {
     resp.errors_inDatabase = true
     locals.errors.push(querySelect.error)
-    // locals.errors.push(E.catcher(querySelect.error))
   }
 
   resp = ctrl.newForm({

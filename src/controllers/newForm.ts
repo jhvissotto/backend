@@ -6,7 +6,7 @@ import { array, cast } from '~/src/libs/functions'
 import { format } from '~/src/libs/utils/dt/format'
 import { id } from '~/src/libs/utils/calc'
 
-type OBJ = object | {}
+type OBJ = object
 type TRI = boolean | null
 
 export function newForm<
@@ -45,7 +45,7 @@ export function newForm<
 
     // ======== current ======== //
     // date_value = 0,
-    // date_full = {},
+    // date_full = undefined,
     // date_formated = '',
 
     // ======== cache ======== //
@@ -61,14 +61,14 @@ export function newForm<
 
     // // #deprecated
     // // // ======== input ======== //
-    // // value_params = {},
-    // // value_query = {},
-    // // value_body = {},
+    // // value_params = undefined,
+    // // value_query = undefined,
+    // // value_body = undefined,
 
     // ======== validation ======== //
-    validation_params = {},
-    validation_query = {},
-    validation_body = {},
+    validation_params = undefined,
+    validation_query = undefined,
+    validation_body = undefined,
     validation_isSanitized = null,
 
     // ======== security ======== //
@@ -102,11 +102,11 @@ export function newForm<
     page_isLast = null,
 
     // ======== output ======== //
-    props_meta = {},
-    props = {},
+    props_meta = undefined,
+    props = undefined,
 
     // ======== list ======== //
-    list_meta = {},
+    list_meta = undefined,
     list = [],
     // list_length = 0,
 
@@ -116,13 +116,13 @@ export function newForm<
     // list_isUnique = null,
     // list_isMany = null,
 
-    // list_itemFirst = {},
-    // list_itemLast = {},
+    // list_itemFirst = undefined,
+    // list_itemLast = undefined,
 
     // ======== multiple lists ======== //
-    resources_meta = {},
+    resources_meta = undefined,
     // resources_count = 0,
-    resources = {},
+    resources = undefined,
 
     // ======== req/res ======== //
     req_isSuccess = null,
@@ -166,14 +166,14 @@ export function newForm<
 
     // // #deprecated
     // // // ======== input ======== //
-    // // value_params?: Value_Params | OBJ;
-    // // value_query?: Value_Query | OBJ;
-    // // value_body?: Value_Body | OBJ;
+    // // value_params?: Value_Params ;
+    // // value_query?: Value_Query ;
+    // // value_body?: Value_Body ;
 
     // ======== validation ======== //
-    validation_params?: Validation_Params | OBJ
-    validation_query?: Validation_Query | OBJ
-    validation_body?: Validation_Body | OBJ
+    validation_params?: Validation_Params
+    validation_query?: Validation_Query
+    validation_body?: Validation_Body
     validation_isSanitized?: TRI
 
     // ======== security ======== //
@@ -207,11 +207,11 @@ export function newForm<
     page_isLast?: TRI
 
     // ======== output ======== //
-    props_meta?: Props_Meta | OBJ
-    props?: Props | OBJ
+    props_meta?: Props_Meta
+    props?: Props
 
     // ======== list ======== //
-    list_meta?: List_Meta | OBJ
+    list_meta?: List_Meta
     list?: Array<List_Item | void>
     // list_length?: number;
 
@@ -221,13 +221,13 @@ export function newForm<
     // list_isUnique?: TRI;
     // list_isMany?: TRI;
 
-    // list_itemFirst?: List_Item | OBJ;
-    // list_itemLast?: List_Item | OBJ;
+    // list_itemFirst?: List_Item ;
+    // list_itemLast?: List_Item ;
 
     // ======== multiple lists ======== //
-    resources_meta?: Resources_Meta | OBJ
+    resources_meta?: Resources_Meta
     // resources_count?: number;
-    resources?: Resources | OBJ
+    resources?: Resources
 
     // ======== req/res ======== //
     req_isSuccess?: TRI
@@ -371,11 +371,11 @@ export function newForm<
     page_isLast,
 
     // ======== output ======== //
-    props_meta: { ...props_meta },
-    props: { ...props },
+    props_meta: props_meta,
+    props: props,
 
     // ======== list ======== //
-    list_meta: { ...list_meta },
+    list_meta: list_meta,
     list,
     list_length,
 
@@ -389,9 +389,9 @@ export function newForm<
     list_itemLast,
 
     // ======== multiple lists ======== //
-    resources_meta: { ...resources_meta },
+    resources_meta: resources_meta,
     resources_count,
-    resources: { ...resources },
+    resources: resources,
 
     // ======== req/res ======== //
     req_isSuccess,
