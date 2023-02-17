@@ -339,6 +339,7 @@ SELECT
     -- ======================= --
         -- date
         create_field,
+        lastUpd_field,
         update_field,
         delete_field,
 

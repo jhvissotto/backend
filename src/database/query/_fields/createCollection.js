@@ -347,6 +347,7 @@ db.getCollection('collection').insert([{
     // ======================================= //
         // // date
         // create_field:            Date,
+        // lastUpd_field:           Date,
         // update_field:            Date,
         // delete_field:            Date,
 

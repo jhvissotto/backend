@@ -17,11 +17,17 @@ CREATE TABLE `table`  (
   `string`                varchar   (255)   CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci    NULL      DEFAULT NULL                                            ,
   `time`                  time                                                                  NULL      DEFAULT NULL                                            ,
   `timestamp`             timestamp                                                             NULL      DEFAULT NULL                                            ,
+  
   `datetime_create`       datetime                                                              NULL      DEFAULT CURRENT_TIMESTAMP                               ,
+  `datetime_lastUpd`      datetime                                                              NULL      DEFAULT CURRENT_TIMESTAMP   ON UPDATE CURRENT_TIMESTAMP ,
   `datetime_update`       datetime                                                              NULL      DEFAULT NULL                ON UPDATE CURRENT_TIMESTAMP ,
   `datetime_delete`       datetime                                                              NULL      DEFAULT NUll                                            ,  
 
-  PRIMARY KEY (`autoInc`) USING BTREE
+
+  PRIMARY KEY   (`autoInc`) USING BTREE,
+  UNIQUE INDEX  `id`(`id`)  USING BTREE,
+  INDEX         `id`(`id`)  USING BTREE
+
 ) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------

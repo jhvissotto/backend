@@ -339,6 +339,7 @@ export function v1(field: string) {
         // ======================================= //
             // date
             create_field:           `create_${field}`,
+            lastUpd_field:          `lastUpd_${field}`,
             update_field:           `update_${field}`,
             delete_field:           `delete_${field}`,
 

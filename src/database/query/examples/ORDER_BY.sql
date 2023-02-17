@@ -28,7 +28,7 @@ CASE (
     -- ====================================== --
     -- ================ DATE ================ --
     -- ====================================== --
-    WHEN 'LAST_UPDATE'          THEN `ORDER BY lastUpdate DESC`
+    WHEN 'LAST_UPDATE'          THEN `ORDER BY lastUpd_field DESC`
     WHEN 'NEWEST'               THEN `ORDER BY create_field DESC`
     WHEN 'OLDEST'               THEN `ORDER BY create_field ASC`
 

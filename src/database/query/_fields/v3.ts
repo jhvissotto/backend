@@ -340,6 +340,7 @@ export const v3 = {
     // ======================================= //
         // date
         create_field:            z.date(),
+        lastUpd_field:           z.date(),
         update_field:            z.date(),
         delete_field:            z.date(),
 

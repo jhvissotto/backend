@@ -342,6 +342,7 @@ CREATE TABLE `table`  (
   -- ======================================= --
     -- -- date
     -- `create_field`          datetime                                                              NULL      DEFAULT CURRENT_TIMESTAMP                               ,
+    -- `lastUpd_field`         datetime                                                              NULL      DEFAULT CURRENT_TIMESTAMP   ON UPDATE CURRENT_TIMESTAMP ,
     -- `update_field`          datetime                                                              NULL      DEFAULT NULL                ON UPDATE CURRENT_TIMESTAMP ,
     -- `delete_field`          datetime                                                              NULL      DEFAULT NUll                                            ,  
 

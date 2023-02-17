@@ -340,6 +340,7 @@ export function v2(field: string) {
         // ======================================= //
             // date
             create_field:           { key: `create_${field}`,       type: z.date()      },
+            lastUpd_field:          { key: `lastUpd_${field}`,      type: z.date()      },
             update_field:           { key: `update_${field}`,       type: z.date()      },
             delete_field:           { key: `delete_${field}`,       type: z.date()      },
 

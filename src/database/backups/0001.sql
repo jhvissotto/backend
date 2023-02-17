@@ -11,26 +11,50 @@
  Target Server Version : 80031
  File Encoding         : 65001
 
- Date: 14/01/2023 16:18:18
+ Date: 16/02/2023 20:07:26
 */
 
 SET NAMES utf8mb4;
 SET FOREIGN_KEY_CHECKS = 0;
 
 -- ----------------------------
+-- Table structure for td_level
+-- ----------------------------
+DROP TABLE IF EXISTS `td_level`;
+CREATE TABLE `td_level`  (
+  `id_ainc_level` int NOT NULL AUTO_INCREMENT,
+  `pk_level` int NULL DEFAULT NULL,
+  `title_en_level` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL,
+  `title_pt_level` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL,
+  PRIMARY KEY (`id_ainc_level`) USING BTREE,
+  UNIQUE INDEX `pk_level`(`pk_level`) USING BTREE
+) ENGINE = InnoDB AUTO_INCREMENT = 11 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = Dynamic;
+
+-- ----------------------------
+-- Records of td_level
+-- ----------------------------
+INSERT INTO `td_level` VALUES (0, 0, 'Free', 'Gratis');
+INSERT INTO `td_level` VALUES (1, 1, 'Freemium', 'Freemium');
+INSERT INTO `td_level` VALUES (2, 2, 'Registered', 'Registrado');
+INSERT INTO `td_level` VALUES (3, 3, 'Trial', 'Teste');
+INSERT INTO `td_level` VALUES (4, 4, 'Paid', 'Pago');
+INSERT INTO `td_level` VALUES (5, 5, 'Premium', 'Premium');
+INSERT INTO `td_level` VALUES (6, 6, 'Exclusive', 'Esclusivo');
+
+-- ----------------------------
 -- Table structure for td_post
 -- ----------------------------
 DROP TABLE IF EXISTS `td_post`;
 CREATE TABLE `td_post`  (
-  `_id` int NOT NULL AUTO_INCREMENT,
-  `pk_slug` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
-  `title` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL,
-  `text` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL,
-  `createdAt` datetime NULL DEFAULT CURRENT_TIMESTAMP,
-  `updatedAt` datetime NULL DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP,
-  PRIMARY KEY (`_id`) USING BTREE,
-  UNIQUE INDEX `pk_slug`(`pk_slug`) USING BTREE
-) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = Dynamic;
+  `id_ainc_post` int NOT NULL AUTO_INCREMENT,
+  `pk_post` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
+  `title_en_post` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL,
+  `text_en_post` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL,
+  `create_post` datetime NULL DEFAULT CURRENT_TIMESTAMP,
+  `update_post` datetime NULL DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id_ainc_post`) USING BTREE,
+  UNIQUE INDEX `pk_slug`(`pk_post`) USING BTREE
+) ENGINE = InnoDB AUTO_INCREMENT = 17 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of td_post
@@ -51,38 +75,93 @@ INSERT INTO `td_post` VALUES (10, 'slug10', 'title10', 'text10', '2023-01-14 15:
 -- ----------------------------
 DROP TABLE IF EXISTS `td_user`;
 CREATE TABLE `td_user`  (
-  `_id` int NOT NULL AUTO_INCREMENT,
-  `pk_email` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
-  `name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL,
+  `id_ainc_user` int NOT NULL AUTO_INCREMENT,
+  `pk_user` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
+  `name_user` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL,
   `passHash` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL,
-  `createdAt` datetime NULL DEFAULT CURRENT_TIMESTAMP,
-  `updatedAt` datetime NULL DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP,
-  PRIMARY KEY (`_id`) USING BTREE,
-  UNIQUE INDEX `pk_email`(`pk_email`) USING BTREE
+  `create_user` datetime NULL DEFAULT CURRENT_TIMESTAMP,
+  `update_user` datetime NULL DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id_ainc_user`) USING BTREE,
+  UNIQUE INDEX `pk_email`(`pk_user`) USING BTREE
 ) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of td_user
 -- ----------------------------
-INSERT INTO `td_user` VALUES (1, 'email1', 'name1', NULL, '2023-01-14 15:56:41', NULL);
-INSERT INTO `td_user` VALUES (2, 'email2', 'name2', NULL, '2023-01-14 15:56:41', NULL);
-INSERT INTO `td_user` VALUES (3, 'email3', 'name3', NULL, '2023-01-14 15:56:41', NULL);
+INSERT INTO `td_user` VALUES (1, 'email1', 'name1', '$2b$10$BpiAbfRC6aNum2lC6CA0oOhSdPAehePESFTMhzJhIgFgoqYscsNLK', '2023-01-14 15:56:40', NULL);
+INSERT INTO `td_user` VALUES (2, 'email2', 'name2', '$2b$10$BpiAbfRC6aNum2lC6CA0oOxQsvAikdTtIsjkQV1I3RISCGN7UoHCK', '2023-01-14 15:56:42', NULL);
+INSERT INTO `td_user` VALUES (3, 'email3', 'name3', '$2b$10$BpiAbfRC6aNum2lC6CA0oOcS/YeEsGXRcarhBBLYJ7kk3b3k.dz7m', '2023-01-14 15:56:43', NULL);
+
+-- ----------------------------
+-- Table structure for tr_post_level
+-- ----------------------------
+DROP TABLE IF EXISTS `tr_post_level`;
+CREATE TABLE `tr_post_level`  (
+  `id_ainc_post_level` int NOT NULL AUTO_INCREMENT,
+  `fk_post` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL,
+  `fk_level` int NULL DEFAULT NULL,
+  `create_post_level` datetime NULL DEFAULT CURRENT_TIMESTAMP,
+  `update_post_level` datetime NULL DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id_ainc_post_level`) USING BTREE,
+  INDEX `fk_slug`(`fk_post`) USING BTREE,
+  INDEX `fk_level`(`fk_level`) USING BTREE,
+  CONSTRAINT `tr_post_level_ibfk_1` FOREIGN KEY (`fk_post`) REFERENCES `td_post` (`pk_post`) ON DELETE RESTRICT ON UPDATE CASCADE,
+  CONSTRAINT `tr_post_level_ibfk_2` FOREIGN KEY (`fk_level`) REFERENCES `td_level` (`pk_level`) ON DELETE RESTRICT ON UPDATE CASCADE
+) ENGINE = InnoDB AUTO_INCREMENT = 11 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = Dynamic;
+
+-- ----------------------------
+-- Records of tr_post_level
+-- ----------------------------
+INSERT INTO `tr_post_level` VALUES (1, 'slug1', 0, '2023-01-17 06:40:59', NULL);
+INSERT INTO `tr_post_level` VALUES (2, 'slug2', 0, '2023-01-17 06:41:04', NULL);
+INSERT INTO `tr_post_level` VALUES (3, 'slug3', 0, '2023-01-17 06:41:10', NULL);
+INSERT INTO `tr_post_level` VALUES (4, 'slug4', 1, '2023-01-17 06:41:13', NULL);
+INSERT INTO `tr_post_level` VALUES (5, 'slug5', 1, '2023-01-17 06:41:15', NULL);
+INSERT INTO `tr_post_level` VALUES (6, 'slug6', 1, '2023-01-17 06:41:19', NULL);
+INSERT INTO `tr_post_level` VALUES (7, 'slug7', 1, '2023-01-17 06:41:22', NULL);
+INSERT INTO `tr_post_level` VALUES (8, 'slug8', 2, '2023-01-17 06:41:26', NULL);
+INSERT INTO `tr_post_level` VALUES (9, 'slug9', 2, '2023-01-17 06:41:28', NULL);
+INSERT INTO `tr_post_level` VALUES (10, 'slug10', 2, '2023-01-17 06:41:31', NULL);
+
+-- ----------------------------
+-- Table structure for tr_user_level
+-- ----------------------------
+DROP TABLE IF EXISTS `tr_user_level`;
+CREATE TABLE `tr_user_level`  (
+  `id_ainc_user_level` int NOT NULL AUTO_INCREMENT,
+  `fk_user` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL,
+  `fk_level` int NULL DEFAULT NULL,
+  `create_user_level` datetime NULL DEFAULT CURRENT_TIMESTAMP,
+  `update_user_level` datetime NULL DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id_ainc_user_level`) USING BTREE,
+  INDEX `fk_email`(`fk_user`) USING BTREE,
+  INDEX `fk_level`(`fk_level`) USING BTREE,
+  CONSTRAINT `tr_user_level_ibfk_1` FOREIGN KEY (`fk_user`) REFERENCES `td_user` (`pk_user`) ON DELETE RESTRICT ON UPDATE CASCADE,
+  CONSTRAINT `tr_user_level_ibfk_2` FOREIGN KEY (`fk_level`) REFERENCES `td_level` (`pk_level`) ON DELETE RESTRICT ON UPDATE CASCADE
+) ENGINE = InnoDB AUTO_INCREMENT = 3 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = Dynamic;
+
+-- ----------------------------
+-- Records of tr_user_level
+-- ----------------------------
+INSERT INTO `tr_user_level` VALUES (1, 'email1', 0, '2023-01-17 06:36:38', NULL);
+INSERT INTO `tr_user_level` VALUES (2, 'email2', 1, '2023-01-17 06:36:38', NULL);
+INSERT INTO `tr_user_level` VALUES (3, 'email3', 3, '2023-01-17 06:36:38', NULL);
 
 -- ----------------------------
 -- Table structure for tr_user_post
 -- ----------------------------
 DROP TABLE IF EXISTS `tr_user_post`;
 CREATE TABLE `tr_user_post`  (
-  `_id` int NOT NULL AUTO_INCREMENT,
-  `fk_email` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL,
-  `fk_slug` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL,
-  `createdAt` datetime NULL DEFAULT CURRENT_TIMESTAMP,
-  `updatedAt` datetime NULL DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP,
-  PRIMARY KEY (`_id`) USING BTREE,
-  INDEX `tr_user_post_ibfk_1`(`fk_email`) USING BTREE,
-  INDEX `tr_user_post_ibfk_2`(`fk_slug`) USING BTREE,
-  CONSTRAINT `tr_user_post_ibfk_1` FOREIGN KEY (`fk_email`) REFERENCES `td_user` (`pk_email`) ON DELETE RESTRICT ON UPDATE CASCADE,
-  CONSTRAINT `tr_user_post_ibfk_2` FOREIGN KEY (`fk_slug`) REFERENCES `td_post` (`pk_slug`) ON DELETE RESTRICT ON UPDATE CASCADE
+  `id_ainc_user_post` int NOT NULL AUTO_INCREMENT,
+  `fk_user` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL,
+  `fk_post` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL,
+  `create_user_post` datetime NULL DEFAULT CURRENT_TIMESTAMP,
+  `update_user_post` datetime NULL DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id_ainc_user_post`) USING BTREE,
+  INDEX `tr_user_post_ibfk_2`(`fk_post`) USING BTREE,
+  INDEX `tr_user_post_ibfk_1`(`fk_user`) USING BTREE,
+  CONSTRAINT `tr_user_post_ibfk_1` FOREIGN KEY (`fk_user`) REFERENCES `td_user` (`pk_user`) ON DELETE RESTRICT ON UPDATE CASCADE,
+  CONSTRAINT `tr_user_post_ibfk_2` FOREIGN KEY (`fk_post`) REFERENCES `td_post` (`pk_post`) ON DELETE RESTRICT ON UPDATE CASCADE
 ) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
