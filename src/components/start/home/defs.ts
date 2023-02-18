@@ -6,14 +6,18 @@ import { level } from '~/src/navigation'
 // local
 import { schema } from '.'
 
+// prettier-ignore
 export const defs = createDef<schema.Req['params'], schema.Req['query']>({
-  name: 'home',
-  active: true,
-  method: 'get',
-  pattern: '/',
-  url: (p, q) => link.stringify(`/home`, q),
-  user_levelReq: level.user.L0_Free.N,
+  // controller
+  name:     'home',
+  active:   true,
+  method:   'get',
+  pattern:  '/',
+  url:      (p, q) => link.stringify(`/home`, q),
+  // middlewares
+  canSanitize:    null,
+  withAuth:       null,
+  user_levelReq:  level.user.L0_Free.N,
   staff_levelReq: level.staff.L0_Dev.N,
-  canSanitize: null,
-  canCache: null,
+  canCache:       null,
 })

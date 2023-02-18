@@ -14,7 +14,7 @@ export async function _ctrl(
   const { wk, we, wv, items, page, randKey } = req.query
   const {} = req.body
 
-  const { validation } = req
+  const validation = req?.middlewares?.validation
   const { locals } = res
 
   let resp = ctrl.newForm({

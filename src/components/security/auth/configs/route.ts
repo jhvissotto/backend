@@ -1,17 +1,18 @@
-// // local
-// import * as comp from '..'
-// // app
-// import { create } from '~/src/navigation/routes/create'
+import { routes } from '~/src/navigation'
+import { defs, schema, _ctrl } from '../'
 
-// // prettier-ignore
-// export const route = create({
-//     name:           comp.defs.name,
-//     active:         comp.defs.active,
-//     method:         comp.defs.method,
-//     pattern:        comp.defs.pattern,
-//     ctrl:           comp._ctrl
-// }, {
-//     z_schema:       comp.z_schemaReq,
-//     canSanitize:    comp.defs.canSanitize,
-//     canCache:       comp.defs.canCache,
-// })
+// prettier-ignore
+export const route = routes.create({
+    name:       defs?.name,
+    active:     defs?.active,
+    method:     defs?.method,
+    pattern:    defs?.pattern,
+    ctrl:       _ctrl
+}, {
+    zSchema:        schema.zReq,
+    canSanitize:    defs?.canSanitize,
+    user_levelReq:  defs?.user_levelReq,
+    staff_levelReq: defs?.staff_levelReq,
+    withAuth:       defs?.withAuth,
+    canCache:       defs?.canCache
+})

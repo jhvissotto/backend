@@ -10,7 +10,7 @@ export async function _ctrl(
   const {} = req.query
   const {} = req.body
 
-  const { validation } = req
+  const validation = req?.middlewares?.validation
   const { locals } = res
 
   return res.json({ welcome: 'Hello World' })

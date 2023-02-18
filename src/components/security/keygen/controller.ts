@@ -18,7 +18,7 @@ export async function _ctrl(
   const { rounds } = req.query
   const { KEY, password } = req.body
 
-  const { validation } = req
+  const validation = req?.middlewares?.validation
   const { locals } = res
 
   let resp = ctrl.newForm({
