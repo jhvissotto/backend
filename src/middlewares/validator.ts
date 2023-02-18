@@ -5,15 +5,17 @@ import { resolvers } from '~/src/libs/helpers/operators'
 // app
 import { E, mids } from '~/src'
 
+// prettier-ignore
 export type Validation = {
-  isSanitized: boolean | null
-  hasError: boolean | null
-  errors: Array<Error | any>
+  isSanitized:  boolean | null
+  hasError:     boolean | null
+  errors:   Array<Error | any>
 }
 
 // prettier-ignore
-export function validator(schema: Z.AnyZodObject, { canSanitize = false }) {
+export function validator(zSchema: Z.AnyZodObject, { canSanitize = false }) {
   
+  // handler
   return async (req: mids.Req, res: mids.Res, next: mids.Next) => {
 
     // ======== define variables ======== //
@@ -24,8 +26,8 @@ export function validator(schema: Z.AnyZodObject, { canSanitize = false }) {
     } as Validation
 
 
-    // ======== validation ========= //
-    const { data, error, isSuccess, isError } = await resolvers.d(schema.parseAsync({
+    // ======== validation ======== //
+    const { data, error, isSuccess, isError } = await resolvers.d(zSchema.parseAsync({
       params: req.params,
       query: req.query,
       body: req.body,
@@ -51,7 +53,8 @@ export function validator(schema: Z.AnyZodObject, { canSanitize = false }) {
 
 
     // ======== assign variables ======== //
-    req['validation'] = validation
+    req['middlewares']['validation'] = validation
+
 
     
     return next()

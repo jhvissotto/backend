@@ -1,12 +1,12 @@
 // libs
 import { link } from '~/src/libs/functions'
 // app
-import { createDefs } from '~/src/components'
+import { createDef } from '~/src/components'
 import { level } from '~/src/navigation'
 // local
-import { Schema } from '.'
+import { schema } from '.'
 
-export const defs = createDefs<Schema['params'], Schema['query']>({
+export const defs = createDef<schema.Req['params'], schema.Req['query']>({
   name: 'auth',
   active: true,
   method: 'get',

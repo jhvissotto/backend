@@ -1,2 +1,2 @@
-export * from "./decode";
-export * from "./verify";
+export * from './decode'
+export * from './verify'

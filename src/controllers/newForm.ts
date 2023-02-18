@@ -287,7 +287,7 @@ export function newForm<
 
   // ======== counters ======== //
   const list_length = list?.length ?? 0
-  const resources_count = Object.entries(resources)?.length ?? 0
+  const resources_count = Object?.entries?.({ ...resources })?.length ?? 0
   const errors_has = cast.boolean(errors?.length)
 
   // ======== list parser ======== //

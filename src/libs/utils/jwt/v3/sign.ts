@@ -24,7 +24,7 @@ export function sign<     Payload >(
     noTimestamp:  true,
     ...options,
     subject:      options.subject
-  });
+  })
 
-  return { token };
+  return { token }
 }

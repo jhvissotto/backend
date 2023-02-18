@@ -15,7 +15,7 @@ export function getToken(req: Request): {
 
 
     // check if auth is Bearer
-    const hasBearer = (typeof Authorization == 'string'  &&  Authorization?.includes('Bearer'))
+    const hasBearer = (typeof Authorization == 'string'  &&  Authorization?.startsWith('Bearer'))
 
 
     if (hasBearer) {

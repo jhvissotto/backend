@@ -13,6 +13,6 @@ export function cache({ canCache = false }, ...props: Parameters<typeof createMi
     else 
     return next()
 
-  };
+  }
 
 }

@@ -15,17 +15,17 @@ export function check<Payload>({
 }) {
 
 
-    const { content: content_decoded,  isDecoded                 } = jwt.v3.decode<Payload>(token,         opts_decode)
-    const { content: content_verified, isValid, isExpired, error } = jwt.v3.verify<Payload>(token, secret, opts_verify)
+    const { content: content_decoded,  isDecoded                           } = jwt.v3.decode<Payload>(token,         opts_decode)
+    const { content: content_verified, isValid, error, hasError, isExpired } = jwt.v3.verify<Payload>(token, secret, opts_verify)
+
 
 
     const content = content_verified || content_decoded
 
     return { 
-        content, 
-        error, 
-        isValid, 
-        isExpired, 
-        isDecoded 
+        // about_data
+        content,  isDecoded,  isValid, 
+        // about_fail
+        error,    hasError,   isExpired,
     }
 }

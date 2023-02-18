@@ -1,6 +1,6 @@
 import type { Methods } from '~/src/navigation/router'
 
-export function createDefs<Params = {}, Query = {}>(props: {
+export function createDef<Params = {}, Query = {}>(props: {
   name: string
   active: boolean
   method: Methods
