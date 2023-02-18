@@ -11,6 +11,7 @@ export type Auth = Payload & {
   token:        ReturnType<typeof Token.check>, 
   level_req:    number,
   level_diff:   number,
+  hasAccess:    boolean,
   canAccess:    boolean,
 }
 
@@ -19,7 +20,6 @@ export const auth = (user_levelReq: number, staff_levelReq: number) => async (re
 
   // ======== input ======== //
   const token_assigned = req?.token
-
 
 
 
@@ -38,11 +38,11 @@ export const auth = (user_levelReq: number, staff_levelReq: number) => async (re
     user_level:   null,
     level_req:    null,
     level_diff:   null,
+    hasAccess:    null,
     canAccess:    null,
-  }
+  } as Auth
 
   
-
 
   // ======== get values ======== //
   const token_parsed  = Token.check({ token: token_assigned })
@@ -55,8 +55,8 @@ export const auth = (user_levelReq: number, staff_levelReq: number) => async (re
   const level_req  = payload?.user_isStaff ? staff_levelReq : user_levelReq
   const level_diff = payload?.user_level   - level_req
 
-  const canAccess = (0 >= level_diff)
-
+  const hasAccess = (0 >= level_diff)
+  const canAccess = hasAccess && token_parsed.isValid
 
 
 
@@ -76,13 +76,20 @@ export const auth = (user_levelReq: number, staff_levelReq: number) => async (re
     user_level:   payload?.user_level,
     level_req:    level_req,
     level_diff:   level_diff,
+    hasAccess:    hasAccess,
     canAccess:    canAccess,
   }
-
 
   req['middlewares']['auth'] = auth
 
 
 
-  return next()
+
+  // ======== finally ======== //
+  if (canAccess) {
+    return next()
+  } else {
+    return res.status(401).json(auth)
+  }
+
 }
