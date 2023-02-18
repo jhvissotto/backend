@@ -13,7 +13,7 @@ export async function listObjects({
      ...props 
 }: Props) {
 
-    const { cb } = useCallback<AWS.S3.ListObjectsV2Output>()
+    const { cb } = useCallback.d<AWS.S3.ListObjectsV2Output>()
 
 
     const resp = await S3.client.listObjectsV2({ Bucket, MaxKeys, ...props })

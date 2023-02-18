@@ -1,2 +1,2 @@
-export * from "./initialize";
-export * from "./is";
+export * from './initialize'
+export * from './check'

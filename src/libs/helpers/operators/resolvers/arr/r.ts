@@ -3,7 +3,7 @@ import { array } from '~/src/libs/functions'
 // import { is } from '~/src/libs/functions/check'
 
 // prettier-ignore
-export async function d<Response, E = Error>(promise): Promise<
+export async function r<Response, E = Error>(promise): Promise<
   {
     // resolver
     duration:     number

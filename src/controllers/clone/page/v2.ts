@@ -6,7 +6,7 @@ export async function v2(req, res) {
   const { url } = req.query
 
   // hooks
-  const { cb } = useCallback()
+  const { cb } = useCallback.d()
 
   // call
   const page = await fetch(url, {

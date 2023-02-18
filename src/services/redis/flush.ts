@@ -8,7 +8,7 @@ type Client_Select = ReturnType<typeof createClient>
 
 type CBFn = Parameters<Client_Select['flushdb']>[1]
 
-const { cb } = useCallback<Parameters<CBFn>[1], Parameters<CBFn>[0]>()
+const { cb } = useCallback.r<Parameters<CBFn>[1], Parameters<CBFn>[0]>()
 
 type CBThen = ReturnType<typeof cb.then>
 type CBCatch = ReturnType<typeof cb.catch>

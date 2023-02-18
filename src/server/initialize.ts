@@ -18,7 +18,7 @@ export function initialize() {
 
   
   // ======== logger ======== //
-  const mode = environment.is().dev ? 'dev' : null
+  const mode = environment.check().isDev ? 'dev' : null
   server.express.use(logger.middleware(mode))
 
 
@@ -54,8 +54,8 @@ export function initialize() {
 
   // ======== apollo ======== //
   // apollo.server.start().then(() => {
-  //   server.express.use("/graphql", apollo.middleware());
-  // });
+  //   server.express.use('/graphql', apollo.middleware())
+  // })
 
 
   // ======== view ======== //

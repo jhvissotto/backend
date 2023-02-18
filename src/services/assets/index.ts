@@ -1,1 +1,1 @@
-export * from './cloudinary'
+export * as cloudinary from './cloudinary'

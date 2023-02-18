@@ -9,7 +9,7 @@ type Props = SetOptional<AWS.S3.GetObjectRequest, 'Bucket'>
 export async function getLink({ Bucket = S3.configs.Bucket, ...props }: Props) {
     
     
-    const { cb } = useCallback<Awaited<ReturnType<typeof S3.client.getSignedUrlPromise>>>()
+    const { cb } = useCallback.d<Awaited<ReturnType<typeof S3.client.getSignedUrlPromise>>>()
 
 
     const resp = await S3.client.getSignedUrlPromise(S3.operations.getObject, {

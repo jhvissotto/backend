@@ -1,7 +1,7 @@
 export type {
   GraphQLSchemaConfig as SchemaConfig,
   GraphQLObjectTypeConfig as ObjectTypeConfig,
-} from "graphql";
+} from 'graphql'
 
 export {
   GraphQLBoolean as Boolean,
@@ -24,4 +24,4 @@ export {
   GraphQLSpecifiedByDirective as SpecifiedByDirective,
   GraphQLString as String,
   GraphQLUnionType as UnionType,
-} from "graphql";
+} from 'graphql'

@@ -41,3 +41,9 @@ https://www.npmjs.com/package/cloudinary-core
 
 LocalDB
 https://www.npmjs.com/package/lowdb
+
+GQL
+graphql
+graphql-tag
+@graphql-tools/utils
+@graphql-tools/schema

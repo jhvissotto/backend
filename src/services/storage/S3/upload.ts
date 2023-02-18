@@ -16,7 +16,7 @@ export async function upload(
     opts?: AWS.S3.ManagedUpload.ManagedUploadOptions,
 ) {
 
-    const { cb } = useCallback<AWS.S3.ManagedUpload.SendData>()
+    const { cb } = useCallback.d<AWS.S3.ManagedUpload.SendData>()
 
 
     const { data, error, isSuccess, isError } = await S3.client.upload({
