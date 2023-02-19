@@ -1,5 +1,6 @@
+export * as connections from './connections'
 export * from './knex'
-export * from './initialize'
 export * as model from './model'
+export * from './prisma'
 export * as query from './query'
 export * as sql from './sql'

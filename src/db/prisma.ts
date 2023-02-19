@@ -1,3 +1,3 @@
-import { Initialize } from "~/src/libs/packs/Prisma";
+import { clients } from '~/src/prisma'
 
-// export const prisma = new Initialize();
+export const prisma = clients.db

@@ -1,5 +1,5 @@
 import { env } from '~/src/global'
-import { Nodemailer } from '~/src/libs/packs/Nodemailer'
+import { Nodemailer } from '~/src/libs/packs'
 
 // Nodemailer / Mailtrap
 export const client = Nodemailer.createTransport({

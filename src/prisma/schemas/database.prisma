@@ -1,0 +1,82 @@
+generator client {
+  provider = "prisma-client-js"
+  output   = "../generated/database"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model td_level {
+  id_ainc_level  Int             @id @default(autoincrement())
+  pk_level       Int?            @unique(map: "pk_level")
+  title_en_level String?         @db.VarChar(255)
+  title_pt_level String?         @db.VarChar(255)
+  tr_post_level  tr_post_level[]
+  tr_user_level  tr_user_level[]
+}
+
+model td_post {
+  id_ainc_post  Int             @id @default(autoincrement())
+  pk_post       String          @unique(map: "pk_slug") @db.VarChar(255)
+  title_en_post String?         @db.VarChar(255)
+  text_en_post  String?         @db.VarChar(255)
+  create_post   DateTime?       @default(now()) @db.DateTime(0)
+  update_post   DateTime?       @db.DateTime(0)
+  tr_post_level tr_post_level[]
+  tr_user_post  tr_user_post[]
+}
+
+model td_user {
+  id_ainc_user  Int             @id @default(autoincrement())
+  pk_user       String          @unique(map: "pk_email") @db.VarChar(255)
+  name_user     String?         @db.VarChar(255)
+  passHash      String?         @db.VarChar(255)
+  isStaff       Boolean?        @db.Bit(1)
+  level_user    Int?
+  level_staff   Int?
+  create_user   DateTime?       @default(now()) @db.DateTime(0)
+  update_user   DateTime?       @db.DateTime(0)
+  tr_user_level tr_user_level[]
+  tr_user_post  tr_user_post[]
+}
+
+model tr_post_level {
+  id_ainc_post_level Int       @id @default(autoincrement())
+  fk_post            String?   @db.VarChar(255)
+  fk_level           Int?
+  create_post_level  DateTime? @default(now()) @db.DateTime(0)
+  update_post_level  DateTime? @db.DateTime(0)
+  td_post            td_post?  @relation(fields: [fk_post], references: [pk_post], onDelete: NoAction, map: "tr_post_level_ibfk_1")
+  td_level           td_level? @relation(fields: [fk_level], references: [pk_level], onDelete: NoAction, map: "tr_post_level_ibfk_2")
+
+  @@index([fk_level], map: "fk_level")
+  @@index([fk_post], map: "fk_slug")
+}
+
+model tr_user_level {
+  id_ainc_user_level Int       @id @default(autoincrement())
+  fk_user            String?   @db.VarChar(255)
+  fk_level           Int?
+  create_user_level  DateTime? @default(now()) @db.DateTime(0)
+  update_user_level  DateTime? @db.DateTime(0)
+  td_user            td_user?  @relation(fields: [fk_user], references: [pk_user], onDelete: NoAction, map: "tr_user_level_ibfk_1")
+  td_level           td_level? @relation(fields: [fk_level], references: [pk_level], onDelete: Restrict, map: "tr_user_level_ibfk_2")
+
+  @@index([fk_user], map: "fk_email")
+  @@index([fk_level], map: "fk_level")
+}
+
+model tr_user_post {
+  id_ainc_user_post Int       @id @default(autoincrement())
+  fk_user           String?   @db.VarChar(255)
+  fk_post           String?   @db.VarChar(255)
+  create_user_post  DateTime? @default(now()) @db.DateTime(0)
+  update_user_post  DateTime? @db.DateTime(0)
+  td_user           td_user?  @relation(fields: [fk_user], references: [pk_user], onDelete: NoAction, map: "tr_user_post_ibfk_1")
+  td_post           td_post?  @relation(fields: [fk_post], references: [pk_post], onDelete: NoAction, map: "tr_user_post_ibfk_2")
+
+  @@index([fk_user], map: "tr_user_post_ibfk_1")
+  @@index([fk_post], map: "tr_user_post_ibfk_2")
+}

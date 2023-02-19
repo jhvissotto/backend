@@ -1,1 +1,1 @@
-export { default as Nodemailer } from "nodemailer";
+export { default as Nodemailer } from 'nodemailer'

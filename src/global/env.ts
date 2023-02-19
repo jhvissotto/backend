@@ -33,6 +33,7 @@ export function env() {
     // ====================================== //
 
     // MYSQL
+    DATABASE_URL:             env.DATABASE_URL,
     DATABASE_USER:            env.DATABASE_USER,
     DATABASE_PASS:            env.DATABASE_PASS,
     DATABASE_HOST:            env.DATABASE_HOST,
