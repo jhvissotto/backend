@@ -1,23 +1,26 @@
+// libs
 import { resolvers } from '~/src/libs/helpers/operators'
-import { client } from './client'
-import { config } from '~/src/global'
+// local
+import { config, client } from '.'
 
 // prettier-ignore
-export async function send(options: Parameters<typeof client.sendMail>[0]) {
+export async function send(props: Parameters<typeof client.sendMail>[0]) {
   
+
   // service
-  const { response, error, isSuccess, isError } = await resolvers.r(
+  const { response, error, isSuccess, isError, duration } = await resolvers.r(
     new Promise((resolve, reject) => {
       client.sendMail({
-        ...config().emailDefault, 
-        ...options,
+        ...config.send, 
+        ...props,
       }, (error, resp) => {
-        error ? reject(error) : resolve(resp);
-      });
+        error ? reject(error) : resolve(resp)
+      })
     })
-  );
+  )
+
 
   // feedback
-  const sending = { response, error, isSuccess, isError };
-  return sending;
+  const sending = { response, error, isSuccess, isError, duration }
+  return sending
 }

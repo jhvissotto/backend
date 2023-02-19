@@ -1,5 +1,5 @@
-import * as nodemailer from './nodemailer'
-import * as sendgrid from './sendgrid'
+// local
+import { nodemailer, sendgrid } from '.'
 
 // prettier-ignore
 export function initialize({ provider }: { provider: 'Nodemailer' | 'Sendgrid' }) {

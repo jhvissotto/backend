@@ -1,13 +1,15 @@
-import { env } from '~/src/global'
+// libs
 import { Nodemailer } from '~/src/libs/packs'
+// local
+import { config } from '.'
 
 // Nodemailer / Mailtrap
 export const client = Nodemailer.createTransport({
-  host: env().NODEMAILER_HOST,
-  port: env().NODEMAILER_PORT,
   secure: true,
   auth: {
-    user: env().NODEMAILER_USER,
-    pass: env().NODEMAILER_PASS,
+    user: config.access.user,
+    pass: config.access.pass,
   },
+  host: config.access.host,
+  port: config.access.port,
 })

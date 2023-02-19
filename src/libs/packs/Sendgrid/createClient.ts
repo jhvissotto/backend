@@ -1,6 +1,6 @@
-import Sendgrid from "@sendgrid/mail";
+import Sendgrid from '@sendgrid/mail'
 
 export function createClient() {
-  const client = Sendgrid;
-  return { client };
+  const client = Sendgrid
+  return { client }
 }

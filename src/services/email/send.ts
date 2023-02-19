@@ -1,17 +1,17 @@
-import { config } from '~/src/global'
-import { client } from '.'
+// local
+import { config, client } from '.'
 
 export async function send(
-  options: Parameters<typeof client.send>[0]
+  props: Parameters<typeof client.send>[0]
   // isMultiple: Parameters<typeof client.send>[1]
 ) {
   //
-  const { response, error, isError, isSuccess } = await client.send({
-    ...config().emailDefault,
-    // ...options
+  const { response, error, isSuccess, isError } = await client.send({
+    ...config.send,
+    // ...props
   })
 
   // feedback
-  const sending = { response, error, isError, isSuccess }
+  const sending = { response, error, isSuccess, isError }
   return sending
 }

@@ -1,6 +1,6 @@
-import { env } from '~/src/global'
-import { client } from '.'
+// local
+import { config, client } from '.'
 
 export function prepare() {
-  client.setApiKey(env().SGM_KEY_TOKEN)
+  client.setApiKey(config.access.key_token)
 }
