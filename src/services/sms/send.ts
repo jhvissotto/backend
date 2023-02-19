@@ -1,28 +1,35 @@
+// libs
 import { resolvers } from '~/src/libs/helpers/operators'
-import { sms } from '~/src/services'
+// local
+import { nexmo } from '.'
 
 // prettier-ignore
-export async function send({
-  from,
-  to,
-  text,
-  options
-}: {
-  from: string;
-  to: string;
-  text: string;
-  options: Parameters<typeof sms.nexmo.message.sendSms>[3]
-}) {
-  // foo
-  const { response, error, isSuccess, isError } = await resolvers.r(
+export async function send({ from, to, text }: { 
+    from: string, 
+    to:   string, 
+    text: string
+  },   
+    opts: Parameters<typeof nexmo.message.sendSms>[3]
+) {
+  
+
+  
+  type Response = ReturnType<typeof nexmo.message.sendSms>
+  
+
+  const { response, error, isSuccess, isError, duration } = await resolvers.r<Response>(
     new Promise((resolve, reject) => {
-      sms.nexmo.message.sendSms(from, to, text, { ...options }, (error, response) => {
-        error ? reject(error) : resolve(response);
-      });
+      nexmo.message.sendSms(
+        from, to, text, 
+        { ...opts }, 
+        (error, resp) => error ? reject(error) : resolve(resp)
+      )
     })
-  );
+  )
+
+
 
   // feedback
-  const sending = { response, error, isSuccess, isError };
-  return sending;
+  const sending = { response, error, isSuccess, isError, duration }
+  return sending
 }

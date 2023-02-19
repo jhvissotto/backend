@@ -1,7 +1,10 @@
+// libs
 import { Nexmo } from '~/src/libs/packs'
-import { env } from '~/src/global'
+// local
+import { config } from '.'
 
-export const nexmo = new Nexmo({
-  apiKey: env().NEXMO_KEY_PUBLIC,
-  apiSecret: env().NEXMO_KEY_PRIVATE,
+// prettier-ignore
+export const nexmo = new Nexmo.Initialize({
+  apiKey:    config.apiKey,
+  apiSecret: config.apiSecret,
 })

@@ -1,3 +1,3 @@
-import { initialize } from ".";
+import { initialize } from '.'
 
-export const { instance } = initialize();
+export const { instance } = initialize()

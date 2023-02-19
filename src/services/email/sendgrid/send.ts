@@ -11,9 +11,12 @@ export async function send(
 ) {
   prepare()
 
+  
+
+  type Response = Awaited<ReturnType<typeof client.send>>
 
   // service
-  const { response, error, isSuccess, isError, duration } = await resolvers.r(
+  const { response, error, isSuccess, isError, duration } = await resolvers.arr.r<Response[0]>(
     new Promise((resolve, reject) => {
       client.send({
         ...config.send, 

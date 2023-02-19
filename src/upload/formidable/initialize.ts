@@ -1,6 +1,8 @@
+// global
+import { __dir } from '~/src/global'
+// libs
 import { Formidable } from '~/src/libs/packs'
 import { calc } from '~/src/libs/functions'
-import { __dir } from '~/src/global'
 
 export function initialize(opts?: Parameters<typeof Formidable.create>[0]) {
   // ======================================== //
@@ -26,7 +28,7 @@ export function initialize(opts?: Parameters<typeof Formidable.create>[0]) {
     maxTotalFileSize: calc.byte(100, 'mb'),
 
     // ==== custom ==== //
-    // enabledPlugins: ["json", "querystring", "multipart", "octetstream"],
+    // enabledPlugins: ['json', 'querystring', 'multipart', 'octetstream'],
     ...opts,
   })
 

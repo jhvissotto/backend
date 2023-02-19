@@ -1,13 +1,9 @@
-import { cors } from '~/src/libs/helpers'
-import { env } from '.'
-
 // prettier-ignore
 export const config = () => {
   return {
     appName:          'Backend',
     bcryptSalt:       '$2b$10$BpiAbfRC6aNum2lC6CA0oO',
     cryptIV:          '5de006283df4d5b5d3d457d9b35a6cf8',
-    allowedOrigins:   cors.parseAllowedOrigins(env().CORS_ORIGIN),
     cacheDuration:    '8 hours',
     tokenExpiration:  '3 hours',
     emailDefault: {

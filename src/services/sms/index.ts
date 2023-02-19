@@ -1,2 +1,3 @@
-export * from "./nexmo";
-export * from "./send";
+export * from './config'
+export * from './nexmo'
+export * from './send'

@@ -1,1 +1,1 @@
-export { default as Nexmo } from "nexmo";
+export { default as Initialize } from 'nexmo'

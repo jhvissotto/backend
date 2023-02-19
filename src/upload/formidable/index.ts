@@ -1,2 +1,2 @@
-export * from "./initialize";
-export * from "./instance";
+export * from './initialize'
+export * from './instance'

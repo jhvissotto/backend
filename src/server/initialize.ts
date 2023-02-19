@@ -1,15 +1,14 @@
 // global
-import { config, env, __dir } from '~/src/global'
+import { __dir } from '~/src/global'
 // libs
 import { Express, EJS } from '~/src/libs/packs'
 import { logger, favicon, parsers, headers } from '~/src/libs/extensions/express'
-import { environment } from '~/src/libs/helpers'
 // app
 import { __public, server, E, view } from '~/src'
 import { router } from '~/src/navigation'
 import { swagger } from '~/src/document'
 // local
-// import {} from '.'
+import { config } from '.'
 
 // prettier-ignore
 export function initialize() {
@@ -18,13 +17,12 @@ export function initialize() {
 
   
   // ======== logger ======== //
-  const mode = environment.check().isDev ? 'dev' : null
-  server.express.use(logger.middleware(mode))
+  server.express.use(logger.middleware(config.logger_mode))
 
 
   // ======== security ======== //
   server.express.use(headers.cors({ 
-    origin: config().allowedOrigins,
+    origin: config.cors_origin,
     preflightContinue: true 
   }))
   // server.express.use(headers.set.frameguard({ action: 'sameorigin' }))
@@ -86,7 +84,7 @@ export function initialize() {
 
 
   // ======== listen ======== //
-  server.express.listen(env().PORT, () => {
-    console.log(`>> Server listening: http://localhost:${env().PORT}`)
+  server.express.listen(config.port, () => {
+    console.log(`>> Server listening: http://localhost:${config.port}`)
   })
 }

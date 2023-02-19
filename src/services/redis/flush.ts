@@ -20,7 +20,7 @@ export async function flush(client: Clients): Promise<CBThen | CBCatch> {
 
   return new Promise((resolve, reject) => {
     client_select.flushdb((error, response) => {
-      error ? reject(cb.catch(error)) : resolve(cb.then(response))
+      error ? resolve(cb.catch(error)) : resolve(cb.then(response))
     })
   })
 }
