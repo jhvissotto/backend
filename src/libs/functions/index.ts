@@ -1,4 +1,5 @@
 export * as array from './array'
+export * as bool from './bool'
 export * as calc from './calc'
 export * as cast from './cast'
 export * as check from './check'
