@@ -1,5 +1,5 @@
-export * from "./client";
-export * from "./initialize";
-export * as nodemailer from "./nodemailer";
-export * from "./send";
-export * as sendgrid from "./sendgrid";
+export * from './initialize'
+export * from './client'
+export * as nodemailer from './nodemailer'
+export * from './send'
+export * as sendgrid from './sendgrid'

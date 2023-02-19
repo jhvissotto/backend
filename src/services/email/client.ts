@@ -1,5 +1,5 @@
-import { initialize } from "./initialize";
+import { initialize } from '.'
 
 export const client = initialize({
-  provider: "Sendgrid"
-});
+  provider: 'Sendgrid',
+})
