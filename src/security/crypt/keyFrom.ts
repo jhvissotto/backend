@@ -31,10 +31,11 @@ export function keyFrom(
   } catch (error) {
     console.warn('>> error:', error)
     return {
-      result:     null,
-      error,
+      result:     null as null,
+      error:      error,
       isSuccess:  false,
       isError:    true
     }
   }
+  
 }
