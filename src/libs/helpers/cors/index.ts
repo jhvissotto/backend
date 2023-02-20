@@ -1,1 +1,1 @@
-export * from "./parseAllowedOrigins";
+export * from './parseAllowedOrigins'

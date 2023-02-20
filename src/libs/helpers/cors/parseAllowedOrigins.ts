@@ -1,4 +1,4 @@
-import { convert } from "~/src/libs/functions";
+import { convert } from '~/src/libs/functions'
 
 // prettier-ignore
 export function parseAllowedOrigins(allowedOrigins: string | string[], char = ',') {
