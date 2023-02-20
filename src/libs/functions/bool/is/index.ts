@@ -1,5 +1,5 @@
-export * as true from './true'
-export * as false from './false'
+export * as True from './True'
+export * as False from './False'
 
-export * as assign from './assign'
-export * as virgin from './virgin'
+export * as Assign from './Assign'
+export * as Virgin from './Virgin'

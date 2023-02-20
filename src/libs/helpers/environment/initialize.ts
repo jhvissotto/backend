@@ -1,1 +1,1 @@
-export { config as initialize } from "dotenv";
+export { config as initialize } from 'dotenv'

@@ -1,5 +1,5 @@
 import { is } from '../../'
 
 export function vs(input) {
-  return is.true.vs(input) || is.false.vs(input)
+  return is.True.vs(input) || is.False.vs(input)
 }

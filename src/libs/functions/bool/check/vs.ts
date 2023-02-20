@@ -1,15 +1,20 @@
-import { is } from '../'
+import { is as check_is } from '../'
 
+// prettier-ignore
 export function vs(input) {
-  const isTrue = is.true.vs(input)
-  const isFalse = is.false.vs(input)
-  const isAssign = is.assign.vs(input)
-  const isVirgin = is.virgin.vs(input)
+  
+  const is = {
+    True:   check_is.True.vs(input),
+    False:  check_is.False.vs(input),
+    Assign: check_is.Assign.vs(input),
+    Virgin: check_is.Virgin.vs(input),
+  }
 
   return {
-    isTrue,
-    isFalse,
-    isAssign,
-    isVirgin,
+    is,
+    isTrue:   is.True,
+    isFalse:  is.False,
+    isAssign: is.Assign,
+    isVirgin: is.Virgin,
   }
 }
