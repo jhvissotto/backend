@@ -1,9 +1,10 @@
 {
   "name": "backend",
   "version": "0.1.0",
-  "description": "backend default boilerplate",
+  "description": "Boilerplate backend",
   "author": "Jose Henrique",
   "main": "index.ts",
+  "private": true,
   "scripts": {
     "start": "tsx .",
     "dev": "tsnd --respawn -r tsconfig-paths/register .",

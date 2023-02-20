@@ -1,12 +1,12 @@
 // prettier-ignore
 export function parseHostname(hostname: string, domain: string): {
-    subdomain, 
+    sub, 
     domain: string, 
     tld
 } {
 
-    const [subdomain, tld] = hostname.split(domain).map(i => i.split('.').filter(Boolean))
+    const [sub, tld] = hostname.split(domain).map(i => i.split('.').filter(Boolean))
 
 
-    return ({ subdomain, domain, tld })
+    return ({ sub, domain, tld })
 }

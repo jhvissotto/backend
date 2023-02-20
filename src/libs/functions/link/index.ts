@@ -1,4 +1,5 @@
 export * from './append'
+export * from './baseUrl'
 export * as concat from './concat'
 export * from './parseHostname'
 export * from './stringify'
